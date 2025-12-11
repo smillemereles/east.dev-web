@@ -8,7 +8,6 @@ const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#portfolio", label: "Portfolio" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -26,30 +25,37 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "glass-effect shadow-elegant py-3"
-          : "bg-transparent py-5"
+          ? "glass-effect py-4"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        <a href="#inicio" className="flex items-center gap-2">
-          <img src={logo} alt="east.dev" className="h-10 w-auto" />
+        <a href="#inicio" className="flex items-center gap-3 group">
+          <img 
+            src={logo} 
+            alt="east.dev" 
+            className="h-10 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" 
+          />
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 text-sm tracking-wide"
+              className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
             >
               {link.label}
             </a>
           ))}
-          <Button variant="hero" size="sm">
-            Solicitar Presupuesto
+        </div>
+
+        <div className="hidden lg:block">
+          <Button variant="hero" size="default">
+            Contactar
           </Button>
         </div>
 
@@ -65,20 +71,20 @@ export const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 glass-effect border-t border-border animate-fade-in">
-          <div className="container-custom py-6 flex flex-col gap-4">
+        <div className="lg:hidden absolute top-full left-0 right-0 glass-effect border-t border-border/30 animate-fade-in">
+          <div className="container-custom py-8 flex flex-col gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary font-medium py-2 transition-colors"
+                className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button variant="hero" className="mt-2">
-              Solicitar Presupuesto
+            <Button variant="hero" className="mt-4">
+              Contactar
             </Button>
           </div>
         </div>

@@ -2,79 +2,62 @@ import { Link2, Code2, Palette, Rocket } from "lucide-react";
 
 export const About = () => {
   return (
-    <section id="nosotros" className="section-padding bg-muted/30">
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="nosotros" className="section-padding relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="container-custom relative z-10">
+        {/* Section Label */}
+        <div className="flex items-center gap-4 mb-16">
+          <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
+            01 — Sobre Nosotros
+          </span>
+          <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
           {/* Left Content */}
           <div>
-            <span className="text-sm font-medium text-primary tracking-wider uppercase">
-              Sobre Nosotros
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mt-4 mb-6">
-              El puente entre tu idea y la{" "}
-              <span className="text-gradient">realidad digital</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-8">
+              El puente entre
+              <br />
+              <span className="text-gradient">tu visión</span> y la
+              <br />
+              realidad digital
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
+            
+            <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
               <p>
-                <strong className="text-foreground">east.dev</strong> nació en Ciudad del Este, 
-                inspirada en el icónico Puente de la Amistad que conecta dos mundos. 
-                De la misma manera, conectamos tecnología y creatividad para dar vida 
-                a proyectos web únicos.
+                <span className="text-foreground font-semibold">east.dev</span> nació en Ciudad del Este, 
+                inspirada en el icónico Puente de la Amistad. Conectamos tecnología 
+                y creatividad para dar vida a proyectos web únicos.
               </p>
               <p>
-                Como desarrolladora y diseñadora web, combino la precisión técnica con 
-                una visión artística para crear experiencias digitales que no solo funcionan 
-                perfectamente, sino que también cuentan historias y generan conexiones 
-                reales con tu audiencia.
-              </p>
-              <p>
-                Cada proyecto es una oportunidad de construir puentes: entre tu marca y 
-                tus clientes, entre lo tradicional y lo innovador, entre la idea y la solución.
+                Cada proyecto es una oportunidad de construir puentes: entre tu marca 
+                y tus clientes, entre lo tradicional y lo innovador.
               </p>
             </div>
           </div>
 
           {/* Right Content - Values */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            <div className="bg-card p-6 rounded-xl shadow-elegant hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border/50">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Link2 className="w-6 h-6 text-primary" />
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { icon: Link2, title: "Conexión", desc: "Unimos diseño y desarrollo para experiencias coherentes." },
+              { icon: Palette, title: "Creatividad", desc: "Cada proyecto tiene su propia identidad visual única." },
+              { icon: Code2, title: "Precisión", desc: "Código limpio y optimizado para rendimiento óptimo." },
+              { icon: Rocket, title: "Innovación", desc: "Tecnologías modernas y tendencias actuales." },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className="group glass-card p-6 rounded-2xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-display font-semibold text-lg mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="font-display font-semibold text-lg mb-2">Conexión</h3>
-              <p className="text-sm text-muted-foreground">
-                Unimos diseño y desarrollo para crear experiencias coherentes y memorables.
-              </p>
-            </div>
-
-            <div className="bg-card p-6 rounded-xl shadow-elegant hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border/50">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Palette className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-lg mb-2">Creatividad</h3>
-              <p className="text-sm text-muted-foreground">
-                Cada proyecto tiene su propia identidad visual única y personalizada.
-              </p>
-            </div>
-
-            <div className="bg-card p-6 rounded-xl shadow-elegant hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border/50">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Code2 className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-lg mb-2">Precisión</h3>
-              <p className="text-sm text-muted-foreground">
-                Código limpio y optimizado que garantiza rendimiento y escalabilidad.
-              </p>
-            </div>
-
-            <div className="bg-card p-6 rounded-xl shadow-elegant hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border/50">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Rocket className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-lg mb-2">Innovación</h3>
-              <p className="text-sm text-muted-foreground">
-                Tecnologías modernas y tendencias actuales en cada proyecto.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Outfit", "system-ui", "sans-serif"],
-        body: ["Space Grotesk", "system-ui", "sans-serif"],
+        display: ["Syne", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,6 +62,7 @@ export default {
           dark: "hsl(var(--silver-dark))",
         },
         steel: "hsl(var(--steel))",
+        electric: "hsl(var(--electric))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

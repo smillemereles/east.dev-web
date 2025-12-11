@@ -8,87 +8,73 @@ const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
 ];
 
-const footerLinks = [
-  {
-    title: "Navegación",
-    links: [
-      { label: "Inicio", href: "#inicio" },
-      { label: "Nosotros", href: "#nosotros" },
-      { label: "Servicios", href: "#servicios" },
-      { label: "Proyectos", href: "#proyectos" },
-    ],
-  },
-  {
-    title: "Servicios",
-    links: [
-      { label: "Desarrollo Web", href: "#servicios" },
-      { label: "Diseño UI/UX", href: "#servicios" },
-      { label: "Marketing Digital", href: "#servicios" },
-      { label: "SEO", href: "#servicios" },
-    ],
-  },
-  {
-    title: "Contacto",
-    links: [
-      { label: "contacto@east.dev", href: "mailto:contacto@east.dev" },
-      { label: "Ciudad del Este, PY", href: "#" },
-    ],
-  },
-];
-
 export const Footer = () => {
   return (
-    <footer className="bg-navy-dark text-silver-light">
+    <footer className="border-t border-border/30">
       <div className="container-custom py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <img src={logo} alt="east.dev" className="h-12 w-auto mb-6 brightness-0 invert opacity-90" />
-            <p className="text-silver/70 mb-6 max-w-sm leading-relaxed">
+            <img 
+              src={logo} 
+              alt="east.dev" 
+              className="h-10 w-auto brightness-0 invert opacity-80 mb-6" 
+            />
+            <p className="text-muted-foreground mb-8 max-w-sm leading-relaxed">
               Diseño y desarrollo web con identidad propia desde Ciudad del Este. 
               Conectamos tu visión con la tecnología.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-silver/10 flex items-center justify-center hover:bg-silver/20 transition-colors"
+                  className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Links */}
-          {footerLinks.map((column) => (
-            <div key={column.title}>
-              <h4 className="font-display font-semibold mb-4">{column.title}</h4>
-              <ul className="space-y-3">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-silver/70 hover:text-silver-light transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Navigation */}
+          <div>
+            <h4 className="font-display font-semibold mb-6 text-sm uppercase tracking-wider">Navegación</h4>
+            <ul className="space-y-4">
+              {["Inicio", "Nosotros", "Servicios", "Proyectos", "Contacto"].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-display font-semibold mb-6 text-sm uppercase tracking-wider">Servicios</h4>
+            <ul className="space-y-4">
+              {["Desarrollo Web", "Diseño UI/UX", "Branding", "Marketing", "SEO"].map((item) => (
+                <li key={item}>
+                  <span className="text-muted-foreground text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-silver/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-silver/50">
-            © {new Date().getFullYear()} east.dev. Todos los derechos reservados.
+        <div className="border-t border-border/30 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} east.dev — Todos los derechos reservados
           </p>
-          <p className="text-sm text-silver/50">
-            Hecho con 💙 en Ciudad del Este
+          <p className="text-sm text-muted-foreground">
+            Ciudad del Este, Paraguay
           </p>
         </div>
       </div>
