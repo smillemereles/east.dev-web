@@ -1,145 +1,138 @@
-import { ExternalLink, Clock } from "lucide-react";
-import { Button } from "./ui/button";
+import { ArrowUpRight, Clock } from "lucide-react";
+import { useState } from "react";
 
 const completedProjects = [
   {
     name: "Hoplon Lounge",
-    description: "Sitio web elegante para un lounge bar con reservas online y menú digital interactivo.",
-    technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop",
-    link: "#",
+    description: "Sitio web elegante para lounge bar con reservas online y menú digital.",
+    technologies: ["React", "Tailwind", "Motion"],
+    image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&h=600&fit=crop",
+    year: "2024",
   },
   {
     name: "La Mansa",
-    description: "Plataforma gastronómica con sistema de pedidos y gestión de carta digital.",
+    description: "Plataforma gastronómica con sistema de pedidos y carta digital.",
     technologies: ["Next.js", "Supabase", "Stripe"],
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
-    link: "#",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
+    year: "2024",
   },
   {
     name: "YoCreo",
-    description: "Página web institucional para organización con diseño moderno y accesible.",
-    technologies: ["React", "TypeScript", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
-    link: "#",
+    description: "Web institucional con diseño moderno y accesible.",
+    technologies: ["React", "TypeScript"],
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
+    year: "2023",
   },
   {
     name: "Lleva Viajes",
-    description: "Agencia de viajes online con catálogo de destinos y sistema de cotización.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop",
-    link: "#",
+    description: "Agencia de viajes con catálogo de destinos y cotización.",
+    technologies: ["React", "Node.js"],
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
+    year: "2023",
   },
 ];
 
 const inProgressProjects = [
-  {
-    name: "E-commerce Premium",
-    description: "Tienda online completa con pasarela de pagos y gestión de inventario.",
-    progress: 75,
-  },
-  {
-    name: "App de Reservas",
-    description: "Sistema de reservas para salones de belleza con recordatorios automáticos.",
-    progress: 40,
-  },
-  {
-    name: "Dashboard Analytics",
-    description: "Panel de control con métricas y reportes en tiempo real.",
-    progress: 60,
-  },
+  { name: "E-commerce Premium", progress: 75 },
+  { name: "App de Reservas", progress: 40 },
+  { name: "Dashboard Analytics", progress: 60 },
 ];
 
 export const Projects = () => {
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
   return (
-    <section id="proyectos" className="section-padding bg-muted/30">
+    <section id="proyectos" className="section-padding relative">
       <div className="container-custom">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-sm font-medium text-primary tracking-wider uppercase">
-            Proyectos
+        {/* Section Label */}
+        <div className="flex items-center gap-4 mb-16">
+          <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
+            03 — Proyectos
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mt-4 mb-6">
-            Trabajos que hablan por{" "}
-            <span className="text-gradient">nosotros</span>
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Cada proyecto es único. Descubre cómo hemos ayudado a diferentes marcas 
-            a alcanzar sus objetivos digitales.
-          </p>
+          <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
         </div>
 
-        {/* Completed Projects */}
-        <div className="mb-20">
-          <h3 className="text-xl font-display font-semibold mb-8 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-500" />
-            Proyectos Finalizados
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {completedProjects.map((project, index) => (
-              <div
-                key={project.name}
-                className="group bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-card-hover transition-all duration-500 border border-border/50"
-              >
-                {/* Image */}
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
-                    <Button variant="metallic" size="sm">
-                      Ver proyecto
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
+        {/* Header */}
+        <div className="max-w-3xl mb-20">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6">
+            Trabajos que{" "}
+            <span className="text-gradient">hablan</span>
+            <br />por nosotros
+          </h2>
+        </div>
+
+        {/* Projects List */}
+        <div className="border-t border-border/30">
+          {completedProjects.map((project, index) => (
+            <div
+              key={project.name}
+              className="group relative border-b border-border/30 py-8 cursor-pointer"
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-8">
+                  <span className="text-sm font-mono text-muted-foreground/50 w-8">
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-display font-bold group-hover:text-primary transition-colors">
+                      {project.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mt-1 max-w-md">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
-                
-                {/* Content */}
-                <div className="p-6">
-                  <h4 className="font-display font-semibold text-xl mb-2">{project.name}</h4>
-                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+
+                <div className="flex items-center gap-6">
+                  <span className="text-sm text-muted-foreground hidden sm:block">{project.year}</span>
+                  <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all">
+                    <ArrowUpRight className="w-5 h-5 group-hover:text-primary-foreground transition-colors" />
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+
+              {/* Hover Image */}
+              <div 
+                className={`absolute right-24 top-1/2 -translate-y-1/2 w-64 h-40 rounded-lg overflow-hidden pointer-events-none transition-all duration-300 z-10 ${
+                  hoveredProject === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                }`}
+              >
+                <img 
+                  src={project.image} 
+                  alt={project.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* In Progress Projects */}
-        <div>
-          <h3 className="text-xl font-display font-semibold mb-8 flex items-center gap-2">
-            <Clock className="w-5 h-5 text-silver-dark" />
-            En Desarrollo
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+        {/* In Progress */}
+        <div className="mt-20">
+          <div className="flex items-center gap-3 mb-8">
+            <Clock className="w-5 h-5 text-muted-foreground" />
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+              En desarrollo
+            </span>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-4">
             {inProgressProjects.map((project) => (
               <div
                 key={project.name}
-                className="bg-card/50 backdrop-blur-sm p-6 rounded-xl border border-border/50"
+                className="glass-card p-6 rounded-xl"
               >
-                <h4 className="font-display font-semibold mb-2">{project.name}</h4>
-                <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-                
-                {/* Progress bar */}
+                <h4 className="font-display font-semibold mb-4">{project.name}</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Progreso</span>
-                    <span className="font-medium text-primary">{project.progress}%</span>
+                    <span className="text-primary font-mono">{project.progress}%</span>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
+                  <div className="h-1 bg-muted rounded-full overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-primary to-navy-light rounded-full transition-all duration-500"
+                      className="h-full bg-gradient-to-r from-primary to-electric rounded-full"
                       style={{ width: `${project.progress}%` }}
                     />
                   </div>
