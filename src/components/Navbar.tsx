@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-eastdev.jpg";
 
 const navLinks = [
@@ -8,6 +9,7 @@ const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
   { href: "#proyectos", label: "Proyectos" },
+  { href: "/portafolio", label: "Portafolio" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -42,15 +44,25 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
 
         <div className="hidden lg:block">
@@ -73,16 +85,27 @@ export const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 glass-effect border-t border-border/30 animate-fade-in">
           <div className="container-custom py-8 flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith("/") ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <Button variant="hero" className="mt-4">
               Contactar
             </Button>
