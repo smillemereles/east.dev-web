@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-eastdev-new.jpeg";
+import logo from "@/assets/logo-eastdev-2.jpeg";
 
 const navLinks = [
   { href: "#inicio", label: "Inicio" },
@@ -29,8 +29,8 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/10 backdrop-blur-md border-b border-white/10 py-3 sm:py-5"
-          : "bg-white/5 backdrop-blur-sm py-4 sm:py-8"
+          ? "bg-white/15 backdrop-blur-md border-b border-white/15 py-4 sm:py-6"
+          : "bg-white/10 backdrop-blur-sm py-5 sm:py-9"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
