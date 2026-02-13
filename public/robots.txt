@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://east.dev/sitemap.xml
+Sitemap: https://east-dev-web.vercel.app/sitemap.xml
