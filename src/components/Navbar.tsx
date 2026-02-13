@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-eastdev-2.jpeg";
 
 const navLinks = [
@@ -16,6 +16,8 @@ const navLinks = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,35 +36,59 @@ export const Navbar = () => {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        <a href="#inicio" className="flex items-center gap-3 group">
-          <img 
-            src={logo} 
-            alt="east.dev" 
-            className="h-10 sm:h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity" 
-          />
-        </a>
+        {location.pathname === "/" ? (
+          <a href="#inicio" className="flex items-center gap-3 group">
+            <img
+              src={logo}
+              alt="east.dev"
+              className="h-10 sm:h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+            />
+          </a>
+        ) : (
+          <Link to={{ pathname: "/", hash: "#inicio" }} className="flex items-center gap-3 group">
+            <img
+              src={logo}
+              alt="east.dev"
+              className="h-10 sm:h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+            />
+          </Link>
+        )}
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) =>
-            link.href.startsWith("/") ? (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
-              >
-                {link.label}
-              </a>
-            )
-          )}
+          {navLinks.map((link) => {
+            if (link.href.startsWith("/")) {
+              return (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
+                >
+                  {link.label}
+                </Link>
+              );
+            } else {
+              // Si estamos en la home, usar ancla normal. Si no, usar <Link> con hash.
+              const isHome = location.pathname === "/";
+              return isHome ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={{ pathname: "/", hash: link.href }}
+                  className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+          })}
         </div>
 
         <div className="hidden lg:block">
@@ -87,27 +113,41 @@ export const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 glass-effect border-t border-border/30 animate-fade-in">
           <div className="container-custom py-8 flex flex-col gap-6">
-            {navLinks.map((link) =>
-              link.href.startsWith("/") ? (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              )
-            )}
+            {navLinks.map((link) => {
+              if (link.href.startsWith("/")) {
+                return (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              } else {
+                const isHome = location.pathname === "/";
+                return isHome ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    to={{ pathname: "/", hash: link.href }}
+                    className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+            })}
             <a href="#contacto" onClick={() => setIsOpen(false)}>
               <Button variant="hero" className="mt-4">
                 Contactar

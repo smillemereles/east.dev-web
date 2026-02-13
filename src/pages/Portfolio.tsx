@@ -42,6 +42,7 @@ interface DesignWork {
   type: string;
   description: string;
   aspect: "square" | "portrait" | "landscape";
+  image: string;
 }
 
 interface ClientPortfolio {
@@ -68,6 +69,7 @@ const clients: ClientPortfolio[] = [
       { id: 3, title: "El Sabor en los Detalles", type: "Post Instagram", description: "Pieza visual destacando la calidad gastronómica y cortes premium a la parrilla", aspect: "portrait", image: hoplonSabor },
       { id: 4, title: "Nueva Web Online", type: "Post Instagram", description: "Lanzamiento de la web oficial www.hoplonclub.com.py con propuesta completa del club", aspect: "portrait", image: hoplonWeb },
     ],
+    image: hoplonWeb,
   },
   {
     name: "La Mansa",
@@ -80,6 +82,7 @@ const clients: ClientPortfolio[] = [
       { id: 2, title: "Mesa de Dulces", type: "Post Instagram", description: "Selección de postres artesanales: pie, alfajores, budín marmolado y flan de chocolate con sello La Mansa Wine Estates", aspect: "portrait", image: lamansaDulces },
       { id: 3, title: "San Valentín", type: "Story", description: "Promo Canastas de Desayuno para San Valentín a Gs. 350.000 con globo personalizado y packaging premium", aspect: "portrait", image: lamansaSanv },
     ],
+    image: lamansaSanv,
   },
   {
     name: "Lleva Viajes",
@@ -94,6 +97,7 @@ const clients: ClientPortfolio[] = [
       { id: 4, title: "Salvador Bahía", type: "Story", description: "Promo Semana Santa 2026 a Salvador Bahía, 7 noches desde 7.300.000 Gs", aspect: "portrait", image: llevaPromosalvador },
       { id: 5, title: "Vision Board Colombia", type: "Post Instagram", description: "Paquete a Colombia: Eje Cafetero, San Andrés y Cartagena", aspect: "portrait", image: llevaVisionboard },
     ],
+    image: llevaConocelaweb,
   },
   {
     name: "City Tour Asunción",
@@ -108,19 +112,20 @@ const clients: ClientPortfolio[] = [
       { id: 4, title: "Historia Independencia", type: "Carousel", description: "Recorrido histórico por la Casa de la Independencia, museo y sitio emblemático de Asunción", aspect: "portrait", image: citytourCasa },
       { id: 5, title: "Semana del Amor", type: "Story", description: "City Tour 2x1 para parejas, Semana del Amor en Asunción del 10 al 13 de febrero 2026", aspect: "portrait", image: citytourAmor },
     ],
+    image: citytourTbt,
   },
   {
     name: "NevenHost",
     slug: "nevenhost",
     description: "Proyecto piloto de web para inmobiliaria. Diseño de plataforma con listado de propiedades, búsqueda y fichas de inmuebles.",
-        category: "Web — Proyecto Piloto",
+    category: "Web — Proyecto Piloto",
     icon: <Globe className="w-5 h-5" />,
     works: [
       { id: 1, title: "Hero Principal", type: "Web Design", description: "Landing 'Aquí comienza tu nuevo hogar' con selección exclusiva de casas y terrenos en venta", aspect: "landscape", image: nevenHero },
       { id: 2, title: "Listado de Propiedades", type: "Web Design", description: "Catálogo con filtros por habitaciones, ubicación y rango de precio en USD", aspect: "landscape", image: nevenPropiedades },
       { id: 3, title: "Galería de Propiedades", type: "Web Design", description: "Galería con filtros por exteriores, interiores y áreas comunes con imágenes cautivadoras", aspect: "landscape", image: nevenGaleria },
     ],
-
+    image: nevenHero,
   },
   {
     name: "Farmacia Do Sul",
@@ -133,6 +138,7 @@ const clients: ClientPortfolio[] = [
       { id: 2, title: "Tienda de Productos", type: "Web Design", description: "Catálogo de Tirzepatida (T.G) en distintas dosis con precios en guaraníes y reales", aspect: "landscape", image: farmaProductos },
       { id: 3, title: "Checkout", type: "Web Design", description: "Flujo de checkout con información del cliente, envío gratis y resumen de pedido en guaraníes", aspect: "landscape", image: farmaCheckout },
     ],
+    image: farmaHero,
   },
   {
     name: "Vital X",
@@ -145,6 +151,7 @@ const clients: ClientPortfolio[] = [
       { id: 2, title: "Tienda de Productos", type: "Web Design", description: "Catálogo e-commerce con productos Tirzepatida de INDUFAR y QUIMFA, precios en guaraníes y reales", aspect: "landscape", image: vitalProduct },
       { id: 3, title: "Carrito de Compras", type: "Web Design", description: "Flujo de carrito con resumen de compra, cantidades editables y checkout integrado", aspect: "landscape", image: vitalCarrito },
     ],
+    image: vitalHero,
   },
 ];
 
