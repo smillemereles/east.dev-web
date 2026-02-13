@@ -102,20 +102,6 @@ const clients: ClientPortfolio[] = [
     ],
   },
   {
-    name: "City Tour CDE",
-    slug: "citytour-cde",
-    description: "Contenido visual y estrategia digital para tours turísticos en Ciudad del Este. Piezas que destacan la cultura local.",
-    category: "Turismo",
-    icon: <MapPin className="w-5 h-5" />,
-    works: [
-      { id: 1, title: "Puente de la Amistad", type: "Post Instagram", description: "Pieza visual del ícono de la ciudad", aspect: "square" },
-      { id: 2, title: "Compras & Cultura", type: "Carousel", description: "Guía visual de experiencias en CDE", aspect: "square" },
-      { id: 3, title: "Itaipú Experience", type: "Post Instagram", description: "Promoción de visita a la represa", aspect: "landscape" },
-      { id: 4, title: "Vida Nocturna", type: "Story", description: "Contenido de entretenimiento nocturno", aspect: "portrait" },
-      { id: 5, title: "Paquete Familiar", type: "Post Instagram", description: "Promoción de tour para familias", aspect: "square" },
-    ],
-  },
-  {
     name: "NevenHost",
     slug: "nevenhost",
     description: "Proyecto piloto de web para inmobiliaria. Diseño de plataforma con listado de propiedades, búsqueda y fichas de inmuebles.",
