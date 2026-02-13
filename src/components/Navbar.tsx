@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-eastdev.jpg";
+import logo from "@/assets/logo-eastdev-new.jpeg";
 
 const navLinks = [
   { href: "#inicio", label: "Inicio" },
@@ -29,8 +29,8 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "glass-effect py-4"
-          : "bg-transparent py-6"
+          ? "bg-background/95 backdrop-blur-md border-b border-border/30 py-5"
+          : "bg-background/80 backdrop-blur-sm py-8"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
@@ -38,7 +38,7 @@ export const Navbar = () => {
           <img 
             src={logo} 
             alt="east.dev" 
-            className="h-10 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" 
+            className="h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity" 
           />
         </a>
 
