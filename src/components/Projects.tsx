@@ -8,6 +8,7 @@ const completedProjects = [
     technologies: ["React", "Tailwind", "Motion"],
     image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800&h=600&fit=crop",
     year: "2024",
+    url: "https://hoplonclub.com.py/",
   },
   {
     name: "La Mansa",
@@ -15,27 +16,34 @@ const completedProjects = [
     technologies: ["Next.js", "Supabase", "Stripe"],
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
     year: "2024",
-  },
-  {
-    name: "YoCreo",
-    description: "Web institucional con diseño moderno y accesible.",
-    technologies: ["React", "TypeScript"],
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
-    year: "2023",
+    url: "https://lamansapy.com/",
   },
   {
     name: "Lleva Viajes",
     description: "Agencia de viajes con catálogo de destinos y cotización.",
     technologies: ["React", "Node.js"],
     image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
-    year: "2023",
+    year: "2024",
+    url: "https://lleva.com.py/",
   },
 ];
 
-const inProgressProjects = [
-  { name: "E-commerce Premium", progress: 75 },
-  { name: "App de Reservas", progress: 40 },
-  { name: "Dashboard Analytics", progress: 60 },
+const prototypeProjects = [
+  {
+    name: "Lleva Elite Journeys",
+    description: "Prototipo de plataforma de viajes premium con experiencias exclusivas.",
+    url: "https://lleva-elite-journeys.vercel.app/",
+  },
+  {
+    name: "Farmacia Do Sul",
+    description: "Prototipo de e-commerce para farmacia con catálogo de productos.",
+    url: "https://farmacia-do-sul-e-commerce-bqwl6t4es-smillemereles-projects.vercel.app/",
+  },
+  {
+    name: "YoCreo",
+    description: "Prototipo de hub digital con diseño moderno y accesible.",
+    url: "https://yocreo-digital-hub.vercel.app/",
+  },
 ];
 
 export const Projects = () => {
@@ -64,9 +72,12 @@ export const Projects = () => {
         {/* Projects List */}
         <div className="border-t border-border/30">
           {completedProjects.map((project, index) => (
-            <div
+            <a
               key={project.name}
-              className="group relative border-b border-border/30 py-8 cursor-pointer"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative border-b border-border/30 py-8 cursor-pointer block"
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
@@ -105,39 +116,35 @@ export const Projects = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
-        {/* In Progress */}
+        {/* Prototypes */}
         <div className="mt-20">
           <div className="flex items-center gap-3 mb-8">
             <Clock className="w-5 h-5 text-muted-foreground" />
             <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-              En desarrollo
+              Prototipos Web
             </span>
           </div>
           
           <div className="grid md:grid-cols-3 gap-4">
-            {inProgressProjects.map((project) => (
-              <div
+            {prototypeProjects.map((project) => (
+              <a
                 key={project.name}
-                className="glass-card p-6 rounded-xl"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-card p-6 rounded-xl group hover:border-primary/50 transition-all"
               >
-                <h4 className="font-display font-semibold mb-4">{project.name}</h4>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Progreso</span>
-                    <span className="text-primary font-mono">{project.progress}%</span>
-                  </div>
-                  <div className="h-1 bg-muted rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-primary to-electric rounded-full"
-                      style={{ width: `${project.progress}%` }}
-                    />
-                  </div>
+                <h4 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">{project.name}</h4>
+                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                <div className="flex items-center gap-2 text-sm text-primary">
+                  <span>Ver prototipo</span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
