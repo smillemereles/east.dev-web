@@ -22,6 +22,9 @@ import hoplonWeb from "@/assets/portfolio/hoplon-web.png";
 import nevenHero from "@/assets/portfolio/neven-hero.png";
 import nevenPropiedades from "@/assets/portfolio/neven-propiedades.png";
 import nevenGaleria from "@/assets/portfolio/neven-galeria.png";
+import farmaHero from "@/assets/portfolio/farma-hero.png";
+import farmaProductos from "@/assets/portfolio/farma-productos.png";
+import farmaCheckout from "@/assets/portfolio/farma-checkout.png";
 
 interface DesignWork {
   id: number;
@@ -130,9 +133,9 @@ const clients: ClientPortfolio[] = [
     category: "E-commerce — Proyecto Piloto",
     icon: <ShoppingCart className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Homepage", type: "Web Design", description: "Diseño de página principal con ofertas destacadas", aspect: "landscape" },
-      { id: 2, title: "Catálogo", type: "Web Design", description: "Vista de catálogo de productos", aspect: "landscape" },
-      { id: 3, title: "Carrito & Checkout", type: "Web Design", description: "Flujo de compra y checkout", aspect: "landscape" },
+      { id: 1, title: "Hero Principal", type: "Web Design", description: "Landing 'Tu Salud, Nuestra Prioridad' con +20 años de confianza y laboratorios aliados como INDUFAR y Eticos", aspect: "landscape", image: farmaHero },
+      { id: 2, title: "Tienda de Productos", type: "Web Design", description: "Catálogo de Tirzepatida (T.G) en distintas dosis con precios en guaraníes y reales", aspect: "landscape", image: farmaProductos },
+      { id: 3, title: "Checkout", type: "Web Design", description: "Flujo de checkout con información del cliente, envío gratis y resumen de pedido en guaraníes", aspect: "landscape", image: farmaCheckout },
     ],
   },
   {
