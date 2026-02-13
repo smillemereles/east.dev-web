@@ -81,11 +81,11 @@ export const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}>
               Ver Proyectos
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="heroOutline" size="xl">
+            <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}>
               Empezar proyecto
             </Button>
           </div>
