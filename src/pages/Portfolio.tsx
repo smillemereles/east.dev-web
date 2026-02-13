@@ -19,6 +19,9 @@ import hoplonEnamorado from "@/assets/portfolio/hoplon-enamorado.png";
 import hoplonHero from "@/assets/portfolio/hoplon-hero.png";
 import hoplonSabor from "@/assets/portfolio/hoplon-sabor.png";
 import hoplonWeb from "@/assets/portfolio/hoplon-web.png";
+import nevenHero from "@/assets/portfolio/neven-hero.png";
+import nevenPropiedades from "@/assets/portfolio/neven-propiedades.png";
+import nevenGaleria from "@/assets/portfolio/neven-galeria.png";
 
 interface DesignWork {
   id: number;
@@ -115,9 +118,9 @@ const clients: ClientPortfolio[] = [
     category: "Web — Proyecto Piloto",
     icon: <Globe className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Landing Page", type: "Web Design", description: "Diseño de página principal con propiedades destacadas", aspect: "landscape" },
-      { id: 2, title: "Listado de Propiedades", type: "Web Design", description: "Vista de catálogo con filtros de búsqueda", aspect: "landscape" },
-      { id: 3, title: "Ficha de Inmueble", type: "Web Design", description: "Página de detalle con galería y datos del inmueble", aspect: "landscape" },
+      { id: 1, title: "Hero Principal", type: "Web Design", description: "Landing 'Aquí comienza tu nuevo hogar' con selección exclusiva de casas y terrenos en venta", aspect: "landscape", image: nevenHero },
+      { id: 2, title: "Listado de Propiedades", type: "Web Design", description: "Catálogo con filtros por habitaciones, ubicación y rango de precio en USD", aspect: "landscape", image: nevenPropiedades },
+      { id: 3, title: "Galería de Propiedades", type: "Web Design", description: "Galería con filtros por exteriores, interiores y áreas comunes con imágenes cautivadoras", aspect: "landscape", image: nevenGaleria },
     ],
   },
   {
