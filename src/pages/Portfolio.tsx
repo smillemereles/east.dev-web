@@ -2,6 +2,11 @@ import { useState } from "react";
 import { ArrowLeft, ExternalLink, Instagram, Palette, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-eastdev.jpg";
+import llevaConocelaweb from "@/assets/portfolio/lleva-conocelaweb.png";
+import llevaDescubrelamarca from "@/assets/portfolio/lleva-descubrelamarca.png";
+import llevaDestino2026 from "@/assets/portfolio/lleva-destino2026.png";
+import llevaPromosalvador from "@/assets/portfolio/lleva-promosalvador.png";
+import llevaVisionboard from "@/assets/portfolio/lleva-visionboard.png";
 
 interface DesignWork {
   id: number;
@@ -58,11 +63,11 @@ const clients: ClientPortfolio[] = [
     category: "Turismo & Viajes",
     icon: <Image className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Destino Cancún", type: "Post Instagram", description: "Promoción de paquete a Cancún", aspect: "square" },
-      { id: 2, title: "Ofertas de Verano", type: "Carousel", description: "Carousel de ofertas estacionales", aspect: "square" },
-      { id: 3, title: "Escapada Fin de Semana", type: "Story", description: "Promo de escapadas cortas", aspect: "portrait" },
-      { id: 4, title: "Paquete Europa", type: "Post Instagram", description: "Diseño de paquete turístico", aspect: "landscape" },
-      { id: 5, title: "Testimonios", type: "Carousel", description: "Reseñas de clientes viajeros", aspect: "square" },
+      { id: 1, title: "Conocé la Web", type: "Post Instagram", description: "Presentación de la web oficial de Lleva Viajes con 15 años de trayectoria", aspect: "portrait", image: llevaConocelaweb },
+      { id: 2, title: "Servicios Exclusivos", type: "Carousel", description: "Promoción de servicios: viajes 2x1, en grupo y de bodas", aspect: "portrait", image: llevaDescubrelamarca },
+      { id: 3, title: "Destinos Brasil 2026", type: "Post Instagram", description: "Paquetes a Natal, Rio de Janeiro y Porto de Galinhas desde 980 USD", aspect: "portrait", image: llevaDestino2026 },
+      { id: 4, title: "Salvador Bahía", type: "Story", description: "Promo Semana Santa 2026 a Salvador Bahía, 7 noches desde 7.300.000 Gs", aspect: "portrait", image: llevaPromosalvador },
+      { id: 5, title: "Vision Board Colombia", type: "Post Instagram", description: "Paquete a Colombia: Eje Cafetero, San Andrés y Cartagena", aspect: "portrait", image: llevaVisionboard },
     ],
   },
   {
