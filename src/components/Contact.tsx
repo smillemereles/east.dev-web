@@ -15,10 +15,9 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensaje enviado",
-      description: "Nos pondremos en contacto pronto.",
-    });
+    const phone = "595973213591";
+    const text = `Hola! Soy *${formData.name}* (${formData.email}).%0A%0A*Proyecto:* ${formData.project}%0A*Presupuesto:* ${formData.budget}%0A%0A${formData.message}`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
     setFormData({ name: "", email: "", project: "", budget: "", message: "" });
   };
 
