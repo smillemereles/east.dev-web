@@ -12,6 +12,9 @@ import citytourHistorias from "@/assets/portfolio/citytour-historias.png";
 import citytourIndependencia from "@/assets/portfolio/citytour-independencia.png";
 import citytourCasa from "@/assets/portfolio/citytour-casa.png";
 import citytourAmor from "@/assets/portfolio/citytour-amor.png";
+import vitalHero from "@/assets/portfolio/vital-hero.png";
+import vitalProduct from "@/assets/portfolio/vital-product.png";
+import vitalCarrito from "@/assets/portfolio/vital-carrito.png";
 
 interface DesignWork {
   id: number;
@@ -134,9 +137,9 @@ const clients: ClientPortfolio[] = [
     category: "Web — Proyecto Piloto",
     icon: <Code className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Landing Page", type: "Web Design", description: "Página principal con propuesta de valor", aspect: "landscape" },
-      { id: 2, title: "Productos", type: "Web Design", description: "Sección de catálogo de productos", aspect: "landscape" },
-      { id: 3, title: "Blog & Contenido", type: "Web Design", description: "Diseño de sección de blog", aspect: "landscape" },
+      { id: 1, title: "Hero Principal", type: "Web Design", description: "Landing page con slider hero 'Activa tu Versión X', suplementación deportiva premium 100% online en Paraguay", aspect: "landscape", image: vitalHero },
+      { id: 2, title: "Tienda de Productos", type: "Web Design", description: "Catálogo e-commerce con productos Tirzepatida de INDUFAR y QUIMFA, precios en guaraníes y reales", aspect: "landscape", image: vitalProduct },
+      { id: 3, title: "Carrito de Compras", type: "Web Design", description: "Flujo de carrito con resumen de compra, cantidades editables y checkout integrado", aspect: "landscape", image: vitalCarrito },
     ],
   },
 ];
