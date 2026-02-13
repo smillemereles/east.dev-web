@@ -25,6 +25,9 @@ import nevenGaleria from "@/assets/portfolio/neven-galeria.png";
 import farmaHero from "@/assets/portfolio/farma-hero.png";
 import farmaProductos from "@/assets/portfolio/farma-productos.png";
 import farmaCheckout from "@/assets/portfolio/farma-checkout.png";
+import lamansaDesayuno from "@/assets/portfolio/lamansa-desayuno.jpeg";
+import lamansaDulces from "@/assets/portfolio/lamansa-dulces.png";
+import lamansaSanv from "@/assets/portfolio/lamansa-sanv.png";
 
 interface DesignWork {
   id: number;
@@ -65,11 +68,9 @@ const clients: ClientPortfolio[] = [
     category: "Gastronomía",
     icon: <Instagram className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Plato del Día", type: "Post Instagram", description: "Serie de posteos de platos destacados", aspect: "square" },
-      { id: 2, title: "Ambiente", type: "Carousel", description: "Carousel mostrando el ambiente del local", aspect: "square" },
-      { id: 3, title: "Promo Delivery", type: "Story", description: "Stories promocionales de delivery", aspect: "portrait" },
-      { id: 4, title: "Menú Semanal", type: "Post Instagram", description: "Diseño de menú semanal", aspect: "square" },
-      { id: 5, title: "Reseñas", type: "Story", description: "Highlight de reseñas de clientes", aspect: "portrait" },
+      { id: 1, title: "Box de Desayuno", type: "Post Instagram", description: "Canasta gourmet con croissant, frutas frescas, yogurt con granola, pie artesanal y jugo natural", aspect: "landscape", image: lamansaDesayuno },
+      { id: 2, title: "Mesa de Dulces", type: "Post Instagram", description: "Selección de postres artesanales: pie, alfajores, budín marmolado y flan de chocolate con sello La Mansa Wine Estates", aspect: "portrait", image: lamansaDulces },
+      { id: 3, title: "San Valentín", type: "Story", description: "Promo Canastas de Desayuno para San Valentín a Gs. 350.000 con globo personalizado y packaging premium", aspect: "portrait", image: lamansaSanv },
     ],
   },
   {
