@@ -16,7 +16,37 @@ export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const phone = "595973213591";
-    const text = `Hola! Soy *${formData.name}* (${formData.email}).%0A%0A*Proyecto:* ${formData.project}%0A*Presupuesto:* ${formData.budget}%0A%0A${formData.message}`;
+    
+    const projectLabels: Record<string, string> = {
+      website: "Sitio Web",
+      ecommerce: "E-commerce",
+      webapp: "Aplicación Web",
+      landing: "Landing Page",
+      redesign: "Rediseño",
+    };
+    
+    const budgetLabels: Record<string, string> = {
+      "500-1000": "$500 - $1,000",
+      "1000-2500": "$1,000 - $2,500",
+      "2500-5000": "$2,500 - $5,000",
+      "5000+": "$5,000+",
+    };
+
+    const projectLabel = projectLabels[formData.project] || formData.project;
+    const budgetLabel = budgetLabels[formData.budget] || "No especificado";
+
+    const text = [
+      `👋 ¡Hola! Soy *${formData.name}*`,
+      `📧 ${formData.email}`,
+      ``,
+      `📋 *Detalles del proyecto:*`,
+      `• Tipo: ${projectLabel}`,
+      `• Presupuesto: ${budgetLabel}`,
+      ``,
+      `💬 *Mensaje:*`,
+      formData.message,
+    ].join("\n");
+
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
     setFormData({ name: "", email: "", project: "", budget: "", message: "" });
   };
