@@ -110,6 +110,7 @@ const clients: ClientPortfolio[] = [
     description: "Proyecto piloto de e-commerce para farmacia. Diseño de tienda online con catálogo de productos y carrito de compras.",
     category: "E-commerce — Proyecto Piloto",
     icon: <ShoppingCart className="w-5 h-5" />,
+    url: "https://farmacia-do-sul-e-commerce.vercel.app/",
     works: [
       { id: 1, title: "Homepage", type: "Web Design", description: "Diseño de página principal con ofertas destacadas", aspect: "landscape" },
       { id: 2, title: "Catálogo", type: "Web Design", description: "Vista de catálogo de productos", aspect: "landscape" },

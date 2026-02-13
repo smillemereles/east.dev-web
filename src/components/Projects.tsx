@@ -37,7 +37,7 @@ const prototypeProjects = [
   {
     name: "Farmacia Do Sul",
     description: "Prototipo de e-commerce para farmacia con catálogo de productos.",
-    url: "https://farmacia-do-sul-e-commerce-bqwl6t4es-smillemereles-projects.vercel.app/",
+    url: "https://farmacia-do-sul-e-commerce.vercel.app/",
   },
   {
     name: "YoCreo",
