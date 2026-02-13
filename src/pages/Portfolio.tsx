@@ -9,6 +9,7 @@ interface DesignWork {
   type: string;
   description: string;
   aspect: "square" | "portrait" | "landscape";
+  image?: string;
 }
 
 interface ClientPortfolio {
@@ -260,16 +261,25 @@ export default function Portfolio() {
                     className="group relative rounded-xl overflow-hidden bg-card/30 border border-border/20 hover:border-electric/30 transition-all duration-500"
                   >
                     <div
-                      className={`${aspectClasses[work.aspect]} bg-gradient-to-br from-card via-card/80 to-electric/5 flex items-center justify-center`}
+                      className={`${aspectClasses[work.aspect]} ${work.image ? "" : "bg-gradient-to-br from-card via-card/80 to-electric/5"} flex items-center justify-center overflow-hidden`}
                     >
-                      <div className="text-center p-4">
-                        <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-electric/10 flex items-center justify-center">
-                          <Image className="w-6 h-6 text-electric/50" />
+                      {work.image ? (
+                        <img
+                          src={work.image}
+                          alt={work.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="text-center p-4">
+                          <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-electric/10 flex items-center justify-center">
+                            <Image className="w-6 h-6 text-electric/50" />
+                          </div>
+                          <p className="text-xs text-muted-foreground/50">
+                            Imagen próximamente
+                          </p>
                         </div>
-                        <p className="text-xs text-muted-foreground/50">
-                          Imagen próximamente
-                        </p>
-                      </div>
+                      )}
                     </div>
 
                     {/* Overlay on hover */}
