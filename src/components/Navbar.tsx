@@ -29,8 +29,8 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/10 backdrop-blur-md border-b border-white/10 py-5"
-          : "bg-white/5 backdrop-blur-sm py-8"
+          ? "bg-white/10 backdrop-blur-md border-b border-white/10 py-3 sm:py-5"
+          : "bg-white/5 backdrop-blur-sm py-4 sm:py-8"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
@@ -38,7 +38,7 @@ export const Navbar = () => {
           <img 
             src={logo} 
             alt="east.dev" 
-            className="h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity" 
+            className="h-10 sm:h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity" 
           />
         </a>
 

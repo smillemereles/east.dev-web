@@ -15,7 +15,7 @@ export const About = () => {
           <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Content */}
           <div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-8">
@@ -40,7 +40,7 @@ export const About = () => {
           </div>
 
           {/* Right Content - Values */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { icon: Link2, title: "Conexión", desc: "Unimos diseño y desarrollo para experiencias coherentes." },
               { icon: Palette, title: "Creatividad", desc: "Cada proyecto tiene su propia identidad visual única." },

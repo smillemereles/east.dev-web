@@ -174,13 +174,13 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-16 relative overflow-hidden">
+      <section className="pt-24 sm:pt-32 pb-10 sm:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-electric/5 via-transparent to-transparent" />
         <div className="container-custom relative">
           <p className="text-electric text-sm uppercase tracking-[0.3em] mb-4 font-medium">
             Portafolio de Diseño Digital
           </p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
             Contenido que
             <br />
             <span className="text-gradient">conecta marcas</span>
@@ -194,12 +194,12 @@ export default function Portfolio() {
       </section>
 
       {/* Client Filter */}
-      <section className="pb-8 sticky top-[72px] z-40 glass-effect">
-        <div className="container-custom">
-          <div className="flex flex-wrap gap-3">
+      <section className="pb-4 sm:pb-8 sticky top-[72px] z-40 glass-effect">
+        <div className="container-custom overflow-x-auto scrollbar-hide">
+          <div className="flex flex-nowrap sm:flex-wrap gap-2 sm:gap-3 pb-2 sm:pb-0">
             <button
               onClick={() => setActiveClient(null)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                 !activeClient
                   ? "bg-electric text-background"
                   : "bg-card/50 text-muted-foreground hover:text-foreground border border-border/30"
@@ -215,7 +215,7 @@ export default function Portfolio() {
                     activeClient === client.slug ? null : client.slug
                   )
                 }
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0 ${
                   activeClient === client.slug
                     ? "bg-electric text-background"
                     : "bg-card/50 text-muted-foreground hover:text-foreground border border-border/30"
@@ -230,8 +230,8 @@ export default function Portfolio() {
       </section>
 
       {/* Client Sections */}
-      <section className="pb-32">
-        <div className="container-custom space-y-24">
+      <section className="pb-16 sm:pb-32">
+        <div className="container-custom space-y-16 sm:space-y-24">
           {filteredClients.map((client) => (
             <div key={client.slug}>
               {/* Client Header */}
@@ -240,7 +240,7 @@ export default function Portfolio() {
                   <span className="text-electric/70 text-xs uppercase tracking-[0.2em] mb-2 block">
                     {client.category}
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-display font-bold">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">
                     {client.name}
                   </h2>
                   <p className="text-muted-foreground mt-2 max-w-xl leading-relaxed">
@@ -253,7 +253,7 @@ export default function Portfolio() {
               </div>
 
               {/* Works Grid - Masonry style */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {client.works.map((work) => (
                   <div
                     key={work.id}
