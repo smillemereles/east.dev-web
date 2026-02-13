@@ -9,7 +9,11 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+<<<<<<< HEAD
   plugins: [react()].filter(Boolean),
+=======
+  plugins: [react()],
+>>>>>>> 2d9e612 (Fix navbar, image rendering, and config issues in Portfolio)
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
