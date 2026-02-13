@@ -1,33 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, ExternalLink, Instagram, Palette, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-eastdev-2.jpeg";
-import llevaConocelaweb from "@/assets/portfolio/lleva-conocelaweb.png";
-import llevaDescubrelamarca from "@/assets/portfolio/lleva-descubrelamarca.png";
-import llevaDestino2026 from "@/assets/portfolio/lleva-destino2026.png";
-import llevaPromosalvador from "@/assets/portfolio/lleva-promosalvador.png";
-import llevaVisionboard from "@/assets/portfolio/lleva-visionboard.png";
-import citytourTbt from "@/assets/portfolio/citytour-tbt.png";
-import citytourHistorias from "@/assets/portfolio/citytour-historias.png";
-import citytourIndependencia from "@/assets/portfolio/citytour-independencia.png";
-import citytourCasa from "@/assets/portfolio/citytour-casa.png";
-import citytourAmor from "@/assets/portfolio/citytour-amor.png";
-import vitalHero from "@/assets/portfolio/vital-hero.png";
-import vitalProduct from "@/assets/portfolio/vital-product.png";
-import vitalCarrito from "@/assets/portfolio/vital-carrito.png";
-import hoplonEnamorado from "@/assets/portfolio/hoplon-enamorado.png";
-import hoplonHero from "@/assets/portfolio/hoplon-hero.png";
-import hoplonSabor from "@/assets/portfolio/hoplon-sabor.png";
-import hoplonWeb from "@/assets/portfolio/hoplon-web.png";
-import nevenHero from "@/assets/portfolio/neven-hero.png";
-import nevenPropiedades from "@/assets/portfolio/neven-propiedades.png";
-import nevenGaleria from "@/assets/portfolio/neven-galeria.png";
-import farmaHero from "@/assets/portfolio/farma-hero.png";
-import farmaProductos from "@/assets/portfolio/farma-productos.png";
-import farmaCheckout from "@/assets/portfolio/farma-checkout.png";
-import lamansaDesayuno from "@/assets/portfolio/lamansa-desayuno.jpeg";
-import lamansaDulces from "@/assets/portfolio/lamansa-dulces.png";
-import lamansaSanv from "@/assets/portfolio/lamansa-sanv.png";
+import logo from "@/assets/logo-eastdev.jpg";
 
 interface DesignWork {
   id: number;
@@ -35,7 +9,6 @@ interface DesignWork {
   type: string;
   description: string;
   aspect: "square" | "portrait" | "landscape";
-  image?: string;
 }
 
 interface ClientPortfolio {
@@ -55,10 +28,12 @@ const clients: ClientPortfolio[] = [
     category: "Gastronomía & Nightlife",
     icon: <Palette className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Hero Web", type: "Web Design", description: "Landing page de Hoplon Club: Parrilla Premium & Shows en Vivo con danzas paraguayas", aspect: "landscape", image: hoplonHero },
-      { id: 2, title: "Ritual del Amor", type: "Post Instagram", description: "Cena romántica para dos, 14 de febrero con música en vivo sobre la Av del Lago", aspect: "portrait", image: hoplonEnamorado },
-      { id: 3, title: "El Sabor en los Detalles", type: "Post Instagram", description: "Pieza visual destacando la calidad gastronómica y cortes premium a la parrilla", aspect: "portrait", image: hoplonSabor },
-      { id: 4, title: "Nueva Web Online", type: "Post Instagram", description: "Lanzamiento de la web oficial www.hoplonclub.com.py con propuesta completa del club", aspect: "portrait", image: hoplonWeb },
+      { id: 1, title: "Promo Viernes", type: "Post Instagram", description: "Diseño promocional para eventos de viernes", aspect: "square" },
+      { id: 2, title: "Menú Digital", type: "Carousel", description: "Carousel de menú para stories e Instagram", aspect: "square" },
+      { id: 3, title: "Opening Night", type: "Post Instagram", description: "Pieza visual para inauguración", aspect: "portrait" },
+      { id: 4, title: "Happy Hour", type: "Story", description: "Story animado para promoción de happy hour", aspect: "portrait" },
+      { id: 5, title: "Brand Identity", type: "Branding", description: "Identidad visual para redes sociales", aspect: "landscape" },
+      { id: 6, title: "Evento Especial", type: "Post Instagram", description: "Diseño para evento temático", aspect: "square" },
     ],
   },
   {
@@ -68,9 +43,11 @@ const clients: ClientPortfolio[] = [
     category: "Gastronomía",
     icon: <Instagram className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Box de Desayuno", type: "Post Instagram", description: "Canasta gourmet con croissant, frutas frescas, yogurt con granola, pie artesanal y jugo natural", aspect: "landscape", image: lamansaDesayuno },
-      { id: 2, title: "Mesa de Dulces", type: "Post Instagram", description: "Selección de postres artesanales: pie, alfajores, budín marmolado y flan de chocolate con sello La Mansa Wine Estates", aspect: "portrait", image: lamansaDulces },
-      { id: 3, title: "San Valentín", type: "Story", description: "Promo Canastas de Desayuno para San Valentín a Gs. 350.000 con globo personalizado y packaging premium", aspect: "portrait", image: lamansaSanv },
+      { id: 1, title: "Plato del Día", type: "Post Instagram", description: "Serie de posteos de platos destacados", aspect: "square" },
+      { id: 2, title: "Ambiente", type: "Carousel", description: "Carousel mostrando el ambiente del local", aspect: "square" },
+      { id: 3, title: "Promo Delivery", type: "Story", description: "Stories promocionales de delivery", aspect: "portrait" },
+      { id: 4, title: "Menú Semanal", type: "Post Instagram", description: "Diseño de menú semanal", aspect: "square" },
+      { id: 5, title: "Reseñas", type: "Story", description: "Highlight de reseñas de clientes", aspect: "portrait" },
     ],
   },
   {
@@ -80,11 +57,11 @@ const clients: ClientPortfolio[] = [
     category: "Turismo & Viajes",
     icon: <Image className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Conocé la Web", type: "Post Instagram", description: "Presentación de la web oficial de Lleva Viajes con 15 años de trayectoria", aspect: "portrait", image: llevaConocelaweb },
-      { id: 2, title: "Servicios Exclusivos", type: "Carousel", description: "Promoción de servicios: viajes 2x1, en grupo y de bodas", aspect: "portrait", image: llevaDescubrelamarca },
-      { id: 3, title: "Destinos Brasil 2026", type: "Post Instagram", description: "Paquetes a Natal, Rio de Janeiro y Porto de Galinhas desde 980 USD", aspect: "portrait", image: llevaDestino2026 },
-      { id: 4, title: "Salvador Bahía", type: "Story", description: "Promo Semana Santa 2026 a Salvador Bahía, 7 noches desde 7.300.000 Gs", aspect: "portrait", image: llevaPromosalvador },
-      { id: 5, title: "Vision Board Colombia", type: "Post Instagram", description: "Paquete a Colombia: Eje Cafetero, San Andrés y Cartagena", aspect: "portrait", image: llevaVisionboard },
+      { id: 1, title: "Destino Cancún", type: "Post Instagram", description: "Promoción de paquete a Cancún", aspect: "square" },
+      { id: 2, title: "Ofertas de Verano", type: "Carousel", description: "Carousel de ofertas estacionales", aspect: "square" },
+      { id: 3, title: "Escapada Fin de Semana", type: "Story", description: "Promo de escapadas cortas", aspect: "portrait" },
+      { id: 4, title: "Paquete Europa", type: "Post Instagram", description: "Diseño de paquete turístico", aspect: "landscape" },
+      { id: 5, title: "Testimonios", type: "Carousel", description: "Reseñas de clientes viajeros", aspect: "square" },
     ],
   },
   {
@@ -94,11 +71,25 @@ const clients: ClientPortfolio[] = [
     category: "Turismo",
     icon: <MapPin className="w-5 h-5" />,
     works: [
-      { id: 1, title: "#TBT Recorridos", type: "Post Instagram", description: "Throwback de grandes recorridos por Asunción con grupos de turistas", aspect: "portrait", image: citytourTbt },
-      { id: 2, title: "Historias de la Ciudad", type: "Post Instagram", description: "Cada ciudad guarda historias que merecen ser contadas, descubrí las casas más antiguas de Asunción", aspect: "portrait", image: citytourHistorias },
-      { id: 3, title: "Casa de la Independencia", type: "Post Instagram", description: "La Casa de la Independencia, punto clave donde se gestó la libertad del Paraguay en 1811", aspect: "portrait", image: citytourIndependencia },
-      { id: 4, title: "Historia Independencia", type: "Carousel", description: "Recorrido histórico por la Casa de la Independencia, museo y sitio emblemático de Asunción", aspect: "portrait", image: citytourCasa },
-      { id: 5, title: "Semana del Amor", type: "Story", description: "City Tour 2x1 para parejas, Semana del Amor en Asunción del 10 al 13 de febrero 2026", aspect: "portrait", image: citytourAmor },
+      { id: 1, title: "Ruta Histórica", type: "Post Instagram", description: "Promoción del recorrido por el centro histórico", aspect: "square" },
+      { id: 2, title: "Gastronomía Local", type: "Carousel", description: "Carousel de paradas gastronómicas del tour", aspect: "square" },
+      { id: 3, title: "Sunset Tour", type: "Story", description: "Story promocional del tour al atardecer", aspect: "portrait" },
+      { id: 4, title: "Testimonios Turistas", type: "Post Instagram", description: "Reseñas de turistas satisfechos", aspect: "square" },
+      { id: 5, title: "Puntos de Interés", type: "Carousel", description: "Lugares destacados del recorrido", aspect: "landscape" },
+    ],
+  },
+  {
+    name: "City Tour CDE",
+    slug: "citytour-cde",
+    description: "Contenido visual y estrategia digital para tours turísticos en Ciudad del Este. Piezas que destacan la cultura local.",
+    category: "Turismo",
+    icon: <MapPin className="w-5 h-5" />,
+    works: [
+      { id: 1, title: "Puente de la Amistad", type: "Post Instagram", description: "Pieza visual del ícono de la ciudad", aspect: "square" },
+      { id: 2, title: "Compras & Cultura", type: "Carousel", description: "Guía visual de experiencias en CDE", aspect: "square" },
+      { id: 3, title: "Itaipú Experience", type: "Post Instagram", description: "Promoción de visita a la represa", aspect: "landscape" },
+      { id: 4, title: "Vida Nocturna", type: "Story", description: "Contenido de entretenimiento nocturno", aspect: "portrait" },
+      { id: 5, title: "Paquete Familiar", type: "Post Instagram", description: "Promoción de tour para familias", aspect: "square" },
     ],
   },
   {
@@ -108,9 +99,9 @@ const clients: ClientPortfolio[] = [
     category: "Web — Proyecto Piloto",
     icon: <Globe className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Hero Principal", type: "Web Design", description: "Landing 'Aquí comienza tu nuevo hogar' con selección exclusiva de casas y terrenos en venta", aspect: "landscape", image: nevenHero },
-      { id: 2, title: "Listado de Propiedades", type: "Web Design", description: "Catálogo con filtros por habitaciones, ubicación y rango de precio en USD", aspect: "landscape", image: nevenPropiedades },
-      { id: 3, title: "Galería de Propiedades", type: "Web Design", description: "Galería con filtros por exteriores, interiores y áreas comunes con imágenes cautivadoras", aspect: "landscape", image: nevenGaleria },
+      { id: 1, title: "Landing Page", type: "Web Design", description: "Diseño de página principal con propiedades destacadas", aspect: "landscape" },
+      { id: 2, title: "Listado de Propiedades", type: "Web Design", description: "Vista de catálogo con filtros de búsqueda", aspect: "landscape" },
+      { id: 3, title: "Ficha de Inmueble", type: "Web Design", description: "Página de detalle con galería y datos del inmueble", aspect: "landscape" },
     ],
   },
   {
@@ -120,9 +111,9 @@ const clients: ClientPortfolio[] = [
     category: "E-commerce — Proyecto Piloto",
     icon: <ShoppingCart className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Hero Principal", type: "Web Design", description: "Landing 'Tu Salud, Nuestra Prioridad' con +20 años de confianza y laboratorios aliados como INDUFAR y Eticos", aspect: "landscape", image: farmaHero },
-      { id: 2, title: "Tienda de Productos", type: "Web Design", description: "Catálogo de Tirzepatida (T.G) en distintas dosis con precios en guaraníes y reales", aspect: "landscape", image: farmaProductos },
-      { id: 3, title: "Checkout", type: "Web Design", description: "Flujo de checkout con información del cliente, envío gratis y resumen de pedido en guaraníes", aspect: "landscape", image: farmaCheckout },
+      { id: 1, title: "Homepage", type: "Web Design", description: "Diseño de página principal con ofertas destacadas", aspect: "landscape" },
+      { id: 2, title: "Catálogo", type: "Web Design", description: "Vista de catálogo de productos", aspect: "landscape" },
+      { id: 3, title: "Carrito & Checkout", type: "Web Design", description: "Flujo de compra y checkout", aspect: "landscape" },
     ],
   },
   {
@@ -132,9 +123,9 @@ const clients: ClientPortfolio[] = [
     category: "Web — Proyecto Piloto",
     icon: <Code className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Hero Principal", type: "Web Design", description: "Landing page con slider hero 'Activa tu Versión X', suplementación deportiva premium 100% online en Paraguay", aspect: "landscape", image: vitalHero },
-      { id: 2, title: "Tienda de Productos", type: "Web Design", description: "Catálogo e-commerce con productos Tirzepatida de INDUFAR y QUIMFA, precios en guaraníes y reales", aspect: "landscape", image: vitalProduct },
-      { id: 3, title: "Carrito de Compras", type: "Web Design", description: "Flujo de carrito con resumen de compra, cantidades editables y checkout integrado", aspect: "landscape", image: vitalCarrito },
+      { id: 1, title: "Landing Page", type: "Web Design", description: "Página principal con propuesta de valor", aspect: "landscape" },
+      { id: 2, title: "Productos", type: "Web Design", description: "Sección de catálogo de productos", aspect: "landscape" },
+      { id: 3, title: "Blog & Contenido", type: "Web Design", description: "Diseño de sección de blog", aspect: "landscape" },
     ],
   },
 ];
@@ -163,13 +154,13 @@ export default function Portfolio() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/15 backdrop-blur-md border-b border-white/15 py-5">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect py-4">
         <div className="container-custom flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <img
               src={logo}
               alt="east.dev"
-              className="h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-10 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </Link>
           <Link
@@ -183,13 +174,13 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-24 sm:pt-32 pb-10 sm:pb-16 relative overflow-hidden">
+      <section className="pt-32 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-electric/5 via-transparent to-transparent" />
         <div className="container-custom relative">
           <p className="text-electric text-sm uppercase tracking-[0.3em] mb-4 font-medium">
             Portafolio de Diseño Digital
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
             Contenido que
             <br />
             <span className="text-gradient">conecta marcas</span>
@@ -203,12 +194,12 @@ export default function Portfolio() {
       </section>
 
       {/* Client Filter */}
-      <section className="pb-4 sm:pb-8 sticky top-[72px] z-40 glass-effect">
-        <div className="container-custom overflow-x-auto scrollbar-hide">
-          <div className="flex flex-nowrap sm:flex-wrap gap-2 sm:gap-3 pb-2 sm:pb-0">
+      <section className="pb-8 sticky top-[72px] z-40 glass-effect">
+        <div className="container-custom">
+          <div className="flex flex-wrap gap-3">
             <button
               onClick={() => setActiveClient(null)}
-              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap ${
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 !activeClient
                   ? "bg-electric text-background"
                   : "bg-card/50 text-muted-foreground hover:text-foreground border border-border/30"
@@ -224,7 +215,7 @@ export default function Portfolio() {
                     activeClient === client.slug ? null : client.slug
                   )
                 }
-                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap shrink-0 ${
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   activeClient === client.slug
                     ? "bg-electric text-background"
                     : "bg-card/50 text-muted-foreground hover:text-foreground border border-border/30"
@@ -239,8 +230,8 @@ export default function Portfolio() {
       </section>
 
       {/* Client Sections */}
-      <section className="pb-16 sm:pb-32">
-        <div className="container-custom space-y-16 sm:space-y-24">
+      <section className="pb-32">
+        <div className="container-custom space-y-24">
           {filteredClients.map((client) => (
             <div key={client.slug}>
               {/* Client Header */}
@@ -249,7 +240,7 @@ export default function Portfolio() {
                   <span className="text-electric/70 text-xs uppercase tracking-[0.2em] mb-2 block">
                     {client.category}
                   </span>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold">
+                  <h2 className="text-3xl md:text-4xl font-display font-bold">
                     {client.name}
                   </h2>
                   <p className="text-muted-foreground mt-2 max-w-xl leading-relaxed">
@@ -262,32 +253,23 @@ export default function Portfolio() {
               </div>
 
               {/* Works Grid - Masonry style */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {client.works.map((work) => (
                   <div
                     key={work.id}
                     className="group relative rounded-xl overflow-hidden bg-card/30 border border-border/20 hover:border-electric/30 transition-all duration-500"
                   >
                     <div
-                      className={`${aspectClasses[work.aspect]} ${work.image ? "" : "bg-gradient-to-br from-card via-card/80 to-electric/5"} flex items-center justify-center overflow-hidden`}
+                      className={`${aspectClasses[work.aspect]} bg-gradient-to-br from-card via-card/80 to-electric/5 flex items-center justify-center`}
                     >
-                      {work.image ? (
-                        <img
-                          src={work.image}
-                          alt={work.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="text-center p-4">
-                          <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-electric/10 flex items-center justify-center">
-                            <Image className="w-6 h-6 text-electric/50" />
-                          </div>
-                          <p className="text-xs text-muted-foreground/50">
-                            Imagen próximamente
-                          </p>
+                      <div className="text-center p-4">
+                        <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-electric/10 flex items-center justify-center">
+                          <Image className="w-6 h-6 text-electric/50" />
                         </div>
-                      )}
+                        <p className="text-xs text-muted-foreground/50">
+                          Imagen próximamente
+                        </p>
+                      </div>
                     </div>
 
                     {/* Overlay on hover */}

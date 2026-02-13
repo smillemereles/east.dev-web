@@ -1,22 +1,63 @@
-# Welcome to your Lovable project
+
+# east.dev | Diseño y Desarrollo Web Premium
+
+east.dev es un estudio digital de Ciudad del Este, Paraguay, especializado en diseño y desarrollo web premium. Inspirados en el icónico Puente de la Amistad, conectamos tecnología y creatividad para crear experiencias digitales que transforman marcas y conectan con audiencias.
+
+## ¿Quiénes somos?
+
+Somos el puente entre tu visión y la realidad digital. Cada proyecto es una oportunidad de construir conexiones: entre tu marca y tus clientes, entre lo tradicional y lo innovador.
+
+**Valores:**
+- Conexión: Unimos diseño y desarrollo para experiencias coherentes.
+- Creatividad: Cada proyecto tiene su propia identidad visual única.
+- Precisión: Código limpio y optimizado para rendimiento óptimo.
+- Innovación: Tecnologías modernas y tendencias actuales.
+
+## Servicios
+
+Ofrecemos soluciones completas para tu presencia digital:
+- Desarrollo Web: Sitios y aplicaciones responsivas con tecnologías modernas.
+- Diseño UI/UX: Interfaces intuitivas y atractivas.
+- Branding Digital: Identidad visual coherente y memorable.
+- Marketing Digital: Estrategias para aumentar tu visibilidad online.
+- Redes Sociales: Gestión y estrategias de contenido.
+- Maquetación Web: Diseño a código pixel-perfect.
+- SEO: Optimización para mejor posicionamiento.
+- Optimización: Mejora de rendimiento y velocidad.
+
+## ¿Por qué elegir east.dev?
+
+- Experiencia local e internacional.
+- Enfoque personalizado y creativo.
+- Compromiso con la calidad y la innovación.
+- Atención cercana y soporte continuo.
+
+## ¿Dónde estamos?
+
+Ciudad del Este, Paraguay
+
+## Contacto
+
+¿Listo para transformar tu marca? Escríbenos a hola@eastdev.com.py o visita nuestro sitio web: [https://east-dev-web.vercel.app](https://east-dev-web.vercel.app)
+
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+
+
+
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Si quieres trabajar localmente usando tu propio IDE, puedes clonar este repositorio y subir los cambios.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -38,36 +79,35 @@ npm run dev
 
 **Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+## Tecnologías utilizadas
 
 - Vite
 - TypeScript
 - React
-- shadcn-ui
+- shadcn/ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Instalación y desarrollo local
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+1. Clona el repositorio:
+	```sh
+	git clone <YOUR_GIT_URL>
+	cd <YOUR_PROJECT_NAME>
+	```
+2. Instala las dependencias:
+	```sh
+	npm install
+	```
+3. Inicia el servidor de desarrollo:
+	```sh
+	npm run dev
+	```
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+© {Año actual} east.dev — Todos los derechos reservados
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
