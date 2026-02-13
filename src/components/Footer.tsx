@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Github, Twitter } from "lucide-react";
-import logo from "@/assets/logo-eastdev.jpg";
+import logo from "@/assets/logo-eastdev-new.jpeg";
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
@@ -18,7 +18,7 @@ export const Footer = () => {
             <img 
               src={logo} 
               alt="east.dev" 
-              className="h-10 w-auto brightness-0 invert opacity-80 mb-6" 
+              className="h-14 w-auto opacity-80 mb-6" 
             />
             <p className="text-muted-foreground mb-8 max-w-sm leading-relaxed">
               Diseño y desarrollo web con identidad propia desde Ciudad del Este. 
