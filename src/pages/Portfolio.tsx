@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, ExternalLink, Instagram, Palette, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-eastdev.jpg";
+import logo from "@/assets/logo-eastdev-2.jpeg";
 import llevaConocelaweb from "@/assets/portfolio/lleva-conocelaweb.png";
 import llevaDescubrelamarca from "@/assets/portfolio/lleva-descubrelamarca.png";
 import llevaDestino2026 from "@/assets/portfolio/lleva-destino2026.png";
@@ -168,13 +168,13 @@ export default function Portfolio() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect py-4">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/15 backdrop-blur-md border-b border-white/15 py-5">
         <div className="container-custom flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <img
               src={logo}
               alt="east.dev"
-              className="h-10 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-12 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </Link>
           <Link

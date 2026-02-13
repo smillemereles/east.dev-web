@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Github, Twitter } from "lucide-react";
-import logo from "@/assets/logo-eastdev-new.jpeg";
+import logo from "@/assets/logo-eastdev-2.jpeg";
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
@@ -10,7 +10,7 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-white/10 bg-white/5">
+    <footer className="border-t border-white/15 bg-white/10">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Brand */}
