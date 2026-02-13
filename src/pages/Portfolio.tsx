@@ -17,6 +17,7 @@ interface ClientPortfolio {
   description: string;
   category: string;
   icon: React.ReactNode;
+  url?: string;
   works: DesignWork[];
 }
 
