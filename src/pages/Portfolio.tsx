@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, ExternalLink, Instagram, Palette, Megaphone, Image } from "lucide-react";
+import { ArrowLeft, ExternalLink, Instagram, Palette, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-eastdev.jpg";
 
@@ -51,21 +51,6 @@ const clients: ClientPortfolio[] = [
     ],
   },
   {
-    name: "YoCreo",
-    slug: "yocreo",
-    description: "Diseño de contenido educativo y motivacional. Piezas visuales para comunidad de emprendedores.",
-    category: "Educación & Emprendimiento",
-    icon: <Megaphone className="w-5 h-5" />,
-    works: [
-      { id: 1, title: "Tips Emprendedor", type: "Carousel", description: "Carousel educativo con tips", aspect: "square" },
-      { id: 2, title: "Frase del Día", type: "Post Instagram", description: "Serie de frases motivacionales", aspect: "square" },
-      { id: 3, title: "Webinar Promo", type: "Post Instagram", description: "Promoción de webinar online", aspect: "square" },
-      { id: 4, title: "Caso de Éxito", type: "Carousel", description: "Historia de éxito de un miembro", aspect: "portrait" },
-      { id: 5, title: "Comunidad", type: "Story", description: "Contenido de comunidad", aspect: "portrait" },
-      { id: 6, title: "Evento Online", type: "Post Instagram", description: "Pieza para evento virtual", aspect: "landscape" },
-    ],
-  },
-  {
     name: "Lleva Viajes",
     slug: "llevaviajes",
     description: "Contenido visual para agencia de viajes. Diseño de posteos, promociones y piezas para campañas estacionales.",
@@ -77,6 +62,70 @@ const clients: ClientPortfolio[] = [
       { id: 3, title: "Escapada Fin de Semana", type: "Story", description: "Promo de escapadas cortas", aspect: "portrait" },
       { id: 4, title: "Paquete Europa", type: "Post Instagram", description: "Diseño de paquete turístico", aspect: "landscape" },
       { id: 5, title: "Testimonios", type: "Carousel", description: "Reseñas de clientes viajeros", aspect: "square" },
+    ],
+  },
+  {
+    name: "City Tour Asunción",
+    slug: "citytour-asu",
+    description: "Diseño de contenido digital para experiencias turísticas en Asunción. Posteos, stories y material promocional.",
+    category: "Turismo",
+    icon: <MapPin className="w-5 h-5" />,
+    works: [
+      { id: 1, title: "Ruta Histórica", type: "Post Instagram", description: "Promoción del recorrido por el centro histórico", aspect: "square" },
+      { id: 2, title: "Gastronomía Local", type: "Carousel", description: "Carousel de paradas gastronómicas del tour", aspect: "square" },
+      { id: 3, title: "Sunset Tour", type: "Story", description: "Story promocional del tour al atardecer", aspect: "portrait" },
+      { id: 4, title: "Testimonios Turistas", type: "Post Instagram", description: "Reseñas de turistas satisfechos", aspect: "square" },
+      { id: 5, title: "Puntos de Interés", type: "Carousel", description: "Lugares destacados del recorrido", aspect: "landscape" },
+    ],
+  },
+  {
+    name: "City Tour CDE",
+    slug: "citytour-cde",
+    description: "Contenido visual y estrategia digital para tours turísticos en Ciudad del Este. Piezas que destacan la cultura local.",
+    category: "Turismo",
+    icon: <MapPin className="w-5 h-5" />,
+    works: [
+      { id: 1, title: "Puente de la Amistad", type: "Post Instagram", description: "Pieza visual del ícono de la ciudad", aspect: "square" },
+      { id: 2, title: "Compras & Cultura", type: "Carousel", description: "Guía visual de experiencias en CDE", aspect: "square" },
+      { id: 3, title: "Itaipú Experience", type: "Post Instagram", description: "Promoción de visita a la represa", aspect: "landscape" },
+      { id: 4, title: "Vida Nocturna", type: "Story", description: "Contenido de entretenimiento nocturno", aspect: "portrait" },
+      { id: 5, title: "Paquete Familiar", type: "Post Instagram", description: "Promoción de tour para familias", aspect: "square" },
+    ],
+  },
+  {
+    name: "NevenHost",
+    slug: "nevenhost",
+    description: "Proyecto piloto de web para empresa de hosting. Diseño y desarrollo de landing page y panel de servicios.",
+    category: "Web — Proyecto Piloto",
+    icon: <Globe className="w-5 h-5" />,
+    works: [
+      { id: 1, title: "Landing Page", type: "Web Design", description: "Diseño de página principal con planes de hosting", aspect: "landscape" },
+      { id: 2, title: "Panel de Precios", type: "Web Design", description: "Sección de comparación de planes", aspect: "landscape" },
+      { id: 3, title: "Dashboard UI", type: "Web Design", description: "Interfaz de panel de usuario", aspect: "landscape" },
+    ],
+  },
+  {
+    name: "Farmacia Do Sul",
+    slug: "farmacia-dosul",
+    description: "Proyecto piloto de e-commerce para farmacia. Diseño de tienda online con catálogo de productos y carrito de compras.",
+    category: "E-commerce — Proyecto Piloto",
+    icon: <ShoppingCart className="w-5 h-5" />,
+    works: [
+      { id: 1, title: "Homepage", type: "Web Design", description: "Diseño de página principal con ofertas destacadas", aspect: "landscape" },
+      { id: 2, title: "Catálogo", type: "Web Design", description: "Vista de catálogo de productos", aspect: "landscape" },
+      { id: 3, title: "Carrito & Checkout", type: "Web Design", description: "Flujo de compra y checkout", aspect: "landscape" },
+    ],
+  },
+  {
+    name: "Vital X",
+    slug: "vitalx",
+    description: "Proyecto piloto de plataforma web para marca de salud y bienestar. Diseño de sitio informativo y e-commerce.",
+    category: "Web — Proyecto Piloto",
+    icon: <Code className="w-5 h-5" />,
+    works: [
+      { id: 1, title: "Landing Page", type: "Web Design", description: "Página principal con propuesta de valor", aspect: "landscape" },
+      { id: 2, title: "Productos", type: "Web Design", description: "Sección de catálogo de productos", aspect: "landscape" },
+      { id: 3, title: "Blog & Contenido", type: "Web Design", description: "Diseño de sección de blog", aspect: "landscape" },
     ],
   },
 ];
@@ -92,6 +141,7 @@ const typeColors: Record<string, string> = {
   "Carousel": "bg-accent/20 text-accent-foreground",
   "Story": "bg-purple-500/20 text-purple-300",
   "Branding": "bg-emerald-500/20 text-emerald-300",
+  "Web Design": "bg-sky-500/20 text-sky-300",
 };
 
 export default function Portfolio() {
