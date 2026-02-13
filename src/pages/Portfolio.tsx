@@ -7,6 +7,11 @@ import llevaDescubrelamarca from "@/assets/portfolio/lleva-descubrelamarca.png";
 import llevaDestino2026 from "@/assets/portfolio/lleva-destino2026.png";
 import llevaPromosalvador from "@/assets/portfolio/lleva-promosalvador.png";
 import llevaVisionboard from "@/assets/portfolio/lleva-visionboard.png";
+import citytourTbt from "@/assets/portfolio/citytour-tbt.png";
+import citytourHistorias from "@/assets/portfolio/citytour-historias.png";
+import citytourIndependencia from "@/assets/portfolio/citytour-independencia.png";
+import citytourCasa from "@/assets/portfolio/citytour-casa.png";
+import citytourAmor from "@/assets/portfolio/citytour-amor.png";
 
 interface DesignWork {
   id: number;
@@ -77,11 +82,11 @@ const clients: ClientPortfolio[] = [
     category: "Turismo",
     icon: <MapPin className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Ruta Histórica", type: "Post Instagram", description: "Promoción del recorrido por el centro histórico", aspect: "square" },
-      { id: 2, title: "Gastronomía Local", type: "Carousel", description: "Carousel de paradas gastronómicas del tour", aspect: "square" },
-      { id: 3, title: "Sunset Tour", type: "Story", description: "Story promocional del tour al atardecer", aspect: "portrait" },
-      { id: 4, title: "Testimonios Turistas", type: "Post Instagram", description: "Reseñas de turistas satisfechos", aspect: "square" },
-      { id: 5, title: "Puntos de Interés", type: "Carousel", description: "Lugares destacados del recorrido", aspect: "landscape" },
+      { id: 1, title: "#TBT Recorridos", type: "Post Instagram", description: "Throwback de grandes recorridos por Asunción con grupos de turistas", aspect: "portrait", image: citytourTbt },
+      { id: 2, title: "Historias de la Ciudad", type: "Post Instagram", description: "Cada ciudad guarda historias que merecen ser contadas, descubrí las casas más antiguas de Asunción", aspect: "portrait", image: citytourHistorias },
+      { id: 3, title: "Casa de la Independencia", type: "Post Instagram", description: "La Casa de la Independencia, punto clave donde se gestó la libertad del Paraguay en 1811", aspect: "portrait", image: citytourIndependencia },
+      { id: 4, title: "Historia Independencia", type: "Carousel", description: "Recorrido histórico por la Casa de la Independencia, museo y sitio emblemático de Asunción", aspect: "portrait", image: citytourCasa },
+      { id: 5, title: "Semana del Amor", type: "Story", description: "City Tour 2x1 para parejas, Semana del Amor en Asunción del 10 al 13 de febrero 2026", aspect: "portrait", image: citytourAmor },
     ],
   },
   {
