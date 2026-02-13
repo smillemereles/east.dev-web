@@ -10,7 +10,7 @@ export const About = () => {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            01 — Sobre Nosotros
+            Sobre Nosotros
           </span>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
         </div>
