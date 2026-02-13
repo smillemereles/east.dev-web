@@ -15,6 +15,10 @@ import citytourAmor from "@/assets/portfolio/citytour-amor.png";
 import vitalHero from "@/assets/portfolio/vital-hero.png";
 import vitalProduct from "@/assets/portfolio/vital-product.png";
 import vitalCarrito from "@/assets/portfolio/vital-carrito.png";
+import hoplonEnamorado from "@/assets/portfolio/hoplon-enamorado.png";
+import hoplonHero from "@/assets/portfolio/hoplon-hero.png";
+import hoplonSabor from "@/assets/portfolio/hoplon-sabor.png";
+import hoplonWeb from "@/assets/portfolio/hoplon-web.png";
 
 interface DesignWork {
   id: number;
@@ -42,12 +46,10 @@ const clients: ClientPortfolio[] = [
     category: "Gastronomía & Nightlife",
     icon: <Palette className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Promo Viernes", type: "Post Instagram", description: "Diseño promocional para eventos de viernes", aspect: "square" },
-      { id: 2, title: "Menú Digital", type: "Carousel", description: "Carousel de menú para stories e Instagram", aspect: "square" },
-      { id: 3, title: "Opening Night", type: "Post Instagram", description: "Pieza visual para inauguración", aspect: "portrait" },
-      { id: 4, title: "Happy Hour", type: "Story", description: "Story animado para promoción de happy hour", aspect: "portrait" },
-      { id: 5, title: "Brand Identity", type: "Branding", description: "Identidad visual para redes sociales", aspect: "landscape" },
-      { id: 6, title: "Evento Especial", type: "Post Instagram", description: "Diseño para evento temático", aspect: "square" },
+      { id: 1, title: "Hero Web", type: "Web Design", description: "Landing page de Hoplon Club: Parrilla Premium & Shows en Vivo con danzas paraguayas", aspect: "landscape", image: hoplonHero },
+      { id: 2, title: "Ritual del Amor", type: "Post Instagram", description: "Cena romántica para dos, 14 de febrero con música en vivo sobre la Av del Lago", aspect: "portrait", image: hoplonEnamorado },
+      { id: 3, title: "El Sabor en los Detalles", type: "Post Instagram", description: "Pieza visual destacando la calidad gastronómica y cortes premium a la parrilla", aspect: "portrait", image: hoplonSabor },
+      { id: 4, title: "Nueva Web Online", type: "Post Instagram", description: "Lanzamiento de la web oficial www.hoplonclub.com.py con propuesta completa del club", aspect: "portrait", image: hoplonWeb },
     ],
   },
   {
