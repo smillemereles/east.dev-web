@@ -66,9 +66,11 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <Button variant="hero" size="default">
-            Contactar
-          </Button>
+          <a href="#contacto">
+            <Button variant="hero" size="default">
+              Contactar
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -106,9 +108,11 @@ export const Navbar = () => {
                 </a>
               )
             )}
-            <Button variant="hero" className="mt-4">
-              Contactar
-            </Button>
+            <a href="#contacto" onClick={() => setIsOpen(false)}>
+              <Button variant="hero" className="mt-4">
+                Contactar
+              </Button>
+            </a>
           </div>
         </div>
       )}
