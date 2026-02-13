@@ -95,13 +95,13 @@ const clients: ClientPortfolio[] = [
   {
     name: "NevenHost",
     slug: "nevenhost",
-    description: "Proyecto piloto de web para empresa de hosting. Diseño y desarrollo de landing page y panel de servicios.",
+    description: "Proyecto piloto de web para inmobiliaria. Diseño de plataforma con listado de propiedades, búsqueda y fichas de inmuebles.",
     category: "Web — Proyecto Piloto",
     icon: <Globe className="w-5 h-5" />,
     works: [
-      { id: 1, title: "Landing Page", type: "Web Design", description: "Diseño de página principal con planes de hosting", aspect: "landscape" },
-      { id: 2, title: "Panel de Precios", type: "Web Design", description: "Sección de comparación de planes", aspect: "landscape" },
-      { id: 3, title: "Dashboard UI", type: "Web Design", description: "Interfaz de panel de usuario", aspect: "landscape" },
+      { id: 1, title: "Landing Page", type: "Web Design", description: "Diseño de página principal con propiedades destacadas", aspect: "landscape" },
+      { id: 2, title: "Listado de Propiedades", type: "Web Design", description: "Vista de catálogo con filtros de búsqueda", aspect: "landscape" },
+      { id: 3, title: "Ficha de Inmueble", type: "Web Design", description: "Página de detalle con galería y datos del inmueble", aspect: "landscape" },
     ],
   },
   {
