@@ -61,7 +61,7 @@ export const Projects = () => {
         </div>
 
         {/* Header */}
-        <div className="max-w-3xl mb-20">
+        <div className="max-w-3xl mb-12 sm:mb-20">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6">
             Trabajos que{" "}
             <span className="text-gradient">hablan</span>
@@ -77,28 +77,28 @@ export const Projects = () => {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative border-b border-border/30 py-8 cursor-pointer block"
+              className="group relative border-b border-border/30 py-6 sm:py-8 cursor-pointer block"
               onMouseEnter={() => setHoveredProject(index)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-8">
-                  <span className="text-sm font-mono text-muted-foreground/50 w-8">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3 sm:gap-8 min-w-0">
+                  <span className="text-sm font-mono text-muted-foreground/50 w-8 shrink-0 hidden sm:block">
                     0{index + 1}
                   </span>
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-display font-bold group-hover:text-primary transition-colors">
+                  <div className="min-w-0">
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-display font-bold group-hover:text-primary transition-colors">
                       {project.name}
                     </h3>
-                    <p className="text-muted-foreground text-sm mt-1 max-w-md">
+                    <p className="text-muted-foreground text-xs sm:text-sm mt-1 max-w-md hidden sm:block">
                       {project.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-3 sm:gap-6 shrink-0">
                   <span className="text-sm text-muted-foreground hidden sm:block">{project.year}</span>
-                  <div className="w-12 h-12 rounded-full border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all">
                     <ArrowUpRight className="w-5 h-5 group-hover:text-primary-foreground transition-colors" />
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export const Projects = () => {
 
               {/* Hover Image */}
               <div 
-                className={`absolute right-24 top-1/2 -translate-y-1/2 w-64 h-40 rounded-lg overflow-hidden pointer-events-none transition-all duration-300 z-10 ${
+                className={`absolute right-24 top-1/2 -translate-y-1/2 w-64 h-40 rounded-lg overflow-hidden pointer-events-none transition-all duration-300 z-10 hidden md:block ${
                   hoveredProject === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
               >
@@ -129,7 +129,7 @@ export const Projects = () => {
             </span>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {prototypeProjects.map((project) => (
               <a
                 key={project.name}

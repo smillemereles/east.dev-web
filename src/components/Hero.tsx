@@ -43,9 +43,9 @@ export const Hero = () => {
         backgroundSize: '80px 80px'
       }} />
 
-      <div className="container-custom relative z-10 pt-32 pb-20">
+      <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
         {/* Top Label */}
-        <div className="flex items-center gap-4 mb-12 animate-fade-up">
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-fade-up">
           <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
             Desarrollo web premium
@@ -54,7 +54,7 @@ export const Hero = () => {
 
         {/* Main Headline */}
         <div className="max-w-5xl">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.9] tracking-tight mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.9] tracking-tight mb-6 sm:mb-8">
             <span className="block animate-fade-up" style={{ animationDelay: "0.1s" }}>
               El socio
             </span>
@@ -74,7 +74,7 @@ export const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-8 sm:mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             Diseño y desarrollo web con identidad propia. Construimos experiencias 
             digitales que transforman marcas.
           </p>
@@ -109,10 +109,10 @@ export const Hero = () => {
       </div>
 
       {/* Bottom Marquee */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-border/30 py-6 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 border-t border-border/30 py-4 sm:py-6 overflow-hidden hidden sm:block">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center gap-16 mx-8">
+            <div key={i} className="flex items-center gap-8 sm:gap-16 mx-4 sm:mx-8">
               {["DESARROLLO WEB", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"].map((item) => (
                 <span key={item} className="text-sm font-medium text-muted-foreground/50 tracking-[0.2em] uppercase flex items-center gap-4">
                   {item}
