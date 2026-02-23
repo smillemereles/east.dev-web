@@ -318,13 +318,15 @@ export default function Portfolio() {
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
             Creamos piezas visuales que comunican la esencia de tu negocio.
           </p>
-          <Link
-            to="/#contacto"
+          <a
+            href="https://wa.link/xy5r4d"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-electric text-background px-8 py-3.5 rounded-full font-semibold hover:bg-electric/90 transition-colors"
           >
             Solicitar presupuesto
             <ExternalLink className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </section>
     </main>

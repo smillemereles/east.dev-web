@@ -73,9 +73,17 @@ export const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} east.dev — Todos los derechos reservados
           </p>
-          <p className="text-sm text-muted-foreground">
-            Ciudad del Este, Paraguay
-          </p>
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+            <p className="text-sm text-muted-foreground">Ciudad del Este, Paraguay</p>
+            <a
+              href="https://wa.link/xy5r4d"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-primary hover:underline flex items-center gap-1"
+            >
+              <span>+595 973213591</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
