@@ -319,7 +319,7 @@ export default function Portfolio() {
             Creamos piezas visuales que comunican la esencia de tu negocio.
           </p>
           <a
-            href="https://wa.link/xy5r4d"
+            href="https://wa.link/jfxdzh"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-electric text-background px-8 py-3.5 rounded-full font-semibold hover:bg-electric/90 transition-colors"

@@ -92,7 +92,7 @@ export const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <a href="https://wa.link/xy5r4d" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer">
             <Button variant="hero" size="default">
               Contactar
             </Button>
@@ -148,7 +148,7 @@ export const Navbar = () => {
                 );
               }
             })}
-            <a href="https://wa.link/xy5r4d" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+            <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
               <Button variant="hero" className="mt-4">
                 Contactar
               </Button>
