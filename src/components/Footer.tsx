@@ -76,7 +76,7 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
             <p className="text-sm text-muted-foreground">Ciudad del Este, Paraguay</p>
             <a
-              href="https://wa.link/xy5r4d"
+              href="https://wa.link/jfxdzh"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-primary hover:underline flex items-center gap-1"
