@@ -45,24 +45,6 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Stats / pillars row */}
-        <div className="border-t border-[hsl(220,15%,75%)]/50 pt-12 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {[
-            { number: "50+", label: "Proyectos entregados" },
-            { number: "20+", label: "Clientes satisfechos" },
-            { number: "3+", label: "Años de experiencia" },
-            { number: "100%", label: "Compromiso" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center lg:text-left">
-              <span className="block text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-primary mb-2">
-                {stat.number}
-              </span>
-              <span className="text-sm text-[hsl(220,15%,40%)] tracking-wide">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
