@@ -41,7 +41,7 @@ export const Navbar = () => {
             <img
               src={logo}
               alt="east.dev"
-              className="h-10 sm:h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-10 sm:h-14 w-auto p-1.5 opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </a>
         ) : (
@@ -49,7 +49,7 @@ export const Navbar = () => {
             <img
               src={logo}
               alt="east.dev"
-              className="h-10 sm:h-14 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+              className="h-10 sm:h-14 w-auto p-1.5 opacity-90 group-hover:opacity-100 transition-opacity"
             />
           </Link>
         )}

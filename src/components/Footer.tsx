@@ -18,7 +18,7 @@ export const Footer = () => {
             <img 
               src={logo} 
               alt="east.dev" 
-              className="h-14 w-auto opacity-80 mb-6" 
+              className="h-14 w-auto p-1.5 opacity-80 mb-6" 
             />
             <p className="text-muted-foreground mb-8 max-w-sm leading-relaxed">
               Diseño y desarrollo web con identidad propia desde Ciudad del Este. 
