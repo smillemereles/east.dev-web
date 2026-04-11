@@ -1,12 +1,16 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
-import heroPhoto1 from "@/assets/hero-photo-1.jpg";
-import heroPhoto2 from "@/assets/hero-photo-2.jpg";
 
 const words = ["Directores", "Diseñadores", "Agencias", "Marcas", "Startups"];
 
-const heroImages = [heroPhoto1, heroPhoto2];
+const images = [
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+  "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&h=300&fit=crop",
+  "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=300&fit=crop",
+  "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+];
 
 export const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -87,18 +91,18 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Floating Personal Photos */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 opacity-50">
-          {heroImages.map((img, i) => (
+        {/* Floating Images */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 opacity-60">
+          {images.slice(0, 3).map((img, i) => (
             <div
               key={i}
-              className="w-36 h-28 rounded-xl overflow-hidden animate-float border border-border/20"
+              className="w-32 h-24 rounded-lg overflow-hidden animate-float"
               style={{ 
-                animationDelay: `${i * 0.8}s`,
-                transform: `translateX(${i % 2 === 0 ? '0' : '24px'})`
+                animationDelay: `${i * 0.5}s`,
+                transform: `translateX(${i % 2 === 0 ? '0' : '20px'})`
               }}
             >
-              <img src={img} alt="" className="w-full h-full object-cover" />
+              <img src={img} alt="" className="w-full h-full object-cover opacity-70" />
             </div>
           ))}
         </div>
