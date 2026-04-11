@@ -50,7 +50,7 @@ export const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
-    <section id="proyectos" className="section-padding relative">
+    <section id="proyectos" className="section-padding relative bg-muted/40">
       <div className="container-custom">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">

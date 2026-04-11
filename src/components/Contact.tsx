@@ -56,7 +56,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="section-padding relative">
+    <section id="contacto" className="section-padding relative bg-background">
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
