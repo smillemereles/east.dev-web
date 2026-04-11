@@ -11,7 +11,6 @@ const heroImages = [heroPhoto1, heroPhoto2];
 export const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,13 +20,6 @@ export const Hero = () => {
         setIsAnimating(false);
       }, 300);
     }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -48,73 +40,67 @@ export const Hero = () => {
       }} />
 
       <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Left: Text Content */}
-          <div className="flex-1 max-w-2xl">
-            {/* Top Label */}
-            <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-fade-up">
-              <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
-              <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-                Desarrollo web premium
-              </span>
-            </div>
+        {/* Top Label */}
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-fade-up">
+          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
+          <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
+            Desarrollo web premium
+          </span>
+        </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.9] tracking-tight mb-6 sm:mb-8">
-              <span className="block animate-fade-up" style={{ animationDelay: "0.1s" }}>
-                El socio
+        {/* Main Headline */}
+        <div className="max-w-5xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.9] tracking-tight mb-6 sm:mb-8">
+            <span className="block animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              El socio
+            </span>
+            <span className="block animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              <span className="text-gradient">creativo</span>
+            </span>
+            <span className="block text-muted-foreground/50 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              para{" "}
+              <span 
+                className={`inline-block text-foreground transition-all duration-300 ${
+                  isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+                }`}
+              >
+                {words[currentWord]}
               </span>
-              <span className="block animate-fade-up" style={{ animationDelay: "0.2s" }}>
-                <span className="text-gradient">creativo</span>
-              </span>
-              <span className="block text-muted-foreground/50 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-                para{" "}
-                <span 
-                  className={`inline-block text-foreground transition-all duration-300 ${
-                    isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-                  }`}
-                >
-                  {words[currentWord]}
-                </span>
-              </span>
-            </h1>
+            </span>
+          </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-8 sm:mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              Diseño y desarrollo web con identidad propia. Construimos experiencias 
-              digitales que transforman marcas.
-            </p>
+          {/* Subheadline */}
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-8 sm:mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            Diseño y desarrollo web con identidad propia. Construimos experiencias 
+            digitales que transforman marcas.
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
-              <Button variant="hero" size="xl" onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}>
-                Ver Proyectos
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}>
-                Empezar proyecto
-              </Button>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+            <Button variant="hero" size="xl" onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}>
+              Ver Proyectos
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+            <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}>
+              Empezar proyecto
+            </Button>
           </div>
+        </div>
 
-          {/* Right: Personal Photo */}
-          <div className="flex-shrink-0 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <div className="relative">
-              {/* Decorative border/glow */}
-              <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-sm" />
-              <div className="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] rounded-2xl overflow-hidden border border-border/30">
-                {heroImages.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt="Desarrolladora de east.dev trabajando"
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      currentImage === i ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
-                {/* Subtle overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
-              </div>
+        {/* Floating Personal Photos */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 opacity-50">
+          {heroImages.map((img, i) => (
+            <div
+              key={i}
+              className="w-36 h-28 rounded-xl overflow-hidden animate-float border border-border/20"
+              style={{ 
+                animationDelay: `${i * 0.8}s`,
+                transform: `translateX(${i % 2 === 0 ? '0' : '24px'})`
+              }}
+            >
+              <img src={img} alt="" className="w-full h-full object-cover" />
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
