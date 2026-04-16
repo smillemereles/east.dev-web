@@ -34,7 +34,7 @@ import llevaVisionboard from "@/assets/portfolio/lleva-visionboard.png";
 // Imágenes Farma Next
 import farmanextLanderbar from "@/assets/portfolio/farmanext-landerbar.png";
 import farmanextDesejadas from "@/assets/portfolio/farmanext-desejadas.png";
-import farmanextLaca from "@/assets/portfolio/farmanext-laca.png";
+
 import farmanextOfertas from "@/assets/portfolio/farmanext-ofertas.png";
 import farmanextPascoa from "@/assets/portfolio/farmanext-pascoa.png";
 import farmanextMelatonin from "@/assets/portfolio/farmanext-melatonin.png";
@@ -117,7 +117,7 @@ const clients: ClientPortfolio[] = [
     works: [
       { id: 1, title: "Lander Bar Protein", type: "Post Instagram", description: "Barra proteica Lander Bar sabor Dulce de Leche, 15g de proteína, sem glúten y libre de colesterol", aspect: "portrait", image: farmanextLanderbar },
       { id: 2, title: "As Mais Desejadas", type: "Post Instagram", description: "Promo semanal con productos desde 449 R$ en medicamentos, vitaminas, cosméticos e importados", aspect: "portrait", image: farmanextDesejadas },
-      { id: 3, title: "Linha Masculina LACA", type: "Post Instagram", description: "Lanzamiento de la línea masculina LACA Laboratorio con productos de cuidado facial", aspect: "portrait", image: farmanextLaca },
+      
       { id: 4, title: "Farma Ofertas", type: "Post Instagram", description: "Evento Farma Ofertas con hasta 50% OFF en medicamentos, vitaminas, cosméticos y productos importados", aspect: "portrait", image: farmanextOfertas },
       { id: 5, title: "Páscoa Saudável", type: "Post Instagram", description: "Campaña de Pascua 'Algo muito saudável está chegando' con premios y chocolate saludable", aspect: "portrait", image: farmanextPascoa },
       { id: 6, title: "Melatonin Sleep", type: "Post Instagram", description: "Melatonina 10mg LanderFit para noches profundas y días más leves, equilibrio y calma mental", aspect: "portrait", image: farmanextMelatonin },
