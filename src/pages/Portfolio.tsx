@@ -31,6 +31,15 @@ import llevaDescubrelamarca from "@/assets/portfolio/lleva-descubrelamarca.png";
 import llevaDestino2026 from "@/assets/portfolio/lleva-destino2026.png";
 import llevaPromosalvador from "@/assets/portfolio/lleva-promosalvador.png";
 import llevaVisionboard from "@/assets/portfolio/lleva-visionboard.png";
+// Imágenes Farma Next
+import farmanextLanderbar from "@/assets/portfolio/farmanext-landerbar.png";
+import farmanextDesejadas from "@/assets/portfolio/farmanext-desejadas.png";
+import farmanextLaca from "@/assets/portfolio/farmanext-laca.png";
+import farmanextOfertas from "@/assets/portfolio/farmanext-ofertas.png";
+import farmanextPascoa from "@/assets/portfolio/farmanext-pascoa.png";
+import farmanextMelatonin from "@/assets/portfolio/farmanext-melatonin.png";
+import farmanextMentovick from "@/assets/portfolio/farmanext-mentovick.png";
+import farmanextGripe from "@/assets/portfolio/farmanext-gripe.png";
 import { ArrowLeft, ExternalLink, Instagram, Palette, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
