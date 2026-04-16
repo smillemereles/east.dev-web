@@ -30,7 +30,7 @@ const completedProjects = [
     name: "Farma Next",
     description: "E-commerce farmacéutico con catálogo de productos y compra online.",
     technologies: ["Next.js", "Tailwind", "E-commerce"],
-    image: "",
+    image: "farmanext/farmanexthero.png",
     year: "2025",
     url: "https://www.farmanext.com.py",
   },
