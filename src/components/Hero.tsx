@@ -4,13 +4,6 @@ import { useEffect, useState } from "react";
 
 const words = ["Directores", "Diseñadores", "Agencias", "Marcas", "Startups"];
 
-const images = [
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
-];
 
 export const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -91,21 +84,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Floating Images */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 opacity-60">
-          {images.slice(0, 3).map((img, i) => (
-            <div
-              key={i}
-              className="w-32 h-24 rounded-lg overflow-hidden animate-float"
-              style={{ 
-                animationDelay: `${i * 0.5}s`,
-                transform: `translateX(${i % 2 === 0 ? '0' : '20px'})`
-              }}
-            >
-              <img src={img} alt="" className="w-full h-full object-cover opacity-70" />
-            </div>
-          ))}
-        </div>
+        {/* Floating images removed per design preference */}
       </div>
 
       {/* Bottom Marquee */}
