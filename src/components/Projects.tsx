@@ -4,22 +4,6 @@ import { useTranslation } from "@/hooks/use-i18n";
 
 const completedProjects = [
   {
-    name: "Hoplon Lounge",
-    description: "Sitio web elegante para lounge bar con reservas online y menú digital.",
-    technologies: ["React", "Tailwind", "Motion"],
-    image: "hoplon/hoplonhero.png",
-    year: "2025",
-    url: "https://hoplonclub.com.py/",
-  },
-  {
-    name: "La Mansa",
-    description: "Plataforma gastronómica con sistema de pedidos y carta digital.",
-    technologies: ["Next.js", "Supabase", "Stripe"],
-    image: "Lamansa/lamansahero.png",
-    year: "2025",
-    url: "https://lamansapy.com/",
-  },
-  {
     name: "Lleva Viajes",
     description: "Agencia de viajes con catálogo de destinos y cotización.",
     technologies: ["React", "Node.js"],
