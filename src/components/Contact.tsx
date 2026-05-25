@@ -74,7 +74,7 @@ export const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <a href="mailto:contacto@east.dev" className="group flex items-center gap-4 p-4 -m-4 rounded-xl hover:bg-white transition-colors">
+              <a href="mailto:east.devpy@gmail.com" className="group flex items-center gap-4 p-4 -m-4 rounded-xl hover:bg-white transition-colors">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>

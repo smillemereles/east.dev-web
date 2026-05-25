@@ -3,7 +3,7 @@ import { useTranslation } from "@/hooks/use-i18n";
 import logo from "@/assets/logo-eastdev-2.jpeg";
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/east.devpy/", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Github, href: "#", label: "GitHub" },
   { icon: Twitter, href: "#", label: "Twitter" },

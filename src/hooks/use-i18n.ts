@@ -109,7 +109,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       description: "Cuéntanos sobre tu proyecto y recibe una cotización personalizada. Estamos listos para dar vida a tu visión.",
       emailLabel: "Email",
       locationLabel: "Ubicación",
-      email: "contacto@east.dev",
+      email: "east.devpy@gmail.com",
       location: "Ciudad del Este, Paraguay",
       form: {
         name: "Nombre",
@@ -263,7 +263,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       description: "Tell us about your project and receive a custom quote. We are ready to bring your vision to life.",
       emailLabel: "Email",
       locationLabel: "Location",
-      email: "contacto@east.dev",
+      email: "east.devpy@gmail.com",
       location: "Ciudad del Este, Paraguay",
       form: {
         name: "Name",

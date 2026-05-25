@@ -38,7 +38,7 @@ Ciudad del Este, Paraguay
 
 ## Contacto
 
-¿Listo para transformar tu marca? Escríbenos a hola@eastdev.com.py o visita nuestro sitio web: [https://east-dev-web.vercel.app](https://east-dev-web.vercel.app)
+¿Listo para transformar tu marca? Escríbenos a east.devpy@gmail.com o visita nuestro sitio web: [https://east-dev-web.vercel.app](https://east-dev-web.vercel.app)
 
 
 ## Project info
