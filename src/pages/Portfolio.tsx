@@ -16,15 +16,6 @@ import citytourHistorias from "@/assets/portfolio/citytour-historias.png";
 import citytourIndependencia from "@/assets/portfolio/citytour-independencia.png";
 import citytourCasa from "@/assets/portfolio/citytour-casa.png";
 import citytourAmor from "@/assets/portfolio/citytour-amor.png";
-// Imágenes Hoplon
-import hoplonHero from "@/assets/portfolio/hoplon-hero.png";
-import hoplonEnamorado from "@/assets/portfolio/hoplon-enamorado.png";
-import hoplonSabor from "@/assets/portfolio/hoplon-sabor.png";
-import hoplonWeb from "@/assets/portfolio/hoplon-web.png";
-// Imágenes La Mansa
-import lamansaDesayuno from "@/assets/portfolio/lamansa-desayuno.jpeg";
-import lamansaDulces from "@/assets/portfolio/lamansa-dulces.png";
-import lamansaSanv from "@/assets/portfolio/lamansa-sanv.png";
 // Imágenes Lleva Viajes
 import llevaConocelaweb from "@/assets/portfolio/lleva-conocelaweb.png";
 import llevaDescubrelamarca from "@/assets/portfolio/lleva-descubrelamarca.png";
@@ -40,7 +31,7 @@ import farmanextPascoa from "@/assets/portfolio/farmanext-pascoa.png";
 import farmanextMelatonin from "@/assets/portfolio/farmanext-melatonin.png";
 import farmanextMentovick from "@/assets/portfolio/farmanext-mentovick.png";
 import farmanextGripe from "@/assets/portfolio/farmanext-gripe.png";
-import { ArrowLeft, ExternalLink, Instagram, Palette, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
+import { ArrowLeft, ExternalLink, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { useState } from "react";
@@ -67,33 +58,6 @@ interface ClientPortfolio {
 }
 
 const clients: ClientPortfolio[] = [
-  {
-    name: "Hoplon Lounge",
-    slug: "hoplon",
-    description: "Contenido visual y estrategia digital para lounge bar premium. Diseño de posteos, stories y piezas promocionales.",
-    category: "Gastronomía & Nightlife",
-    icon: <Palette className="w-5 h-5" />,
-    works: [
-      { id: 1, title: "Hero Web", type: "Web Design", description: "Landing page de Hoplon Club: Parrilla Premium & Shows en Vivo con danzas paraguayas", aspect: "landscape", image: hoplonHero },
-      { id: 2, title: "Ritual del Amor", type: "Post Instagram", description: "Cena romántica para dos, 14 de febrero con música en vivo sobre la Av del Lago", aspect: "portrait", image: hoplonEnamorado },
-      { id: 3, title: "El Sabor en los Detalles", type: "Post Instagram", description: "Pieza visual destacando la calidad gastronómica y cortes premium a la parrilla", aspect: "portrait", image: hoplonSabor },
-      { id: 4, title: "Nueva Web Online", type: "Post Instagram", description: "Lanzamiento de la web oficial www.hoplonclub.com.py con propuesta completa del club", aspect: "portrait", image: hoplonWeb },
-    ],
-    image: hoplonWeb,
-  },
-  {
-    name: "La Mansa",
-    slug: "lamansa",
-    description: "Estrategia de contenido y diseño digital para restaurante. Creación de identidad visual en redes sociales.",
-    category: "Gastronomía",
-    icon: <Instagram className="w-5 h-5" />,
-    works: [
-      { id: 1, title: "Box de Desayuno", type: "Post Instagram", description: "Canasta gourmet con croissant, frutas frescas, yogurt con granola, pie artesanal y jugo natural", aspect: "landscape", image: lamansaDesayuno },
-      { id: 2, title: "Mesa de Dulces", type: "Post Instagram", description: "Selección de postres artesanales: pie, alfajores, budín marmolado y flan de chocolate con sello La Mansa Wine Estates", aspect: "portrait", image: lamansaDulces },
-      { id: 3, title: "San Valentín", type: "Story", description: "Promo Canastas de Desayuno para San Valentín a Gs. 350.000 con globo personalizado y packaging premium", aspect: "portrait", image: lamansaSanv },
-    ],
-    image: lamansaSanv,
-  },
   {
     name: "Lleva Viajes",
     slug: "llevaviajes",
