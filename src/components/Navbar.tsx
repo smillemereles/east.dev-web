@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-eastdev-2.jpeg";
+import { useTranslation } from "@/hooks/use-i18n";
 
 const navLinks = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: "/portafolio", label: "Portafolio" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#inicio", key: "nav.home" },
+  { href: "#nosotros", key: "nav.about" },
+  { href: "#servicios", key: "nav.services" },
+  { href: "#proyectos", key: "nav.projects" },
+  { href: "/portafolio", key: "nav.portfolio" },
+  { href: "#contacto", key: "nav.contact" },
 ];
 
 export const Navbar = () => {
+  const { locale, setLocale, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +58,7 @@ export const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => {
+            const label = t(link.key) as string;
             if (link.href.startsWith("/")) {
               return (
                 <Link
@@ -64,11 +66,10 @@ export const Navbar = () => {
                   to={link.href}
                   className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
                 >
-                  {link.label}
+                  {label}
                 </Link>
               );
             } else {
-              // Si estamos en la home, usar ancla normal. Si no, usar <Link> con hash.
               const isHome = location.pathname === "/";
               return isHome ? (
                 <a
@@ -76,7 +77,7 @@ export const Navbar = () => {
                   href={link.href}
                   className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
                 >
-                  {link.label}
+                  {label}
                 </a>
               ) : (
                 <Link
@@ -84,29 +85,49 @@ export const Navbar = () => {
                   to={{ pathname: "/", hash: link.href }}
                   className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
                 >
-                  {link.label}
+                  {label}
                 </Link>
               );
             }
           })}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-3">
+          <button
+            type="button"
+            className="rounded-full border border-border/50 px-3 py-2 text-sm font-medium text-muted-foreground hover:border-foreground hover:text-foreground transition-colors flex items-center gap-2"
+            onClick={() => setLocale(locale === "es" ? "en" : "es")}
+            title={locale === "es" ? "Switch to English" : "Cambiar a Español"}
+          >
+            <Globe size={16} />
+            {locale === "es" ? "EN" : "ES"}
+          </button>
           <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer">
             <Button variant="hero" size="default">
-              Contactar
+              {t("nav.contactButton")}
             </Button>
           </a>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2 text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <button
+            type="button"
+            className="rounded-full border border-border/50 px-3 py-2 text-sm font-medium text-muted-foreground hover:border-foreground hover:text-foreground transition-colors flex items-center gap-2"
+            onClick={() => setLocale(locale === "es" ? "en" : "es")}
+            title={locale === "es" ? "Switch to English" : "Cambiar a Español"}
+          >
+            <Globe size={16} />
+            {locale === "es" ? "EN" : "ES"}
+          </button>
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -114,6 +135,7 @@ export const Navbar = () => {
         <div className="lg:hidden absolute top-full left-0 right-0 glass-effect border-t border-border/30 animate-fade-in">
           <div className="container-custom py-8 flex flex-col gap-6">
             {navLinks.map((link) => {
+              const label = t(link.key) as string;
               if (link.href.startsWith("/")) {
                 return (
                   <Link
@@ -122,7 +144,7 @@ export const Navbar = () => {
                     className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.label}
+                    {label}
                   </Link>
                 );
               } else {
@@ -134,7 +156,7 @@ export const Navbar = () => {
                     className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.label}
+                    {label}
                   </a>
                 ) : (
                   <Link
@@ -143,14 +165,14 @@ export const Navbar = () => {
                     className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
                     onClick={() => setIsOpen(false)}
                   >
-                    {link.label}
+                    {label}
                   </Link>
                 );
               }
             })}
             <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
               <Button variant="hero" className="mt-4">
-                Contactar
+                {t("nav.contactButton")}
               </Button>
             </a>
           </div>

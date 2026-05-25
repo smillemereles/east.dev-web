@@ -1,11 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
-
-const words = ["Directores", "Diseñadores", "Agencias", "Marcas", "Startups"];
+import { useTranslation } from "@/hooks/use-i18n";
 
 
 export const Hero = () => {
+  const { t } = useTranslation();
+  const words = t("hero.words") as string[];
   const [currentWord, setCurrentWord] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -41,7 +42,7 @@ export const Hero = () => {
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-fade-up">
           <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            Desarrollo web premium
+            {t("hero.label")}
           </span>
         </div>
 
@@ -49,13 +50,13 @@ export const Hero = () => {
         <div className="max-w-5xl">
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.9] tracking-tight mb-6 sm:mb-8">
             <span className="block animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              El socio
+              {t("hero.titleLine1")}
             </span>
             <span className="block animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              <span className="text-gradient">creativo</span>
+              <span className="text-gradient">{t("hero.titleLine2")}</span>
             </span>
             <span className="block text-muted-foreground/50 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              para{" "}
+              {t("hero.subtitle")} {" "}
               <span 
                 className={`inline-block text-foreground transition-all duration-300 ${
                   isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
@@ -68,18 +69,17 @@ export const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-8 sm:mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            Diseño y desarrollo web con identidad propia. Construimos experiencias 
-            digitales que transforman marcas.
+            {t("hero.description")}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
             <Button variant="hero" size="xl" onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}>
-              Ver Proyectos
+              {t("hero.ctaProjects")}
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}>
-              Empezar proyecto
+              {t("hero.ctaContact")}
             </Button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { ArrowUpRight, Clock } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "@/hooks/use-i18n";
 
 const completedProjects = [
   {
@@ -55,6 +56,7 @@ const prototypeProjects = [
 ];
 
 export const Projects = () => {
+  const { t } = useTranslation();
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
@@ -63,18 +65,24 @@ export const Projects = () => {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            Proyectos
+            {t("projects.section")}
           </span>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
         </div>
 
-        {/* Header */}
-        <div className="max-w-3xl mb-12 sm:mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6">
-            Trabajos que{" "}
-            <span className="text-gradient">hablan</span>
-            <br />por nosotros
-          </h2>
+        {/* New Slogan */}
+        <div className="max-w-4xl mb-12 sm:mb-20">
+          <div className="mb-8">
+            <span className="inline-block text-sm font-medium text-primary/70 mb-4 tracking-wide">
+              {t("projects.subtitle")}
+            </span>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-6">
+              {t("projects.header")}
+            </h2>
+            <p className="text-2xl sm:text-3xl text-muted-foreground font-light">
+              {t("projects.subtitleAlt")}
+            </p>
+          </div>
         </div>
 
         {/* Projects List */}
@@ -133,7 +141,7 @@ export const Projects = () => {
           <div className="flex items-center gap-3 mb-8">
             <Clock className="w-5 h-5 text-muted-foreground" />
             <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-              Prototipos Web
+              {t("projects.prototypesLabel")}
             </span>
           </div>
           
@@ -149,7 +157,7 @@ export const Projects = () => {
                 <h4 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">{project.name}</h4>
                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                 <div className="flex items-center gap-2 text-sm text-primary">
-                  <span>Ver prototipo</span>
+                  <span>{t("projects.prototypeAction")}</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </div>
               </a>

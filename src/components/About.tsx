@@ -1,4 +1,7 @@
+import { useTranslation } from "@/hooks/use-i18n";
+
 export const About = () => {
+  const { t } = useTranslation();
   return (
     <section id="nosotros" className="section-padding relative overflow-hidden bg-[hsl(210,15%,88%)] text-[hsl(220,20%,10%)]">
 
@@ -6,7 +9,7 @@ export const About = () => {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-xs font-medium text-[hsl(220,15%,40%)] tracking-[0.3em] uppercase">
-            Sobre Nosotros
+            {t("about.section")}
           </span>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-[hsl(220,15%,70%)] to-transparent" />
         </div>
@@ -14,9 +17,7 @@ export const About = () => {
         {/* Big statement */}
         <div className="max-w-5xl mb-20">
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-[1.05] mb-10">
-            El puente entre{" "}
-            <span className="text-primary">tu visión</span> y la
-            realidad digital
+            {t("about.title")}
           </h2>
         </div>
 
@@ -24,23 +25,18 @@ export const About = () => {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 mb-20">
           <div className="space-y-6 text-[hsl(220,15%,35%)] text-lg leading-relaxed">
             <p>
-              <span className="text-[hsl(220,20%,10%)] font-semibold">east.dev</span> nació en Ciudad del Este, 
-              inspirada en el icónico Puente de la Amistad. Conectamos tecnología 
-              y creatividad para dar vida a proyectos web únicos.
+              <span className="text-[hsl(220,20%,10%)] font-semibold">east.dev</span> {t("about.paragraph1")}
             </p>
             <p>
-              Cada proyecto es una oportunidad de construir puentes: entre tu marca 
-              y tus clientes, entre lo tradicional y lo innovador.
+              {t("about.paragraph2")}
             </p>
           </div>
           <div className="space-y-6 text-[hsl(220,15%,35%)] text-lg leading-relaxed">
             <p>
-              Trabajamos codo a codo con emprendedores, pymes y marcas que buscan 
-              destacar en el mundo digital con soluciones a medida y diseño con propósito.
+              {t("about.paragraph3")}
             </p>
             <p>
-              Nuestro enfoque combina código limpio, diseño moderno y estrategia 
-              para entregar resultados que impactan.
+              {t("about.paragraph4")}
             </p>
           </div>
         </div>

@@ -44,6 +44,7 @@ import { ArrowLeft, ExternalLink, Instagram, Palette, Image, Globe, MapPin, Shop
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { useState } from "react";
+import { useTranslation } from "@/hooks/use-i18n";
 
 interface DesignWork {
   id: number;
@@ -197,6 +198,7 @@ const typeColors: Record<string, string> = {
 };
 
 export default function Portfolio() {
+  const { t } = useTranslation();
   const [activeClient, setActiveClient] = useState<string | null>(null);
 
   const filteredClients = activeClient
@@ -213,17 +215,15 @@ export default function Portfolio() {
         <div className="absolute inset-0 bg-gradient-to-b from-electric/5 via-transparent to-transparent" />
         <div className="container-custom relative">
           <p className="text-electric text-sm uppercase tracking-[0.3em] mb-4 font-medium">
-            Portafolio de Diseño Digital
+            {t("portfolio.sectionLabel")}
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
-            Contenido que
+            {t("portfolio.headerTitleLine1")}
             <br />
-            <span className="text-gradient">conecta marcas</span>
+            <span className="text-gradient">{t("portfolio.headerTitleLine2")}</span>
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl leading-relaxed">
-            Diseño de posteos, stories, carousels y piezas visuales para redes
-            sociales. Cada pieza está pensada para comunicar la esencia de cada
-            marca.
+            {t("portfolio.headerDescription")}
           </p>
         </div>
       </section>
@@ -240,7 +240,7 @@ export default function Portfolio() {
                   : "bg-card/50 text-muted-foreground hover:text-foreground border border-border/30"
               }`}
             >
-              Todos
+              {t("portfolio.filterAll")}
             </button>
             {clients.map((client) => (
               <button
@@ -283,7 +283,7 @@ export default function Portfolio() {
                   </p>
                 </div>
                 <span className="text-muted-foreground/50 text-sm">
-                  {client.works.length} piezas
+                  {client.works.length} {t("portfolio.pieces")}
                 </span>
               </div>
 
@@ -340,10 +340,10 @@ export default function Portfolio() {
       <section className="py-20 border-t border-border/20">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            ¿Necesitás contenido para tu marca?
+            {t("portfolio.ctaTitle")}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-            Creamos piezas visuales que comunican la esencia de tu negocio.
+            {t("portfolio.ctaDescription")}
           </p>
           <a
             href="https://wa.link/jfxdzh"
@@ -351,7 +351,7 @@ export default function Portfolio() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-electric text-background px-8 py-3.5 rounded-full font-semibold hover:bg-electric/90 transition-colors"
           >
-            Solicitar presupuesto
+            {t("portfolio.ctaButton")}
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>

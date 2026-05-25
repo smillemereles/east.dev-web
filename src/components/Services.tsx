@@ -8,19 +8,16 @@ import {
   Layers,
   Zap
 } from "lucide-react";
+import { useTranslation } from "@/hooks/use-i18n";
 
-const services = [
-  { icon: Globe, title: "Desarrollo Web", description: "Sitios web y aplicaciones responsivas con las últimas tecnologías." },
-  { icon: Paintbrush, title: "Diseño UI/UX", description: "Interfaces intuitivas que mejoran la experiencia del usuario." },
-  { icon: Layers, title: "Branding Digital", description: "Identidad visual coherente que refleja tu marca." },
-  { icon: Megaphone, title: "Marketing Digital", description: "Estrategias para aumentar tu visibilidad online." },
-  { icon: Share2, title: "Redes Sociales", description: "Gestión y estrategias de contenido efectivas." },
-  { icon: Code, title: "Maquetación Web", description: "Diseños transformados en código pixel-perfect." },
-  { icon: Search, title: "SEO", description: "Optimización para mejor posicionamiento." },
-  { icon: Zap, title: "Optimización", description: "Mejora de rendimiento y velocidad." },
-];
+const serviceIcons = [Globe, Paintbrush, Layers, Megaphone, Share2, Code, Search, Zap];
 
 export const Services = () => {
+  const { t } = useTranslation();
+  const services = (t("services.items") as { title: string; description: string }[]).map((item, index) => ({
+    icon: serviceIcons[index],
+    ...item,
+  }));
   return (
     <section id="servicios" className="section-padding relative">
       {/* Background */}
@@ -30,7 +27,7 @@ export const Services = () => {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            Servicios
+            {t("services.section")}
           </span>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
         </div>
@@ -38,12 +35,10 @@ export const Services = () => {
         {/* Header */}
         <div className="max-w-3xl mb-20">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6">
-            Soluciones completas para tu{" "}
-            <span className="text-gradient">presencia digital</span>
+            {t("services.header")}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Un conjunto integral de servicios diseñados para llevar 
-            tu marca al siguiente nivel.
+            {t("services.description")}
           </p>
         </div>
 
