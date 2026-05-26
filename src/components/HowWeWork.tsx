@@ -116,33 +116,3 @@ export const HowWeWork = () => {
     </section>
   );
 };
-
-              Optimizamos constantemente basados en datos reales de rendimiento.
-            </p>
-          </div>
-        </div>
-      </FlowSection>
-
-      <FlowSection 
-        aria-label="Nuestro Compromiso" 
-        style={{ backgroundColor: '#1a1a2e', color: '#fff' }}
-      >
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400">
-          La Diferencia HitOcean
-        </p>
-        <hr className="my-[2vw] border-none border-t border-blue-500/30" />
-        <div>
-          <h3 className="text-[clamp(2.5rem,10vw,12rem)] font-bold leading-[0.85] uppercase tracking-tight">
-            Socios en
-            <br />
-            tu Éxito
-          </h3>
-        </div>
-        <hr className="my-[2vw] border-none border-t border-blue-500/30" />
-        <p className="mt-auto max-w-[50ch] text-[clamp(1rem,2.5vw,2rem)] font-normal leading-relaxed">
-          Nos comprometemos con tu crecimiento a largo plazo. Tu éxito es nuestro éxito.
-        </p>
-      </FlowSection>
-    </FlowArt>
-  );
-};
