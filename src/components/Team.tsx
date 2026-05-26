@@ -11,47 +11,34 @@ interface TeamMember {
     linkedin?: string;
     twitter?: string;
   };
+  skills?: string[];
 }
 
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Santiago",
-    role: "Creative Director",
-    image: "https://via.placeholder.com/300x300?text=Santiago",
-    bio: "Líder creativo con experiencia en branding digital y diseño estratégico.",
+    name: "Smille Mereles",
+    role: "Founder · Web & Digital Designer",
+    image: "https://via.placeholder.com/300x300?text=Smille",
+    bio: "Diseñadora web y digital, estratega y creadora de contenido. Diseño experiencias completas, desarrollo soluciones web y creo contenido que potencia la identidad de marca.",
+    skills: [
+      "Branding y diseño web",
+      "UI/UX y experiencia digital",
+      "Desarrollo web responsive",
+      "Estrategia de contenido",
+      "Lanzamiento y performance",
+    ],
     socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-    },
-  },
-  {
-    id: 2,
-    name: "María",
-    role: "Product Designer",
-    image: "https://via.placeholder.com/300x300?text=María",
-    bio: "Diseñadora enfocada en experiencias de usuario intuitivas y modernas.",
-    socials: {
-      linkedin: "https://linkedin.com",
-    },
-  },
-  {
-    id: 3,
-    name: "Carlos",
-    role: "Lead Developer",
-    image: "https://via.placeholder.com/300x300?text=Carlos",
-    bio: "Desarrollador especializado en arquitecturas escalables y código limpio.",
-    socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com/in/samil",
+      twitter: "https://twitter.com/smillemereles",
     },
   },
 ];
 
 const stats = [
-  { number: "400+", label: "projects" },
-  { number: "230+", label: "clients" },
-  { number: "12+", label: "team" },
+  { number: "15+", label: "projects" },
+  { number: "8+", label: "clients" },
+  { number: "1", label: "team" },
 ];
 
 export const Team = () => {
@@ -122,9 +109,19 @@ export const Team = () => {
                 <span className="text-xs font-medium text-primary/70 uppercase tracking-wider mb-4 block">
                   {member.role}
                 </span>
-                <p className="text-sm text-muted-foreground mb-6 line-clamp-2">
+                <p className="text-sm text-muted-foreground mb-4">
                   {member.bio}
                 </p>
+                {member.skills && (
+                  <ul className="mb-6 space-y-2 text-sm text-muted-foreground">
+                    {member.skills.map((skill) => (
+                      <li key={skill} className="flex items-start gap-2">
+                        <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary" />
+                        <span>{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 {/* Social Links */}
                 <div className="flex items-center gap-3 pt-4 border-t border-border/30">

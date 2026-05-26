@@ -4,32 +4,12 @@ import { useTranslation } from "@/hooks/use-i18n";
 export const HowWeWork = () => {
   const { t } = useTranslation();
 
-  const steps = [
-    {
-      number: "01",
-      title: "Descubrimiento & Estrategia",
-      description: "Analizamos tu negocio, objetivos y audiencia para definir una estrategia clara y resultados medibles.",
-      points: ["Análisis competitivo", "Research de usuarios", "Definición de KPIs"],
-    },
-    {
-      number: "02",
-      title: "Diseño & Prototipado",
-      description: "Creamos wireframes y prototipos interactivos para validar la solución antes de la ejecución.",
-      points: ["Diseño UI/UX", "Prototipos interactivos", "Validación con usuarios"],
-    },
-    {
-      number: "03",
-      title: "Desarrollo & Optimización",
-      description: "Código limpio, responsivo y optimizado con las mejores prácticas de la industria.",
-      points: ["Desarrollo full-stack", "Performance optimization", "Testing y QA"],
-    },
-    {
-      number: "04",
-      title: "Lanzamiento & Soporte",
-      description: "Deployamos con seguridad, monitoreamos el rendimiento y proveemos soporte continuo.",
-      points: ["Deployment seguro", "Monitoreo 24/7", "Soporte técnico"],
-    },
-  ];
+  const steps = (t("howWeWork.steps") as Array<{
+    number: string;
+    title: string;
+    description: string;
+    points: string[];
+  }>) || [];
 
   return (
     <section className="section-padding relative overflow-hidden">
@@ -40,7 +20,7 @@ export const HowWeWork = () => {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            ¿Cómo trabajamos?
+            {t("howWeWork.section")}
           </span>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
         </div>
@@ -48,11 +28,11 @@ export const HowWeWork = () => {
         {/* Header */}
         <div className="max-w-4xl mb-20">
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-6">
-            <span className="block">Proceso probado</span>
-            <span className="block text-gradient">y trasparente</span>
+            <span className="block">{t("howWeWork.subtitle")}</span>
+            <span className="block text-gradient">{t("howWeWork.subtitleHighlight")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mt-8">
-            Metodología ágil con entregas regulares, comunicación clara y foco absoluto en resultados medibles.
+            {t("howWeWork.description")}
           </p>
         </div>
 
@@ -99,15 +79,15 @@ export const HowWeWork = () => {
         {/* Final CTA */}
         <div className="mt-20 p-8 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/5 to-electric/5">
           <div className="max-w-2xl">
-            <h3 className="text-2xl font-display font-bold mb-4">Listo para comenzar tu proyecto?</h3>
+            <h3 className="text-2xl font-display font-bold mb-4">{t("howWeWork.ctaTitle")}</h3>
             <p className="text-muted-foreground mb-6">
-              Contáctanos hoy y conoce cómo podemos transformar tu visión en realidad.
+              {t("howWeWork.ctaDescription")}
             </p>
             <a
               href="#contacto"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium transition-all hover:shadow-lg"
             >
-              Iniciar conversación
+              {t("howWeWork.ctaButton")}
               <span>→</span>
             </a>
           </div>
