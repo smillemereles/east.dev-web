@@ -2,6 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
+import heroBg from "@/assets/hero-bridge-bg.png.asset.json";
+
 
 
 export const Hero = () => {
@@ -26,8 +28,20 @@ export const Hero = () => {
       id="inicio"
       className="min-h-screen flex flex-col justify-center relative overflow-hidden"
     >
+      {/* Subtle hero background image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src={heroBg.url}
+          alt="Puente de la Amistad con conexión digital"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
+      </div>
+
       {/* Background Glow Effects */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-electric/5 rounded-full blur-[120px] pointer-events-none" />
       
       {/* Grid overlay */}
