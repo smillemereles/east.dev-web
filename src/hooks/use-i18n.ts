@@ -388,7 +388,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
 interface I18nContextValue {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: (key: string, params?: Record<string, string>) => TranslationValue;
+  t: (key: string, params?: Record<string, string>) => any;
 }
 
 const LanguageContext = createContext<I18nContextValue | undefined>(undefined);
