@@ -2,6 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
+import heroBg from "@/assets/hero-bridge-bg.png.asset.json";
+
 
 
 export const Hero = () => {
