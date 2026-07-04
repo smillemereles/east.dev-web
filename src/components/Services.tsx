@@ -40,6 +40,10 @@ export const Services = () => {
           <p className="text-lg text-muted-foreground">
             {t("services.description")}
           </p>
+          <p className="mt-4 text-sm font-medium text-primary inline-flex items-center gap-2">
+            <Globe className="w-4 h-4" />
+            {t("services.internationalNote")}
+          </p>
         </div>
 
         {/* Services Grid */}
