@@ -301,7 +301,8 @@ const translations: Record<Locale, Record<string, any>> = {
     services: {
       section: "Services",
       header: "Complete solutions for your digital presence",
-      description: "A comprehensive set of services designed to take your brand to the next level.",
+      description: "A comprehensive set of services designed to take your brand to the next level, available for international clients.",
+      internationalNote: "We work remotely with teams and clients from any country.",
       items: [
         { title: "Web Development", description: "Responsive websites and applications built with the latest technologies." },
         { title: "UI/UX Design", description: "Intuitive interfaces that enhance the user experience." },
