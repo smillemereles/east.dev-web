@@ -2,9 +2,9 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from "
 
 type Locale = "es" | "en";
 
-type TranslationValue = string | string[] | Record<string, string> | Record<string, any>;
+type TranslationValue = string | string[] | Record<string, any> | any[];
 
-const translations: Record<Locale, Record<string, TranslationValue>> = {
+const translations: Record<Locale, Record<string, any>> = {
   es: {
     nav: {
       home: "Inicio",
@@ -24,6 +24,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       ctaProjects: "Ver Proyectos",
       ctaContact: "Empezar proyecto",
       words: ["Directores", "Diseñadores", "Agencias", "Marcas", "Startups"],
+      marquee: ["DESARROLLO WEB", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"],
     },
     about: {
       section: "Sobre Nosotros",
@@ -38,38 +39,14 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       header: "Soluciones completas para tu presencia digital",
       description: "Un conjunto integral de servicios diseñados para llevar tu marca al siguiente nivel.",
       items: [
-        {
-          title: "Desarrollo Web",
-          description: "Sitios web y aplicaciones responsivas con las últimas tecnologías.",
-        },
-        {
-          title: "Diseño UI/UX",
-          description: "Interfaces intuitivas que mejoran la experiencia del usuario.",
-        },
-        {
-          title: "Branding Digital",
-          description: "Identidad visual coherente que refleja tu marca.",
-        },
-        {
-          title: "Marketing Digital",
-          description: "Estrategias para aumentar tu visibilidad online.",
-        },
-        {
-          title: "Redes Sociales",
-          description: "Gestión y estrategias de contenido efectivas.",
-        },
-        {
-          title: "Maquetación Web",
-          description: "Diseños transformados en código pixel-perfect.",
-        },
-        {
-          title: "SEO",
-          description: "Optimización para mejor posicionamiento.",
-        },
-        {
-          title: "Optimización",
-          description: "Mejora de rendimiento y velocidad.",
-        },
+        { title: "Desarrollo Web", description: "Sitios web y aplicaciones responsivas con las últimas tecnologías." },
+        { title: "Diseño UI/UX", description: "Interfaces intuitivas que mejoran la experiencia del usuario." },
+        { title: "Branding Digital", description: "Identidad visual coherente que refleja tu marca." },
+        { title: "Marketing Digital", description: "Estrategias para aumentar tu visibilidad online." },
+        { title: "Redes Sociales", description: "Gestión y estrategias de contenido efectivas." },
+        { title: "Maquetación Web", description: "Diseños transformados en código pixel-perfect." },
+        { title: "SEO", description: "Optimización para mejor posicionamiento." },
+        { title: "Optimización", description: "Mejora de rendimiento y velocidad." },
       ],
     },
     projects: {
@@ -79,6 +56,43 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       header: "Trabajos que hablan por nosotros",
       prototypesLabel: "Prototipos Web",
       prototypeAction: "Ver prototipo",
+      projectSingular: "proyecto",
+      projectPlural: "proyectos",
+      categories: {
+        gastronomia: {
+          label: "Restaurantes & Gastronomía",
+          projects: {
+            "Smart order for Masarte Pizzeria": "Link de pedidos inteligente con video para Meta Ads. El cliente hace clic, arma su pedido y la orden llega organizada por WhatsApp a la pizzería.",
+            "Hoplon Lounge": "Sitio web elegante para lounge bar con reservas online y menú digital.",
+            "La Mansa": "Plataforma gastronómica con sistema de pedidos y carta digital.",
+          },
+        },
+        ecommerce: {
+          label: "E-commerce & Retail",
+          projects: {
+            "Farma Next": "E-commerce farmacéutico con catálogo de productos y compra online.",
+            "Black Colors": "E-commerce y landing de impresión sustentable con catálogo y servicios de leasing.",
+            "Mania Group": "Tienda online multi-categoría: celulares, vapes y perfumería premium.",
+          },
+        },
+        agro: {
+          label: "Agro & Industria",
+          projects: {
+            "CMP Agro": "Sitio corporativo para soluciones tecnológicas al agro-negocio, con catálogo de productos y marcas.",
+          },
+        },
+        turismo: {
+          label: "Turismo & Viajes",
+          projects: {
+            "Lleva Viajes": "Agencia de viajes con catálogo de destinos y cotización.",
+          },
+        },
+      },
+      prototypes: {
+        "Lleva Elite Journeys": "Prototipo de plataforma de viajes premium con experiencias exclusivas.",
+        "Farmacia Do Sul": "Prototipo de e-commerce para farmacia con catálogo de productos.",
+        "YoCreo": "Prototipo de hub digital con diseño moderno y accesible.",
+      },
     },
     howWeWork: {
       section: "¿Cómo trabajamos?",
@@ -86,30 +100,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       subtitleHighlight: "y trasparente",
       description: "Metodología ágil con entregas regulares, comunicación clara y foco absoluto en resultados medibles.",
       steps: [
-        {
-          number: "01",
-          title: "Descubrimiento & Estrategia",
-          description: "Analizamos tu negocio, objetivos y audiencia para definir una estrategia clara y resultados medibles.",
-          points: ["Análisis competitivo", "Research de usuarios", "Definición de KPIs"],
-        },
-        {
-          number: "02",
-          title: "Diseño & Prototipado",
-          description: "Creamos wireframes y prototipos interactivos para validar la solución antes de la ejecución.",
-          points: ["Diseño UI/UX", "Prototipos interactivos", "Validación con usuarios"],
-        },
-        {
-          number: "03",
-          title: "Desarrollo & Optimización",
-          description: "Código limpio, responsivo y optimizado con las mejores prácticas de la industria.",
-          points: ["Desarrollo full-stack", "Performance optimization", "Testing y QA"],
-        },
-        {
-          number: "04",
-          title: "Lanzamiento & Soporte",
-          description: "Deployamos con seguridad, monitoreamos el rendimiento y proveemos soporte continuo.",
-          points: ["Deployment seguro", "Monitoreo 24/7", "Soporte técnico"],
-        },
+        { number: "01", title: "Descubrimiento & Estrategia", description: "Analizamos tu negocio, objetivos y audiencia para definir una estrategia clara y resultados medibles.", points: ["Análisis competitivo", "Research de usuarios", "Definición de KPIs"] },
+        { number: "02", title: "Diseño & Prototipado", description: "Creamos wireframes y prototipos interactivos para validar la solución antes de la ejecución.", points: ["Diseño UI/UX", "Prototipos interactivos", "Validación con usuarios"] },
+        { number: "03", title: "Desarrollo & Optimización", description: "Código limpio, responsivo y optimizado con las mejores prácticas de la industria.", points: ["Desarrollo full-stack", "Performance optimization", "Testing y QA"] },
+        { number: "04", title: "Lanzamiento & Soporte", description: "Deployamos con seguridad, monitoreamos el rendimiento y proveemos soporte continuo.", points: ["Deployment seguro", "Monitoreo 24/7", "Soporte técnico"] },
       ],
       ctaTitle: "Listo para comenzar tu proyecto?",
       ctaDescription: "Contáctanos hoy y conoce cómo podemos transformar tu visión en realidad.",
@@ -120,11 +114,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       title: "Conoce a tu socio digital",
       titleAlt: "para diseño y desarrollo web",
       description: "Como diseñadores web y digitales, estrategas y creadores de contenido, desarrollamos proyectos con foco en branding, experiencia de usuario, rendimiento y resultados comerciales.",
-      stats: {
-        projects: "Proyectos Completados",
-        clients: "Clientes Satisfechos",
-        team: "Equipo",
-      },
+      stats: { projects: "Proyectos Completados", clients: "Clientes Satisfechos", team: "Equipo" },
     },
     portfolio: {
       sectionLabel: "Portafolio de Diseño Digital",
@@ -136,6 +126,79 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       ctaButton: "Solicitar presupuesto",
       filterAll: "Todos",
       pieces: "piezas",
+      imageComingSoon: "Imagen próximamente",
+      workTypes: {
+        "Post Instagram": "Post Instagram",
+        "Carousel": "Carousel",
+        "Story": "Story",
+        "Branding": "Branding",
+        "Web Design": "Diseño Web",
+      },
+      clients: {
+        llevaviajes: {
+          category: "Turismo & Viajes",
+          description: "Contenido visual para agencia de viajes. Diseño de posteos, promociones y piezas para campañas estacionales.",
+          works: {
+            "1": { title: "Conocé la Web", description: "Presentación de la web oficial de Lleva Viajes con 15 años de trayectoria" },
+            "2": { title: "Servicios Exclusivos", description: "Promoción de servicios: viajes 2x1, en grupo y de bodas" },
+            "3": { title: "Destinos Brasil 2026", description: "Paquetes a Natal, Rio de Janeiro y Porto de Galinhas desde 980 USD" },
+            "4": { title: "Salvador Bahía", description: "Promo Semana Santa 2026 a Salvador Bahía, 7 noches desde 7.300.000 Gs" },
+            "5": { title: "Vision Board Colombia", description: "Paquete a Colombia: Eje Cafetero, San Andrés y Cartagena" },
+          },
+        },
+        farmanext: {
+          category: "Farmacia & E-commerce",
+          description: "Contenido visual y diseño digital para farmacia e-commerce. Piezas promocionales, campañas de productos y branding en redes sociales.",
+          works: {
+            "1": { title: "Lander Bar Protein", description: "Barra proteica Lander Bar sabor Dulce de Leche, 15g de proteína, sin gluten y libre de colesterol" },
+            "2": { title: "As Mais Desejadas", description: "Promo semanal con productos desde 449 R$ en medicamentos, vitaminas, cosméticos e importados" },
+            "3": { title: "Linha Masculina LACA", description: "Lanzamiento de la línea masculina LACA Laboratorio con productos de cuidado facial" },
+            "4": { title: "Farma Ofertas", description: "Evento Farma Ofertas con hasta 50% OFF en medicamentos, vitaminas, cosméticos y productos importados" },
+            "5": { title: "Páscoa Saudável", description: "Campaña de Pascua con premios y chocolate saludable" },
+            "6": { title: "Melatonin Sleep", description: "Melatonina 10mg LanderFit para noches profundas, equilibrio y calma mental" },
+            "7": { title: "Mento Vick Deportivo", description: "Crema analgésica Mento Vick, fórmula anti-inflamatoria para alivio del dolor tras el esfuerzo" },
+            "8": { title: "Antigripales", description: "Línea completa antigripal: Vitamina C, Cortagrip y Mento Vick Té Caliente de INDUFAR" },
+          },
+        },
+        "citytour-asu": {
+          category: "Turismo",
+          description: "Diseño de contenido digital para experiencias turísticas en Asunción. Posteos, stories y material promocional.",
+          works: {
+            "1": { title: "#TBT Recorridos", description: "Throwback de grandes recorridos por Asunción con grupos de turistas" },
+            "2": { title: "Historias de la Ciudad", description: "Cada ciudad guarda historias que merecen ser contadas, descubrí las casas más antiguas de Asunción" },
+            "3": { title: "Casa de la Independencia", description: "La Casa de la Independencia, punto clave donde se gestó la libertad del Paraguay en 1811" },
+            "4": { title: "Historia Independencia", description: "Recorrido histórico por la Casa de la Independencia, museo y sitio emblemático de Asunción" },
+            "5": { title: "Semana del Amor", description: "City Tour 2x1 para parejas, Semana del Amor en Asunción del 10 al 13 de febrero 2026" },
+          },
+        },
+        nevenhost: {
+          category: "Web — Proyecto Piloto",
+          description: "Proyecto piloto de web para inmobiliaria. Diseño de plataforma con listado de propiedades, búsqueda y fichas de inmuebles.",
+          works: {
+            "1": { title: "Hero Principal", description: "Landing 'Aquí comienza tu nuevo hogar' con selección exclusiva de casas y terrenos en venta" },
+            "2": { title: "Listado de Propiedades", description: "Catálogo con filtros por habitaciones, ubicación y rango de precio en USD" },
+            "3": { title: "Galería de Propiedades", description: "Galería con filtros por exteriores, interiores y áreas comunes con imágenes cautivadoras" },
+          },
+        },
+        "farmacia-dosul": {
+          category: "E-commerce — Proyecto Piloto",
+          description: "Proyecto piloto de e-commerce para farmacia. Diseño de tienda online con catálogo de productos y carrito de compras.",
+          works: {
+            "1": { title: "Hero Principal", description: "Landing 'Tu Salud, Nuestra Prioridad' con más de 20 años de confianza y laboratorios aliados como INDUFAR y Éticos" },
+            "2": { title: "Tienda de Productos", description: "Catálogo de Tirzepatida (T.G) en distintas dosis con precios en guaraníes y reales" },
+            "3": { title: "Checkout", description: "Flujo de checkout con información del cliente, envío gratis y resumen de pedido en guaraníes" },
+          },
+        },
+        vitalx: {
+          category: "Web — Proyecto Piloto",
+          description: "Proyecto piloto de plataforma web para marca de salud y bienestar. Diseño de sitio informativo y e-commerce.",
+          works: {
+            "1": { title: "Hero Principal", description: "Landing page con slider hero 'Activa tu Versión X', suplementación deportiva premium 100% online en Paraguay" },
+            "2": { title: "Tienda de Productos", description: "Catálogo e-commerce con productos Tirzepatida de INDUFAR y QUIMFA, precios en guaraníes y reales" },
+            "3": { title: "Carrito de Compras", description: "Flujo de carrito con resumen de compra, cantidades editables y checkout integrado" },
+          },
+        },
+      },
     },
     contact: {
       section: "Contacto",
@@ -170,7 +233,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
         "500-1000": "$500 - $1,000",
         "1000-2500": "$1,000 - $2,500",
         "2500-5000": "$2,500 - $5,000",
-        "5000+": "$5,000+$",
+        "5000+": "$5,000+",
       },
       whatsapp: {
         greeting: "👋 ¡Hola! Soy *{name}*",
@@ -213,6 +276,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       ctaProjects: "See Projects",
       ctaContact: "Start Project",
       words: ["Directors", "Designers", "Agencies", "Brands", "Startups"],
+      marquee: ["WEB DEVELOPMENT", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"],
     },
     about: {
       section: "About Us",
@@ -227,38 +291,14 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       header: "Complete solutions for your digital presence",
       description: "A comprehensive set of services designed to take your brand to the next level.",
       items: [
-        {
-          title: "Web Development",
-          description: "Responsive websites and applications built with the latest technologies.",
-        },
-        {
-          title: "UI/UX Design",
-          description: "Intuitive interfaces that enhance the user experience.",
-        },
-        {
-          title: "Digital Branding",
-          description: "Consistent visual identity that reflects your brand.",
-        },
-        {
-          title: "Digital Marketing",
-          description: "Strategies to increase your online visibility.",
-        },
-        {
-          title: "Social Media",
-          description: "Effective content management and campaign strategies.",
-        },
-        {
-          title: "Web Layout",
-          description: "Designs turned into pixel-perfect code.",
-        },
-        {
-          title: "SEO",
-          description: "Optimization for better search rankings.",
-        },
-        {
-          title: "Performance",
-          description: "Improvement of speed and loading times.",
-        },
+        { title: "Web Development", description: "Responsive websites and applications built with the latest technologies." },
+        { title: "UI/UX Design", description: "Intuitive interfaces that enhance the user experience." },
+        { title: "Digital Branding", description: "Consistent visual identity that reflects your brand." },
+        { title: "Digital Marketing", description: "Strategies to increase your online visibility." },
+        { title: "Social Media", description: "Effective content management and campaign strategies." },
+        { title: "Web Layout", description: "Designs turned into pixel-perfect code." },
+        { title: "SEO", description: "Optimization for better search rankings." },
+        { title: "Performance", description: "Improvement of speed and loading times." },
       ],
     },
     projects: {
@@ -268,6 +308,43 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       header: "Work that speaks for us",
       prototypesLabel: "Web Prototypes",
       prototypeAction: "See prototype",
+      projectSingular: "project",
+      projectPlural: "projects",
+      categories: {
+        gastronomia: {
+          label: "Restaurants & Gastronomy",
+          projects: {
+            "Smart order for Masarte Pizzeria": "Smart ordering link with a Meta Ads video. Customers click, build their order and the pizzeria receives it neatly on WhatsApp.",
+            "Hoplon Lounge": "Elegant website for a lounge bar with online reservations and a digital menu.",
+            "La Mansa": "Gastronomy platform with an ordering system and digital menu.",
+          },
+        },
+        ecommerce: {
+          label: "E-commerce & Retail",
+          projects: {
+            "Farma Next": "Pharmaceutical e-commerce with a product catalog and online purchasing.",
+            "Black Colors": "E-commerce and landing page for sustainable printing with catalog and leasing services.",
+            "Mania Group": "Multi-category online store: phones, vapes and premium perfumery.",
+          },
+        },
+        agro: {
+          label: "Agri & Industry",
+          projects: {
+            "CMP Agro": "Corporate site for agri-business tech solutions, with product and brand catalog.",
+          },
+        },
+        turismo: {
+          label: "Tourism & Travel",
+          projects: {
+            "Lleva Viajes": "Travel agency with destination catalog and quote requests.",
+          },
+        },
+      },
+      prototypes: {
+        "Lleva Elite Journeys": "Prototype of a premium travel platform with exclusive experiences.",
+        "Farmacia Do Sul": "Prototype of a pharmacy e-commerce with product catalog.",
+        "YoCreo": "Prototype of a digital hub with a modern, accessible design.",
+      },
     },
     howWeWork: {
       section: "How We Work",
@@ -275,30 +352,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       subtitleHighlight: "and Transparent",
       description: "Agile methodology with regular deliveries, clear communication and absolute focus on measurable results.",
       steps: [
-        {
-          number: "01",
-          title: "Discovery & Strategy",
-          description: "We analyze your business, goals and audience to define clear strategy and measurable outcomes.",
-          points: ["Competitive Analysis", "User Research", "KPI Definition"],
-        },
-        {
-          number: "02",
-          title: "Design & Prototyping",
-          description: "We create wireframes and interactive prototypes to validate the solution before execution.",
-          points: ["UI/UX Design", "Interactive Prototypes", "User Validation"],
-        },
-        {
-          number: "03",
-          title: "Development & Optimization",
-          description: "Clean, responsive code optimized with industry best practices.",
-          points: ["Full-stack Development", "Performance Optimization", "Testing & QA"],
-        },
-        {
-          number: "04",
-          title: "Launch & Support",
-          description: "We deploy securely, monitor performance and provide continuous support.",
-          points: ["Secure Deployment", "24/7 Monitoring", "Technical Support"],
-        },
+        { number: "01", title: "Discovery & Strategy", description: "We analyze your business, goals and audience to define clear strategy and measurable outcomes.", points: ["Competitive Analysis", "User Research", "KPI Definition"] },
+        { number: "02", title: "Design & Prototyping", description: "We create wireframes and interactive prototypes to validate the solution before execution.", points: ["UI/UX Design", "Interactive Prototypes", "User Validation"] },
+        { number: "03", title: "Development & Optimization", description: "Clean, responsive code optimized with industry best practices.", points: ["Full-stack Development", "Performance Optimization", "Testing & QA"] },
+        { number: "04", title: "Launch & Support", description: "We deploy securely, monitor performance and provide continuous support.", points: ["Secure Deployment", "24/7 Monitoring", "Technical Support"] },
       ],
       ctaTitle: "Ready to start your project?",
       ctaDescription: "Contact us today and discover how we can transform your vision into reality.",
@@ -309,11 +366,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       title: "Meet your digital partner",
       titleAlt: "for web design and development",
       description: "As web and digital designers, strategists and content creators, we build projects focused on branding, UX, performance and measurable outcomes.",
-      stats: {
-        projects: "Projects Completed",
-        clients: "Satisfied Clients",
-        team: "Team",
-      },
+      stats: { projects: "Projects Completed", clients: "Satisfied Clients", team: "Team" },
     },
     portfolio: {
       sectionLabel: "Digital Design Portfolio",
@@ -325,6 +378,79 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       ctaButton: "Request a quote",
       filterAll: "All",
       pieces: "pieces",
+      imageComingSoon: "Image coming soon",
+      workTypes: {
+        "Post Instagram": "Instagram Post",
+        "Carousel": "Carousel",
+        "Story": "Story",
+        "Branding": "Branding",
+        "Web Design": "Web Design",
+      },
+      clients: {
+        llevaviajes: {
+          category: "Tourism & Travel",
+          description: "Visual content for a travel agency. Post designs, promotions and seasonal campaign pieces.",
+          works: {
+            "1": { title: "Meet the Website", description: "Presentation of Lleva Viajes' official website with 15 years of experience" },
+            "2": { title: "Exclusive Services", description: "Promotion of services: 2x1, group and wedding trips" },
+            "3": { title: "Brazil Destinations 2026", description: "Packages to Natal, Rio de Janeiro and Porto de Galinhas from USD 980" },
+            "4": { title: "Salvador Bahia", description: "Easter 2026 promo to Salvador Bahia, 7 nights from Gs 7,300,000" },
+            "5": { title: "Colombia Vision Board", description: "Package to Colombia: Coffee Region, San Andrés and Cartagena" },
+          },
+        },
+        farmanext: {
+          category: "Pharmacy & E-commerce",
+          description: "Visual content and digital design for a pharmacy e-commerce. Promotional pieces, product campaigns and social media branding.",
+          works: {
+            "1": { title: "Lander Bar Protein", description: "Lander Bar protein bar, Dulce de Leche flavor, 15g of protein, gluten-free and cholesterol-free" },
+            "2": { title: "Most Wanted", description: "Weekly promo with products from R$ 449 in medicines, vitamins, cosmetics and imported goods" },
+            "3": { title: "LACA Men's Line", description: "Launch of LACA Laboratorio's men's line with facial care products" },
+            "4": { title: "Farma Deals", description: "Farma Deals event with up to 50% OFF on medicines, vitamins, cosmetics and imported products" },
+            "5": { title: "Healthy Easter", description: "Easter campaign with prizes and healthy chocolate" },
+            "6": { title: "Melatonin Sleep", description: "LanderFit Melatonin 10mg for deep nights, balance and mental calm" },
+            "7": { title: "Mento Vick Sport", description: "Mento Vick analgesic cream, anti-inflammatory formula for pain relief after exertion" },
+            "8": { title: "Cold & Flu", description: "Full cold & flu line: Vitamin C, Cortagrip and Mento Vick Hot Tea from INDUFAR" },
+          },
+        },
+        "citytour-asu": {
+          category: "Tourism",
+          description: "Digital content design for tourist experiences in Asunción. Posts, stories and promotional material.",
+          works: {
+            "1": { title: "#TBT Tours", description: "Throwback of great tours around Asunción with groups of tourists" },
+            "2": { title: "City Stories", description: "Every city holds stories worth telling — discover the oldest houses in Asunción" },
+            "3": { title: "House of Independence", description: "The House of Independence, key site where Paraguay's freedom was forged in 1811" },
+            "4": { title: "Independence History", description: "Historic tour of the House of Independence, museum and emblematic site of Asunción" },
+            "5": { title: "Love Week", description: "2x1 City Tour for couples, Love Week in Asunción from Feb 10–13, 2026" },
+          },
+        },
+        nevenhost: {
+          category: "Web — Pilot Project",
+          description: "Pilot web project for a real estate agency. Platform design with property listings, search and property sheets.",
+          works: {
+            "1": { title: "Main Hero", description: "'Your new home starts here' landing with an exclusive selection of houses and land for sale" },
+            "2": { title: "Property Listing", description: "Catalog with filters by rooms, location and USD price range" },
+            "3": { title: "Property Gallery", description: "Gallery with filters for exteriors, interiors and common areas with captivating images" },
+          },
+        },
+        "farmacia-dosul": {
+          category: "E-commerce — Pilot Project",
+          description: "Pilot e-commerce project for a pharmacy. Online store design with product catalog and shopping cart.",
+          works: {
+            "1": { title: "Main Hero", description: "'Your Health, Our Priority' landing with 20+ years of trust and partner labs like INDUFAR and Éticos" },
+            "2": { title: "Product Store", description: "Tirzepatide (T.G) catalog in different doses with prices in guaraníes and reais" },
+            "3": { title: "Checkout", description: "Checkout flow with customer info, free shipping and order summary in guaraníes" },
+          },
+        },
+        vitalx: {
+          category: "Web — Pilot Project",
+          description: "Pilot web platform project for a health and wellness brand. Informational site and e-commerce design.",
+          works: {
+            "1": { title: "Main Hero", description: "Landing page with 'Activate your X Version' hero slider — premium sports supplementation 100% online in Paraguay" },
+            "2": { title: "Product Store", description: "E-commerce catalog with Tirzepatide products from INDUFAR and QUIMFA, prices in guaraníes and reais" },
+            "3": { title: "Shopping Cart", description: "Cart flow with purchase summary, editable quantities and integrated checkout" },
+          },
+        },
+      },
     },
     contact: {
       section: "Contact",
@@ -393,13 +519,13 @@ interface I18nContextValue {
 
 const LanguageContext = createContext<I18nContextValue | undefined>(undefined);
 
-const getTranslation = (locale: Locale, key: string): TranslationValue => {
-  return key.split('.').reduce<Record<string, any> | TranslationValue>((acc, part) => {
-    if (typeof acc === 'object' && acc !== null && part in acc) {
+const getTranslation = (locale: Locale, key: string): any => {
+  return key.split('.').reduce<any>((acc, part) => {
+    if (acc && typeof acc === 'object' && part in acc) {
       return acc[part];
     }
     return acc;
-  }, translations[locale]) as TranslationValue;
+  }, translations[locale]);
 };
 
 const interpolate = (value: string, params?: Record<string, string>) => {

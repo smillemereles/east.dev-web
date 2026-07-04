@@ -120,6 +120,8 @@ const prototypeProjects = [
 export const Projects = () => {
   const { t } = useTranslation();
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
+  const catTranslations = t("projects.categories") as Record<string, { label: string; projects: Record<string, string> }>;
+  const prototypeTranslations = t("projects.prototypes") as Record<string, string>;
 
   return (
     <section id="proyectos" className="section-padding relative bg-muted/40">
@@ -153,11 +155,11 @@ export const Projects = () => {
             <div key={category.id}>
               <div className="flex items-baseline justify-between gap-4 mb-6">
                 <h3 className="text-xl sm:text-2xl font-display font-semibold text-foreground/90">
-                  {category.label}
+                  {catTranslations?.[category.id]?.label ?? category.label}
                 </h3>
                 <span className="text-xs font-mono text-muted-foreground/60 tracking-wider">
                   {String(category.projects.length).padStart(2, "0")}{" "}
-                  {category.projects.length === 1 ? "proyecto" : "proyectos"}
+                  {category.projects.length === 1 ? (t("projects.projectSingular") as string) : (t("projects.projectPlural") as string)}
                 </span>
               </div>
 
@@ -195,7 +197,7 @@ export const Projects = () => {
                                 {project.name}
                               </h4>
                               <p className="text-muted-foreground text-xs sm:text-sm mt-1 max-w-md block">
-                                {project.description}
+                                {catTranslations?.[category.id]?.projects?.[project.name] ?? project.description}
                               </p>
                             </div>
                           </div>
@@ -252,7 +254,7 @@ export const Projects = () => {
                 <h4 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">
                   {project.name}
                 </h4>
-                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                <p className="text-muted-foreground text-sm mb-4">{prototypeTranslations?.[project.name] ?? project.description}</p>
                 <div className="flex items-center gap-2 text-sm text-primary">
                   <span>{t("projects.prototypeAction")}</span>
                   <ArrowUpRight className="w-4 h-4" />

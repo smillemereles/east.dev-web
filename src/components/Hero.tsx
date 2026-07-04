@@ -111,7 +111,7 @@ export const Hero = () => {
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center gap-8 sm:gap-16 mx-4 sm:mx-8">
-              {["DESARROLLO WEB", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"].map((item) => (
+              {(t("hero.marquee") as string[]).map((item) => (
                 <span key={item} className="text-sm font-medium text-muted-foreground/50 tracking-[0.2em] uppercase flex items-center gap-4">
                   {item}
                   <span className="w-2 h-2 rounded-full bg-primary/30" />
