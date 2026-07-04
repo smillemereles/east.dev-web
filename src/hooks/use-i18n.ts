@@ -75,6 +75,7 @@ const translations: Record<Locale, Record<string, any>> = {
           label: "E-commerce & Retail",
           projects: {
             "Farma Next": "E-commerce farmacéutico con catálogo de productos y compra online.",
+            "Farmacia Do Sul": "E-commerce farmacéutico con catálogo de productos, carrito de compras y checkout en guaraníes.",
             "Black Colors": "E-commerce y landing de impresión sustentable con catálogo y servicios de leasing.",
             "Mania Group": "Tienda online multi-categoría: celulares, vapes y perfumería premium.",
           },
