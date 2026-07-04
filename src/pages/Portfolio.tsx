@@ -164,6 +164,12 @@ const typeColors: Record<string, string> = {
 export default function Portfolio() {
   const { t } = useTranslation();
   const [activeClient, setActiveClient] = useState<string | null>(null);
+  const clientTranslations = t("portfolio.clients") as Record<string, {
+    category: string;
+    description: string;
+    works: Record<string, { title: string; description: string }>;
+  }>;
+  const workTypeTranslations = t("portfolio.workTypes") as Record<string, string>;
 
   const filteredClients = activeClient
     ? clients.filter((c) => c.slug === activeClient)
