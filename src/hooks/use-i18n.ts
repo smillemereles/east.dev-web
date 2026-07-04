@@ -119,7 +119,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       section: "Por Qué Elegir a east.dev",
       title: "Conoce a tu socio digital",
       titleAlt: "para diseño y desarrollo web",
-      description: "Como diseñadora web y digital, estratega y creadora de contenido, desarrollo proyectos con foco en branding, experiencia de usuario, rendimiento y resultados comerciales.",
+      description: "Como diseñadores web y digitales, estrategas y creadores de contenido, desarrollamos proyectos con foco en branding, experiencia de usuario, rendimiento y resultados comerciales.",
       stats: {
         projects: "Proyectos Completados",
         clients: "Clientes Satisfechos",
@@ -308,7 +308,7 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       section: "Why Choose east.dev",
       title: "Meet your digital partner",
       titleAlt: "for web design and development",
-      description: "As a web and digital designer, strategist and content creator, I build projects focused on branding, UX, performance and measurable outcomes.",
+      description: "As web and digital designers, strategists and content creators, we build projects focused on branding, UX, performance and measurable outcomes.",
       stats: {
         projects: "Projects Completed",
         clients: "Satisfied Clients",
