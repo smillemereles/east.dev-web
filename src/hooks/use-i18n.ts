@@ -210,7 +210,7 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "Contacto",
       question: "¿Listo para",
       highlight: "comenzar?",
-      description: "Cuéntanos sobre tu proyecto y recibe una cotización personalizada. Estamos listos para dar vida a tu visión.",
+      description: "Cuéntanos sobre tu proyecto y recibe una cotización personalizada. Estamos listos para dar vida a tu visión, sin importar tu país o zona horaria.",
       emailLabel: "Email",
       locationLabel: "Ubicación",
       email: "east.devpy@gmail.com",
@@ -248,6 +248,8 @@ const translations: Record<Locale, Record<string, any>> = {
         budgetLabel: "• Presupuesto: {budget}",
         messageLabel: "💬 *Mensaje:*",
       },
+      internationalNote: "🌍 Trabajamos con clientes de todo el mundo. Escríbenos en español o inglés.",
+      internationalCta: "Iniciar proyecto internacional",
     },
     footer: {
       description: "Diseño y desarrollo web con identidad propia desde Ciudad del Este. Conectamos tu visión con la tecnología.",
