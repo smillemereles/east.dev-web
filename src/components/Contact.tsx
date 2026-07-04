@@ -197,6 +197,16 @@ export const Contact = () => {
                 {t("contact.form.submit")}
                 <Send className="w-4 h-4" />
               </Button>
+              <a
+                href="https://wa.link/jfxdzh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
+                <Button type="button" variant="outline" size="lg" className="w-full border-slate-200 hover:border-primary hover:text-primary">
+                  {t("contact.internationalCta")}
+                </Button>
+              </a>
             </form>
           </div>
         </div>
