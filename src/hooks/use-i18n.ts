@@ -364,7 +364,8 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "How We Work",
       subtitle: "Proven Process",
       subtitleHighlight: "and Transparent",
-      description: "Agile methodology with regular deliveries, clear communication and absolute focus on measurable results.",
+      description: "Agile methodology with regular deliveries, clear communication and absolute focus on measurable results, tailored for international teams.",
+      internationalNote: "We work remotely with clients in any timezone, maintaining constant communication and on-time deliveries.",
       steps: [
         { number: "01", title: "Discovery & Strategy", description: "We analyze your business, goals and audience to define clear strategy and measurable outcomes.", points: ["Competitive Analysis", "User Research", "KPI Definition"] },
         { number: "02", title: "Design & Prototyping", description: "We create wireframes and interactive prototypes to validate the solution before execution.", points: ["UI/UX Design", "Interactive Prototypes", "User Validation"] },
@@ -372,7 +373,7 @@ const translations: Record<Locale, Record<string, any>> = {
         { number: "04", title: "Launch & Support", description: "We deploy securely, monitor performance and provide continuous support.", points: ["Secure Deployment", "24/7 Monitoring", "Technical Support"] },
       ],
       ctaTitle: "Ready to start your project?",
-      ctaDescription: "Contact us today and discover how we can transform your vision into reality.",
+      ctaDescription: "Contact us today and discover how we can transform your vision into reality, wherever you are.",
       ctaButton: "Start Conversation",
     },
     team: {
