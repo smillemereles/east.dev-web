@@ -357,7 +357,6 @@ const translations: Record<Locale, Record<string, any>> = {
       },
       prototypes: {
         "Lleva Elite Journeys": "Prototype of a premium travel platform with exclusive experiences.",
-        "Farmacia Do Sul": "Prototype of a pharmacy e-commerce with product catalog.",
         "YoCreo": "Prototype of a digital hub with a modern, accessible design.",
       },
     },
