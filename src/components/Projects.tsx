@@ -254,7 +254,7 @@ export const Projects = () => {
                 <h4 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">
                   {project.name}
                 </h4>
-                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                <p className="text-muted-foreground text-sm mb-4">{prototypeTranslations?.[project.name] ?? project.description}</p>
                 <div className="flex items-center gap-2 text-sm text-primary">
                   <span>{t("projects.prototypeAction")}</span>
                   <ArrowUpRight className="w-4 h-4" />
