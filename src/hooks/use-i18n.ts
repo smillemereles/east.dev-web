@@ -286,6 +286,8 @@ const translations: Record<Locale, Record<string, any>> = {
       ctaContact: "Start Project",
       words: ["Directors", "Designers", "Agencies", "Brands", "Startups"],
       marquee: ["WEB DEVELOPMENT", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"],
+      internationalBadge: "🌍 Available for international projects",
+      internationalCta: "International project",
     },
     about: {
       section: "About Us",
