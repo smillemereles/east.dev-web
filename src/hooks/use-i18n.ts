@@ -25,6 +25,8 @@ const translations: Record<Locale, Record<string, any>> = {
       ctaContact: "Empezar proyecto",
       words: ["Directores", "Diseñadores", "Agencias", "Marcas", "Startups"],
       marquee: ["DESARROLLO WEB", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"],
+      internationalBadge: "🌍 Disponible para proyectos internacionales",
+      internationalCta: "Proyecto internacional",
     },
     about: {
       section: "Sobre Nosotros",
