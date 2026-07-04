@@ -38,6 +38,9 @@ export const About = () => {
             <p>
               {t("about.paragraph4")}
             </p>
+            <p>
+              {t("about.paragraph5")}
+            </p>
           </div>
         </div>
 
