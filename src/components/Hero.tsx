@@ -30,11 +30,17 @@ export const Hero = () => {
     >
       {/* Subtle hero background image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src={heroBg.url}
-          alt="Puente de la Amistad con conexión digital"
-          className="w-full h-full object-cover opacity-20"
-        />
+        <picture>
+          <source srcSet="/hero-bridge-bg.webp" type="image/webp" />
+          <img
+            src="/hero-bridge-bg.png"
+            alt="Puente de la Amistad con conexión digital"
+            className="w-full h-full object-cover opacity-20"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
       </div>
