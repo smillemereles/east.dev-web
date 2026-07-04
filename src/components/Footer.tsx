@@ -32,8 +32,11 @@ export const Footer = () => {
               alt="east.dev" 
               className="h-14 w-auto p-1.5 opacity-80 mb-6" 
             />
-            <p className="text-muted-foreground mb-8 max-w-sm leading-relaxed">
+            <p className="text-muted-foreground mb-4 max-w-sm leading-relaxed">
               {t("footer.description")}
+            </p>
+            <p className="text-sm font-medium text-primary mb-8 max-w-sm">
+              {t("footer.internationalNote")}
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
