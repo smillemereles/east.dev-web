@@ -35,6 +35,7 @@ const translations: Record<Locale, Record<string, any>> = {
       paragraph2: "Cada proyecto es una oportunidad de construir puentes: entre tu marca y tus clientes, entre lo tradicional y lo innovador.",
       paragraph3: "Trabajamos codo a codo con emprendedores, pymes y marcas que buscan destacar en el mundo digital con soluciones a medida y diseño con propósito.",
       paragraph4: "Nuestro enfoque combina código limpio, diseño moderno y estrategia para entregar resultados que impactan.",
+      paragraph5: "Desde Paraguay colaboramos con equipos de todo el mundo. Trabajamos de forma remota con comunicación clara, procesos ágiles y entregas que se adaptan a tu zona horaria.",
     },
     services: {
       section: "Servicios",
