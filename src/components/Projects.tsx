@@ -76,6 +76,13 @@ const categories: Category[] = [
     label: "Agro & Industria",
     projects: [
       {
+        name: "SAISA",
+        description: "Sitio web corporativo para servicios ambientales integrales, enfocado en empresas e industrias con soluciones sostenibles y economía circular.",
+        image: "saisa/hero.png",
+        year: "2026",
+        url: "https://saisa-six.vercel.app/",
+      },
+      {
         name: "CMP Agro",
         description: "Sitio corporativo para soluciones tecnológicas al agro-negocio, con catálogo de productos y marcas.",
         image: "cmpagro/hero.png",
