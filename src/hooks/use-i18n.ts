@@ -296,6 +296,7 @@ const translations: Record<Locale, Record<string, any>> = {
       paragraph2: "Each project is an opportunity to build bridges: between your brand and your customers, between the traditional and the innovative.",
       paragraph3: "We work side by side with entrepreneurs, SMEs and brands seeking to stand out in the digital world with tailored solutions and purposeful design.",
       paragraph4: "Our approach combines clean code, modern design and strategy to deliver results that make an impact.",
+      paragraph5: "From Paraguay we collaborate with teams around the world. We work remotely with clear communication, agile processes and deliveries adapted to your timezone.",
     },
     services: {
       section: "Services",
