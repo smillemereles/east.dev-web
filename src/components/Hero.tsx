@@ -36,7 +36,7 @@ export const Hero = () => {
             src="/hero-bridge-bg.png"
             alt="Puente de la Amistad con conexión digital"
             className="w-full h-full object-cover opacity-20"
-            fetchpriority="high"
+            fetchPriority="high"
             loading="eager"
             decoding="async"
           />
