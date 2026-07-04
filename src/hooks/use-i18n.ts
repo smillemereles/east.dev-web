@@ -103,7 +103,8 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "¿Cómo trabajamos?",
       subtitle: "Proceso probado",
       subtitleHighlight: "y trasparente",
-      description: "Metodología ágil con entregas regulares, comunicación clara y foco absoluto en resultados medibles.",
+      description: "Metodología ágil con entregas regulares, comunicación clara y foco absoluto en resultados medibles, adaptada a equipos internacionales.",
+      internationalNote: "Trabajamos de forma remota con clientes en cualquier zona horaria, manteniendo comunicación constante y entregas puntuales.",
       steps: [
         { number: "01", title: "Descubrimiento & Estrategia", description: "Analizamos tu negocio, objetivos y audiencia para definir una estrategia clara y resultados medibles.", points: ["Análisis competitivo", "Research de usuarios", "Definición de KPIs"] },
         { number: "02", title: "Diseño & Prototipado", description: "Creamos wireframes y prototipos interactivos para validar la solución antes de la ejecución.", points: ["Diseño UI/UX", "Prototipos interactivos", "Validación con usuarios"] },
@@ -111,7 +112,7 @@ const translations: Record<Locale, Record<string, any>> = {
         { number: "04", title: "Lanzamiento & Soporte", description: "Deployamos con seguridad, monitoreamos el rendimiento y proveemos soporte continuo.", points: ["Deployment seguro", "Monitoreo 24/7", "Soporte técnico"] },
       ],
       ctaTitle: "Listo para comenzar tu proyecto?",
-      ctaDescription: "Contáctanos hoy y conoce cómo podemos transformar tu visión en realidad.",
+      ctaDescription: "Contáctanos hoy y conoce cómo podemos transformar tu visión en realidad, estés donde estés.",
       ctaButton: "Iniciar conversación",
     },
     team: {
