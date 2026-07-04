@@ -102,14 +102,14 @@ export const Team = () => {
         </div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-500 overflow-hidden"
+              className="group relative overflow-hidden rounded-xl md:rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-500 overflow-hidden"
             >
               {/* Image Container */}
-              <div className="relative h-80 bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden">
+              <div className="relative h-44 sm:h-64 md:h-80 bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -120,18 +120,18 @@ export const Team = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-display font-bold mb-1 group-hover:text-primary transition-colors">
+              <div className="p-3 sm:p-6 md:p-8">
+                <h3 className="text-sm sm:text-xl md:text-2xl font-display font-bold mb-0.5 md:mb-1 group-hover:text-primary transition-colors leading-tight">
                   {member.name}
                 </h3>
-                <span className="text-xs font-medium text-primary/70 uppercase tracking-wider mb-4 block">
+                <span className="text-[10px] sm:text-xs font-medium text-primary/70 uppercase tracking-wider mb-2 md:mb-4 block">
                   {member.role}
                 </span>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="hidden sm:block text-sm text-muted-foreground mb-4">
                   {member.bio}
                 </p>
                 {member.skills && (
-                  <ul className="mb-6 space-y-2 text-sm text-muted-foreground">
+                  <ul className="hidden md:block mb-6 space-y-2 text-sm text-muted-foreground">
                     {member.skills.map((skill) => (
                       <li key={skill} className="flex items-start gap-2">
                         <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary" />
@@ -142,16 +142,16 @@ export const Team = () => {
                 )}
 
                 {/* Social Links */}
-                <div className="flex items-center gap-3 pt-4 border-t border-border/30">
+                <div className="flex items-center gap-2 md:gap-3 pt-3 md:pt-4 border-t border-border/30">
                   {member.socials.linkedin && (
                     <a
                       href={member.socials.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-border/50 text-muted-foreground hover:border-primary hover:text-primary hover:bg-primary/10 transition-all"
+                      className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full border border-border/50 text-muted-foreground hover:border-primary hover:text-primary hover:bg-primary/10 transition-all"
                       aria-label="LinkedIn"
                     >
-                      <Linkedin size={16} />
+                      <Linkedin size={14} className="md:w-4 md:h-4" />
                     </a>
                   )}
                   {member.socials.twitter && (
@@ -159,10 +159,10 @@ export const Team = () => {
                       href={member.socials.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-border/50 text-muted-foreground hover:border-primary hover:text-primary hover:bg-primary/10 transition-all"
+                      className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full border border-border/50 text-muted-foreground hover:border-primary hover:text-primary hover:bg-primary/10 transition-all"
                       aria-label="Twitter"
                     >
-                      <Twitter size={16} />
+                      <Twitter size={14} className="md:w-4 md:h-4" />
                     </a>
                   )}
                 </div>
