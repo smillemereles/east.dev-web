@@ -22,6 +22,13 @@ const categories: Category[] = [
     label: "Restaurantes & Gastronomía",
     projects: [
       {
+        name: "Smart order for Masarte Pizzeria",
+        description: "Link de pedidos inteligente con video para Meta Ads. El cliente hace clic, arma su pedido y la orden llega organizada por WhatsApp a la pizzería.",
+        image: "masarte/masartehero.png",
+        year: "2026",
+        url: "https://masartepizzeriapy.shop",
+      },
+      {
         name: "Hoplon Lounge",
         description: "Sitio web elegante para lounge bar con reservas online y menú digital.",
         image: "hoplon/hoplonhero.png",
