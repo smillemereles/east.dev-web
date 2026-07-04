@@ -203,7 +203,7 @@ export const Contact = () => {
                 rel="noopener noreferrer"
                 className="block w-full"
               >
-                <Button type="button" variant="outline" size="lg" className="w-full border-slate-200 hover:border-primary hover:text-primary">
+                <Button type="button" variant="outline" size="lg" className="w-full bg-transparent border-slate-300 text-slate-700 hover:border-primary hover:text-primary hover:bg-slate-50">
                   {t("contact.internationalCta")}
                 </Button>
               </a>
