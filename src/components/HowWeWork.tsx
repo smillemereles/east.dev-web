@@ -80,8 +80,11 @@ export const HowWeWork = () => {
         <div className="mt-20 p-8 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/5 to-electric/5">
           <div className="max-w-2xl">
             <h3 className="text-2xl font-display font-bold mb-4">{t("howWeWork.ctaTitle")}</h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-2">
               {t("howWeWork.ctaDescription")}
+            </p>
+            <p className="text-sm text-primary mb-6 font-medium">
+              {t("howWeWork.internationalNote")}
             </p>
             <a
               href="#contacto"

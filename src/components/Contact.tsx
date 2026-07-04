@@ -68,8 +68,11 @@ export const Contact = () => {
               <span className="text-gradient">{t("contact.highlight")}</span>
             </h2>
             
-            <p className="text-lg text-slate-700 mb-12 max-w-md">
+            <p className="text-lg text-slate-700 mb-4 max-w-md">
               {t("contact.description")}
+            </p>
+            <p className="text-sm font-medium text-primary mb-12 max-w-md">
+              {t("contact.internationalNote")}
             </p>
 
             {/* Contact Info */}
@@ -194,6 +197,16 @@ export const Contact = () => {
                 {t("contact.form.submit")}
                 <Send className="w-4 h-4" />
               </Button>
+              <a
+                href="https://wa.link/jfxdzh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+              >
+                <Button type="button" variant="outline" size="lg" className="w-full bg-transparent border-slate-300 text-slate-700 hover:border-primary hover:text-primary hover:bg-slate-50">
+                  {t("contact.internationalCta")}
+                </Button>
+              </a>
             </form>
           </div>
         </div>

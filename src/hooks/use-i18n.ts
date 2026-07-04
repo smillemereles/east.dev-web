@@ -25,6 +25,8 @@ const translations: Record<Locale, Record<string, any>> = {
       ctaContact: "Empezar proyecto",
       words: ["Directores", "Diseñadores", "Agencias", "Marcas", "Startups"],
       marquee: ["DESARROLLO WEB", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"],
+      internationalBadge: "🌍 Disponible para proyectos internacionales",
+      internationalCta: "Proyecto internacional",
     },
     about: {
       section: "Sobre Nosotros",
@@ -33,11 +35,13 @@ const translations: Record<Locale, Record<string, any>> = {
       paragraph2: "Cada proyecto es una oportunidad de construir puentes: entre tu marca y tus clientes, entre lo tradicional y lo innovador.",
       paragraph3: "Trabajamos codo a codo con emprendedores, pymes y marcas que buscan destacar en el mundo digital con soluciones a medida y diseño con propósito.",
       paragraph4: "Nuestro enfoque combina código limpio, diseño moderno y estrategia para entregar resultados que impactan.",
+      paragraph5: "Desde Paraguay colaboramos con equipos de todo el mundo. Trabajamos de forma remota con comunicación clara, procesos ágiles y entregas que se adaptan a tu zona horaria.",
     },
     services: {
       section: "Servicios",
       header: "Soluciones completas para tu presencia digital",
-      description: "Un conjunto integral de servicios diseñados para llevar tu marca al siguiente nivel.",
+      description: "Un conjunto integral de servicios diseñados para llevar tu marca al siguiente nivel, con alcance internacional.",
+      internationalNote: "Trabajamos de forma remota con equipos y clientes de cualquier país.",
       items: [
         { title: "Desarrollo Web", description: "Sitios web y aplicaciones responsivas con las últimas tecnologías." },
         { title: "Diseño UI/UX", description: "Interfaces intuitivas que mejoran la experiencia del usuario." },
@@ -99,7 +103,8 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "¿Cómo trabajamos?",
       subtitle: "Proceso probado",
       subtitleHighlight: "y trasparente",
-      description: "Metodología ágil con entregas regulares, comunicación clara y foco absoluto en resultados medibles.",
+      description: "Metodología ágil con entregas regulares, comunicación clara y foco absoluto en resultados medibles, adaptada a equipos internacionales.",
+      internationalNote: "Trabajamos de forma remota con clientes en cualquier zona horaria, manteniendo comunicación constante y entregas puntuales.",
       steps: [
         { number: "01", title: "Descubrimiento & Estrategia", description: "Analizamos tu negocio, objetivos y audiencia para definir una estrategia clara y resultados medibles.", points: ["Análisis competitivo", "Research de usuarios", "Definición de KPIs"] },
         { number: "02", title: "Diseño & Prototipado", description: "Creamos wireframes y prototipos interactivos para validar la solución antes de la ejecución.", points: ["Diseño UI/UX", "Prototipos interactivos", "Validación con usuarios"] },
@@ -107,7 +112,7 @@ const translations: Record<Locale, Record<string, any>> = {
         { number: "04", title: "Lanzamiento & Soporte", description: "Deployamos con seguridad, monitoreamos el rendimiento y proveemos soporte continuo.", points: ["Deployment seguro", "Monitoreo 24/7", "Soporte técnico"] },
       ],
       ctaTitle: "Listo para comenzar tu proyecto?",
-      ctaDescription: "Contáctanos hoy y conoce cómo podemos transformar tu visión en realidad.",
+      ctaDescription: "Contáctanos hoy y conoce cómo podemos transformar tu visión en realidad, estés donde estés.",
       ctaButton: "Iniciar conversación",
     },
     team: {
@@ -205,7 +210,7 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "Contacto",
       question: "¿Listo para",
       highlight: "comenzar?",
-      description: "Cuéntanos sobre tu proyecto y recibe una cotización personalizada. Estamos listos para dar vida a tu visión.",
+      description: "Cuéntanos sobre tu proyecto y recibe una cotización personalizada. Estamos listos para dar vida a tu visión, sin importar tu país o zona horaria.",
       emailLabel: "Email",
       locationLabel: "Ubicación",
       email: "east.devpy@gmail.com",
@@ -243,6 +248,8 @@ const translations: Record<Locale, Record<string, any>> = {
         budgetLabel: "• Presupuesto: {budget}",
         messageLabel: "💬 *Mensaje:*",
       },
+      internationalNote: "🌍 Trabajamos con clientes de todo el mundo. Escríbenos en español o inglés.",
+      internationalCta: "Iniciar proyecto internacional",
     },
     footer: {
       description: "Diseño y desarrollo web con identidad propia desde Ciudad del Este. Conectamos tu visión con la tecnología.",
@@ -251,6 +258,7 @@ const translations: Record<Locale, Record<string, any>> = {
       reserved: "© {year} east.dev — Todos los derechos reservados",
       location: "Ciudad del Este, Paraguay",
       phone: "+595 973213591",
+      internationalNote: "Estudio remoto · Clientes internacionales",
     },
     notFound: {
       title: "404",
@@ -278,6 +286,8 @@ const translations: Record<Locale, Record<string, any>> = {
       ctaContact: "Start Project",
       words: ["Directors", "Designers", "Agencies", "Brands", "Startups"],
       marquee: ["WEB DEVELOPMENT", "UI/UX DESIGN", "BRANDING", "MARKETING", "SEO", "E-COMMERCE"],
+      internationalBadge: "🌍 Available for international projects",
+      internationalCta: "International project",
     },
     about: {
       section: "About Us",
@@ -286,11 +296,13 @@ const translations: Record<Locale, Record<string, any>> = {
       paragraph2: "Each project is an opportunity to build bridges: between your brand and your customers, between the traditional and the innovative.",
       paragraph3: "We work side by side with entrepreneurs, SMEs and brands seeking to stand out in the digital world with tailored solutions and purposeful design.",
       paragraph4: "Our approach combines clean code, modern design and strategy to deliver results that make an impact.",
+      paragraph5: "From Paraguay we collaborate with teams around the world. We work remotely with clear communication, agile processes and deliveries adapted to your timezone.",
     },
     services: {
       section: "Services",
       header: "Complete solutions for your digital presence",
-      description: "A comprehensive set of services designed to take your brand to the next level.",
+      description: "A comprehensive set of services designed to take your brand to the next level, available for international clients.",
+      internationalNote: "We work remotely with teams and clients from any country.",
       items: [
         { title: "Web Development", description: "Responsive websites and applications built with the latest technologies." },
         { title: "UI/UX Design", description: "Intuitive interfaces that enhance the user experience." },
@@ -352,7 +364,8 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "How We Work",
       subtitle: "Proven Process",
       subtitleHighlight: "and Transparent",
-      description: "Agile methodology with regular deliveries, clear communication and absolute focus on measurable results.",
+      description: "Agile methodology with regular deliveries, clear communication and absolute focus on measurable results, tailored for international teams.",
+      internationalNote: "We work remotely with clients in any timezone, maintaining constant communication and on-time deliveries.",
       steps: [
         { number: "01", title: "Discovery & Strategy", description: "We analyze your business, goals and audience to define clear strategy and measurable outcomes.", points: ["Competitive Analysis", "User Research", "KPI Definition"] },
         { number: "02", title: "Design & Prototyping", description: "We create wireframes and interactive prototypes to validate the solution before execution.", points: ["UI/UX Design", "Interactive Prototypes", "User Validation"] },
@@ -360,7 +373,7 @@ const translations: Record<Locale, Record<string, any>> = {
         { number: "04", title: "Launch & Support", description: "We deploy securely, monitor performance and provide continuous support.", points: ["Secure Deployment", "24/7 Monitoring", "Technical Support"] },
       ],
       ctaTitle: "Ready to start your project?",
-      ctaDescription: "Contact us today and discover how we can transform your vision into reality.",
+      ctaDescription: "Contact us today and discover how we can transform your vision into reality, wherever you are.",
       ctaButton: "Start Conversation",
     },
     team: {
@@ -458,7 +471,7 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "Contact",
       question: "Ready to",
       highlight: "get started?",
-      description: "Tell us about your project and receive a custom quote. We are ready to bring your vision to life.",
+      description: "Tell us about your project and receive a custom quote. We are ready to bring your vision to life, no matter your country or timezone.",
       emailLabel: "Email",
       locationLabel: "Location",
       email: "east.devpy@gmail.com",
@@ -496,6 +509,8 @@ const translations: Record<Locale, Record<string, any>> = {
         budgetLabel: "• Budget: {budget}",
         messageLabel: "💬 *Message:*",
       },
+      internationalNote: "🌍 We work with clients worldwide. Write to us in English or Spanish.",
+      internationalCta: "Start international project",
     },
     footer: {
       description: "Design and web development with a unique identity from Ciudad del Este. We connect your vision with technology.",
@@ -504,6 +519,7 @@ const translations: Record<Locale, Record<string, any>> = {
       reserved: "© {year} east.dev — All rights reserved",
       location: "Ciudad del Este, Paraguay",
       phone: "+595 973213591",
+      internationalNote: "Remote studio · International clients",
     },
     notFound: {
       title: "404",
@@ -551,6 +567,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("locale", locale);
+      document.documentElement.lang = locale;
     }
   }, [locale]);
 

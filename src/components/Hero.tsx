@@ -58,10 +58,15 @@ export const Hero = () => {
 
       <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
         {/* Top Label */}
-        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-fade-up">
-          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
-          <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            {t("hero.label")}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8 sm:mb-12 animate-fade-up">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
+            <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
+              {t("hero.label")}
+            </span>
+          </div>
+          <span className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs font-medium text-primary tracking-wide">
+            {t("hero.internationalBadge")}
           </span>
         </div>
 
@@ -92,7 +97,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
             <Button variant="hero" size="xl" onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}>
               {t("hero.ctaProjects")}
               <ArrowRight className="w-5 h-5" />
@@ -100,6 +105,11 @@ export const Hero = () => {
             <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}>
               {t("hero.ctaContact")}
             </Button>
+            <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer" className="inline-flex">
+              <Button variant="heroOutline" size="xl">
+                {t("hero.internationalCta")}
+              </Button>
+            </a>
           </div>
         </div>
 
