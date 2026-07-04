@@ -258,6 +258,7 @@ const translations: Record<Locale, Record<string, any>> = {
       reserved: "© {year} east.dev — Todos los derechos reservados",
       location: "Ciudad del Este, Paraguay",
       phone: "+595 973213591",
+      internationalNote: "Estudio remoto · Clientes internacionales",
     },
     notFound: {
       title: "404",
