@@ -120,11 +120,6 @@ const prototypeProjects = [
     url: "https://lleva-elite-journeys.vercel.app/",
   },
   {
-    name: "Farmacia Do Sul",
-    description: "Prototipo de e-commerce para farmacia con catálogo de productos.",
-    url: "https://farmacia-do-sul-e-commerce.vercel.app/",
-  },
-  {
     name: "YoCreo",
     description: "Prototipo de hub digital con diseño moderno y accesible.",
     url: "https://yocreo-digital-hub.vercel.app/",
