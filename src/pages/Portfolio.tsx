@@ -237,19 +237,21 @@ export default function Portfolio() {
       {/* Client Sections */}
       <section className="pb-32">
         <div className="container-custom space-y-24">
-          {filteredClients.map((client) => (
+          {filteredClients.map((client) => {
+            const ct = clientTranslations?.[client.slug];
+            return (
             <div key={client.slug}>
               {/* Client Header */}
               <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                 <div>
                   <span className="text-electric/70 text-xs uppercase tracking-[0.2em] mb-2 block">
-                    {client.category}
+                    {ct?.category ?? client.category}
                   </span>
                   <h2 className="text-3xl md:text-4xl font-display font-bold">
                     {client.name}
                   </h2>
                   <p className="text-muted-foreground mt-2 max-w-xl leading-relaxed">
-                    {client.description}
+                    {ct?.description ?? client.description}
                   </p>
                 </div>
                 <span className="text-muted-foreground/50 text-sm">
@@ -259,7 +261,10 @@ export default function Portfolio() {
 
               {/* Works Grid - Masonry style */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {client.works.map((work) => (
+                {client.works.map((work) => {
+                  const wt = ct?.works?.[String(work.id)];
+                  const translatedType = workTypeTranslations?.[work.type] ?? work.type;
+                  return (
                   <div
                     key={work.id}
                     className="group relative rounded-xl overflow-hidden bg-card/30 border border-border/20 hover:border-electric/30 transition-all duration-500"
@@ -270,7 +275,7 @@ export default function Portfolio() {
                       {work.image ? (
                         <img
                           src={work.image}
-                          alt={work.title}
+                          alt={wt?.title ?? work.title}
                           className="object-cover w-full h-full"
                           loading="lazy"
                         />
@@ -280,7 +285,7 @@ export default function Portfolio() {
                             <Image className="w-6 h-6 text-electric/50" />
                           </div>
                           <p className="text-xs text-muted-foreground/50">
-                            Imagen próximamente
+                            {t("portfolio.imageComingSoon")}
                           </p>
                         </div>
                       )}
@@ -291,18 +296,20 @@ export default function Portfolio() {
                       <span
                         className={`text-xs px-2.5 py-1 rounded-full w-fit mb-2 ${typeColors[work.type] || "bg-card text-foreground"}`}
                       >
-                        {work.type}
+                        {translatedType}
                       </span>
-                      <h3 className="text-sm font-semibold">{work.title}</h3>
+                      <h3 className="text-sm font-semibold">{wt?.title ?? work.title}</h3>
                       <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                        {work.description}
+                        {wt?.description ?? work.description}
                       </p>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
