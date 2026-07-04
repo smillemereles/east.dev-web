@@ -37,7 +37,6 @@ export const Hero = () => {
             alt="Puente de la Amistad con conexión digital"
             className="w-full h-full object-cover opacity-20"
             loading="eager"
-            loading="eager"
             decoding="async"
           />
         </picture>
