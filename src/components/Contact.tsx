@@ -68,8 +68,11 @@ export const Contact = () => {
               <span className="text-gradient">{t("contact.highlight")}</span>
             </h2>
             
-            <p className="text-lg text-slate-700 mb-12 max-w-md">
+            <p className="text-lg text-slate-700 mb-4 max-w-md">
               {t("contact.description")}
+            </p>
+            <p className="text-sm font-medium text-primary mb-12 max-w-md">
+              {t("contact.internationalNote")}
             </p>
 
             {/* Contact Info */}
