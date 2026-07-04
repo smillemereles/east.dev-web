@@ -471,7 +471,7 @@ const translations: Record<Locale, Record<string, any>> = {
       section: "Contact",
       question: "Ready to",
       highlight: "get started?",
-      description: "Tell us about your project and receive a custom quote. We are ready to bring your vision to life.",
+      description: "Tell us about your project and receive a custom quote. We are ready to bring your vision to life, no matter your country or timezone.",
       emailLabel: "Email",
       locationLabel: "Location",
       email: "east.devpy@gmail.com",
@@ -509,6 +509,8 @@ const translations: Record<Locale, Record<string, any>> = {
         budgetLabel: "• Budget: {budget}",
         messageLabel: "💬 *Message:*",
       },
+      internationalNote: "🌍 We work with clients worldwide. Write to us in English or Spanish.",
+      internationalCta: "Start international project",
     },
     footer: {
       description: "Design and web development with a unique identity from Ciudad del Este. We connect your vision with technology.",
