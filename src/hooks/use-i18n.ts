@@ -75,6 +75,7 @@ const translations: Record<Locale, Record<string, any>> = {
           label: "E-commerce & Retail",
           projects: {
             "Farma Next": "E-commerce farmacéutico con catálogo de productos y compra online.",
+            "Farmacia Do Sul": "E-commerce farmacéutico con catálogo de productos, carrito de compras y checkout en guaraníes.",
             "Black Colors": "E-commerce y landing de impresión sustentable con catálogo y servicios de leasing.",
             "Mania Group": "Tienda online multi-categoría: celulares, vapes y perfumería premium.",
           },
@@ -95,7 +96,6 @@ const translations: Record<Locale, Record<string, any>> = {
       },
       prototypes: {
         "Lleva Elite Journeys": "Prototipo de plataforma de viajes premium con experiencias exclusivas.",
-        "Farmacia Do Sul": "Prototipo de e-commerce para farmacia con catálogo de productos.",
         "YoCreo": "Prototipo de hub digital con diseño moderno y accesible.",
       },
     },
@@ -336,6 +336,7 @@ const translations: Record<Locale, Record<string, any>> = {
           label: "E-commerce & Retail",
           projects: {
             "Farma Next": "Pharmaceutical e-commerce with a product catalog and online purchasing.",
+            "Farmacia Do Sul": "Pharmaceutical e-commerce with product catalog, shopping cart and checkout in guaraníes.",
             "Black Colors": "E-commerce and landing page for sustainable printing with catalog and leasing services.",
             "Mania Group": "Multi-category online store: phones, vapes and premium perfumery.",
           },
@@ -356,7 +357,6 @@ const translations: Record<Locale, Record<string, any>> = {
       },
       prototypes: {
         "Lleva Elite Journeys": "Prototype of a premium travel platform with exclusive experiences.",
-        "Farmacia Do Sul": "Prototype of a pharmacy e-commerce with product catalog.",
         "YoCreo": "Prototype of a digital hub with a modern, accessible design.",
       },
     },

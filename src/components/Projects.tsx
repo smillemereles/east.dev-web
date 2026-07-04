@@ -56,6 +56,13 @@ const categories: Category[] = [
         url: "https://www.farmanext.com.py",
       },
       {
+        name: "Farmacia Do Sul",
+        description: "E-commerce farmacéutico con catálogo de productos, carrito de compras y checkout en guaraníes.",
+        image: "fardosul/farmahero.png",
+        year: "2026",
+        url: "https://farmacia-do-sul-e-commerce.vercel.app/",
+      },
+      {
         name: "Black Colors",
         description: "E-commerce y landing de impresión sustentable con catálogo y servicios de leasing.",
         image: "blackcolors/hero.png",
@@ -111,11 +118,6 @@ const prototypeProjects = [
     name: "Lleva Elite Journeys",
     description: "Prototipo de plataforma de viajes premium con experiencias exclusivas.",
     url: "https://lleva-elite-journeys.vercel.app/",
-  },
-  {
-    name: "Farmacia Do Sul",
-    description: "Prototipo de e-commerce para farmacia con catálogo de productos.",
-    url: "https://farmacia-do-sul-e-commerce.vercel.app/",
   },
   {
     name: "YoCreo",
