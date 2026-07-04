@@ -33,12 +33,30 @@ const teamMembers: TeamMember[] = [
       twitter: "https://twitter.com/smillemereles",
     },
   },
+  {
+    id: 2,
+    name: "Franco Boggiano",
+    role: "Web Designer",
+    image: "/team-franco.svg",
+    bio: "Diseñador web enfocado en interfaces limpias, navegación intuitiva y experiencias visuales que comunican con claridad la propuesta de cada marca.",
+    skills: [
+      "Diseño web visual",
+      "UI/UX y prototipado",
+      "Responsive design",
+      "Sistemas de diseño",
+      "Diseño orientado a conversiones",
+    ],
+    socials: {
+      linkedin: "https://linkedin.com/in/francoboggiano",
+      twitter: "https://twitter.com/francoboggiano",
+    },
+  },
 ];
 
 const stats = [
   { number: "15+", label: "projects" },
   { number: "8+", label: "clients" },
-  { number: "1", label: "team" },
+  { number: "2", label: "team" },
 ];
 
 export const Team = () => {
