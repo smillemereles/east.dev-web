@@ -197,7 +197,7 @@ export const Projects = () => {
                                 {project.name}
                               </h4>
                               <p className="text-muted-foreground text-xs sm:text-sm mt-1 max-w-md block">
-                                {project.description}
+                                {catTranslations?.[category.id]?.projects?.[project.name] ?? project.description}
                               </p>
                             </div>
                           </div>
