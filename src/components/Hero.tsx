@@ -58,10 +58,15 @@ export const Hero = () => {
 
       <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
         {/* Top Label */}
-        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-fade-up">
-          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
-          <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            {t("hero.label")}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8 sm:mb-12 animate-fade-up">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
+            <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
+              {t("hero.label")}
+            </span>
+          </div>
+          <span className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs font-medium text-primary tracking-wide">
+            {t("hero.internationalBadge")}
           </span>
         </div>
 
