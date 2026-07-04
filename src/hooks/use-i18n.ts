@@ -78,6 +78,7 @@ const translations: Record<Locale, Record<string, any>> = {
         agro: {
           label: "Agro & Industria",
           projects: {
+            "SAISA": "Sitio web corporativo para servicios ambientales integrales, enfocado en empresas e industrias con soluciones sostenibles y economía circular.",
             "CMP Agro": "Sitio corporativo para soluciones tecnológicas al agro-negocio, con catálogo de productos y marcas.",
           },
         },
