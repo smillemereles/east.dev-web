@@ -567,6 +567,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("locale", locale);
+      document.documentElement.lang = locale;
     }
   }, [locale]);
 
