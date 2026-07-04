@@ -97,7 +97,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
             <Button variant="hero" size="xl" onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}>
               {t("hero.ctaProjects")}
               <ArrowRight className="w-5 h-5" />
@@ -105,6 +105,11 @@ export const Hero = () => {
             <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}>
               {t("hero.ctaContact")}
             </Button>
+            <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer" className="inline-flex">
+              <Button variant="heroOutline" size="xl">
+                {t("hero.internationalCta")}
+              </Button>
+            </a>
           </div>
         </div>
 
