@@ -349,7 +349,6 @@ const translations: Record<Locale, Record<string, any>> = {
         gastronomia: {
           label: "Restaurants & Gastronomy",
           projects: {
-            "Smart order for Masarte Pizzeria": "Smart ordering link with a Meta Ads video. Customers click, build their order and the pizzeria receives it neatly on WhatsApp.",
             "Hoplon Lounge": "Elegant website for a lounge bar with online reservations and a digital menu.",
             "La Mansa": "Gastronomy platform with an ordering system and digital menu.",
           },
