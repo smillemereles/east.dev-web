@@ -460,11 +460,8 @@ const translations: Record<Locale, Record<string, any>> = {
       imageAlt: "Chef David Sánchez website in Park City, Utah",
     },
     team: {
-      section: "Why Choose east.dev",
-      title: "Meet your digital partner",
-      titleAlt: "for web design and development",
-      description: "As web and digital designers, strategists and content creators, we build projects focused on branding, UX, performance and measurable outcomes.",
-      stats: { projects: "Projects Completed", clients: "Satisfied Clients", team: "Team" },
+      section: "Why choose east.dev?",
+      answer: "Because we combine design, technology, and communication in one team. We work remotely with clear processes, delivering clean code and purposeful design focused on real results: more bookings, more sales, and a brand that stands out.",
     },
     portfolio: {
       sectionLabel: "Digital Design Portfolio",
