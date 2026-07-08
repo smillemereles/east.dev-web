@@ -1,4 +1,4 @@
-import { ArrowUpRight, Clock } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
 
@@ -106,24 +106,11 @@ const categories: Category[] = [
   },
 ];
 
-const prototypeProjects = [
-  {
-    name: "Lleva Elite Journeys",
-    description: "Prototipo de plataforma de viajes premium con experiencias exclusivas.",
-    url: "https://lleva-elite-journeys.vercel.app/",
-  },
-  {
-    name: "YoCreo",
-    description: "Prototipo de hub digital con diseño moderno y accesible.",
-    url: "https://yocreo-digital-hub.vercel.app/",
-  },
-];
 
 export const Projects = () => {
   const { t } = useTranslation();
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
   const catTranslations = t("projects.categories") as Record<string, { label: string; projects: Record<string, string> }>;
-  const prototypeTranslations = t("projects.prototypes") as Record<string, string>;
 
   return (
     <section id="proyectos" className="section-padding relative bg-muted/40">
@@ -235,36 +222,6 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* Prototypes */}
-        <div className="mt-20">
-          <div className="flex items-center gap-3 mb-8">
-            <Clock className="w-5 h-5 text-muted-foreground" />
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-              {t("projects.prototypesLabel")}
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {prototypeProjects.map((project) => (
-              <a
-                key={project.name}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-card p-6 rounded-xl group hover:border-primary/50 transition-all"
-              >
-                <h4 className="font-display font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {project.name}
-                </h4>
-                <p className="text-muted-foreground text-sm mb-4">{prototypeTranslations?.[project.name] ?? project.description}</p>
-                <div className="flex items-center gap-2 text-sm text-primary">
-                  <span>{t("projects.prototypeAction")}</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

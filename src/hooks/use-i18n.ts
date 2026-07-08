@@ -59,8 +59,6 @@ const translations: Record<Locale, Record<string, any>> = {
       subtitle: "Design With Purpose",
       subtitleAlt: "Build With Impact",
       header: "Trabajos que hablan por nosotros",
-      prototypesLabel: "Prototipos Web",
-      prototypeAction: "Ver prototipo",
       projectSingular: "proyecto",
       projectPlural: "proyectos",
       categories: {
@@ -93,10 +91,6 @@ const translations: Record<Locale, Record<string, any>> = {
             "Lleva Viajes": "Agencia de viajes con catálogo de destinos y cotización.",
           },
         },
-      },
-      prototypes: {
-        "Lleva Elite Journeys": "Prototipo de plataforma de viajes premium con experiencias exclusivas.",
-        "YoCreo": "Prototipo de hub digital con diseño moderno y accesible.",
       },
     },
     howWeWork: {
@@ -360,8 +354,6 @@ const translations: Record<Locale, Record<string, any>> = {
       subtitle: "Design With Purpose",
       subtitleAlt: "Build With Impact",
       header: "Work that speaks for us",
-      prototypesLabel: "Web Prototypes",
-      prototypeAction: "See prototype",
       projectSingular: "project",
       projectPlural: "projects",
       categories: {
@@ -394,10 +386,6 @@ const translations: Record<Locale, Record<string, any>> = {
             "Lleva Viajes": "Travel agency with destination catalog and quote requests.",
           },
         },
-      },
-      prototypes: {
-        "Lleva Elite Journeys": "Prototype of a premium travel platform with exclusive experiences.",
-        "YoCreo": "Prototype of a digital hub with a modern, accessible design.",
       },
     },
     howWeWork: {
