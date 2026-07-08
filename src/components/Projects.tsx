@@ -1,4 +1,4 @@
-import { ArrowUpRight, Clock } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
 
