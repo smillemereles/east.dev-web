@@ -2,7 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
-const heroBg = { url: "/hero-bridge-bg.png" };
+import heroBgPng from "@/assets/hero-bridge-bg.png.asset.json";
+import heroBgWebp from "@/assets/hero-bridge-bg.webp.asset.json";
+import heroBgAvif from "@/assets/hero-bridge-bg.avif.asset.json";
 
 
 
@@ -31,9 +33,10 @@ export const Hero = () => {
       {/* Subtle hero background image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <picture>
-          <source srcSet="/hero-bridge-bg.webp" type="image/webp" />
+          <source srcSet={heroBgAvif.url} type="image/avif" />
+          <source srcSet={heroBgWebp.url} type="image/webp" />
           <img
-            src="/hero-bridge-bg.png"
+            src={heroBgPng.url}
             alt="Puente de la Amistad con conexión digital"
             className="w-full h-full object-cover opacity-20"
             loading="eager"
