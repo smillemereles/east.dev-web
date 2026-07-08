@@ -2,7 +2,7 @@ import { Search, Globe, TrendingUp, FileText, ArrowRight } from "lucide-react";
 import { useTranslation } from "@/hooks/use-i18n";
 
 export const SEOClients = () => {
-  const { t, locale } = useTranslation();
+  const { t } = useTranslation();
 
   const articles = (t("seoClients.articles") as string[]) || [];
 
