@@ -4,6 +4,7 @@ import { About } from "@/components/About";
 import { Services } from "@/components/Services";
 import { SmartOrder } from "@/components/SmartOrder";
 import { HowWeWork } from "@/components/HowWeWork";
+import { SEOClients } from "@/components/SEOClients";
 import { Projects } from "@/components/Projects";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
