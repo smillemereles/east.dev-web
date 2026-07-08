@@ -159,11 +159,8 @@ const translations: Record<Locale, Record<string, any>> = {
       imageAlt: "Sitio web del chef David Sánchez en Park City, Utah",
     },
     team: {
-      section: "Por Qué Elegir a east.dev",
-      title: "Conoce a tu socio digital",
-      titleAlt: "para diseño y desarrollo web",
-      description: "Como diseñadores web y digitales, estrategas y creadores de contenido, desarrollamos proyectos con foco en branding, experiencia de usuario, rendimiento y resultados comerciales.",
-      stats: { projects: "Proyectos Completados", clients: "Clientes Satisfechos", team: "Equipo" },
+      section: "¿Por qué elegir east.dev?",
+      answer: "Porque unimos diseño, tecnología y comunicación en un solo equipo. Trabajamos a distancia con procesos claros, entregamos código limpio y diseño con propósito, y nos enfocamos en resultados reales: más reservas, más ventas y una marca que se destaca.",
     },
     portfolio: {
       sectionLabel: "Portafolio de Diseño Digital",
