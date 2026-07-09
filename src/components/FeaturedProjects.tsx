@@ -235,14 +235,14 @@ export const FeaturedProjects = () => {
             variants={fadeUp}
             className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-6"
           >
-            Trabajos que <span className="text-gradient">brillan</span>
+            {t("featuredProjects.title")}{" "}
+            <span className="text-gradient">{t("featuredProjects.titleHighlight")}</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="text-xl sm:text-2xl text-muted-foreground font-light max-w-2xl"
           >
-            Una selección de proyectos donde estrategia, diseño y código se unen para generar
-            resultados reales.
+            {t("featuredProjects.description")}
           </motion.p>
         </motion.div>
 
