@@ -94,6 +94,11 @@ const translations: Record<Locale, Record<string, any>> = {
         },
       },
     },
+    featuredProjects: {
+      title: "Trabajos que",
+      titleHighlight: "brillan",
+      description: "Una selección de proyectos donde estrategia, diseño y código se unen para generar resultados reales.",
+    },
     howWeWork: {
       section: "¿Cómo trabajamos?",
       subtitle: "Así lo hacemos",
@@ -389,6 +394,11 @@ const translations: Record<Locale, Record<string, any>> = {
           },
         },
       },
+    },
+    featuredProjects: {
+      title: "Work that",
+      titleHighlight: "shines",
+      description: "A curated selection of projects where strategy, design and code come together to deliver real results.",
     },
     howWeWork: {
       section: "How We Work",

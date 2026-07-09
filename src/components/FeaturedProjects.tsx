@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "@/hooks/use-i18n";
 import {
   ArrowUpRight,
   CreditCard,
@@ -205,6 +206,7 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
 );
 
 export const FeaturedProjects = () => {
+  const { t } = useTranslation();
   return (
     <section
       id="proyectos-estrella"
@@ -216,7 +218,7 @@ export const FeaturedProjects = () => {
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-12">
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
-            Proyectos Estrella
+            {t("nav.featured")}
           </span>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
         </div>
@@ -233,14 +235,14 @@ export const FeaturedProjects = () => {
             variants={fadeUp}
             className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-6"
           >
-            Trabajos que <span className="text-gradient">brillan</span>
+            {t("featuredProjects.title")}{" "}
+            <span className="text-gradient">{t("featuredProjects.titleHighlight")}</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="text-xl sm:text-2xl text-muted-foreground font-light max-w-2xl"
           >
-            Una selección de proyectos donde estrategia, diseño y código se unen para generar
-            resultados reales.
+            {t("featuredProjects.description")}
           </motion.p>
         </motion.div>
 
