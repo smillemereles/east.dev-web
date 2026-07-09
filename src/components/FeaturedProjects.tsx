@@ -228,9 +228,15 @@ export const FeaturedProjects = () => {
     >
       {/* Dramatic background layers */}
       <div className="absolute inset-0 bg-featured pointer-events-none" />
-      <div className="absolute inset-0 bg-noise opacity-[0.025] pointer-events-none mix-blend-overlay" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
+      <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+
+      {/* Header glow orb */}
+      <div
+        className="glow-orb w-[60vw] h-[40vh] top-0 left-1/2 -translate-x-1/2 bg-primary/15"
+        aria-hidden="true"
+      />
 
       <div className="container-wide relative z-10">
         {/* Section Label */}
@@ -273,7 +279,7 @@ export const FeaturedProjects = () => {
         {/* Zigzag projects */}
         <div className="relative space-y-32 sm:space-y-44 lg:space-y-56">
           {/* Vertical connecting line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/30 to-transparent hidden lg:block" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/40 to-transparent hidden lg:block" />
 
           {featuredProjects.map((project, index) => {
             const reversed = index % 2 === 1;
@@ -286,9 +292,17 @@ export const FeaturedProjects = () => {
                 variants={stagger}
                 className="relative grid lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-28 items-center"
               >
+                {/* Ambient glow orb per project */}
+                <div
+                  className={`glow-orb w-[40vw] h-[30vh] top-1/2 -translate-y-1/2 ${
+                    reversed ? "-left-[10vw] bg-primary/10" : "-right-[10vw] bg-accent/10"
+                  }`}
+                  aria-hidden="true"
+                />
+
                 {/* Giant decorative index */}
                 <div
-                  className={`absolute -top-20 sm:-top-28 lg:-top-32 font-display font-bold text-[8rem] sm:text-[10rem] lg:text-[14rem] leading-none text-foreground/[0.03] select-none pointer-events-none z-0 ${
+                  className={`absolute -top-20 sm:-top-28 lg:-top-32 font-display font-bold text-[8rem] sm:text-[10rem] lg:text-[14rem] leading-none text-foreground/[0.04] select-none pointer-events-none z-0 ${
                     reversed ? "lg:left-0 lg:text-left" : "lg:right-0 lg:text-right"
                   }`}
                   aria-hidden="true"
@@ -313,3 +327,4 @@ export const FeaturedProjects = () => {
     </section>
   );
 };
+
