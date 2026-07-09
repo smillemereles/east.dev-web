@@ -206,6 +206,7 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
 );
 
 export const FeaturedProjects = () => {
+  const { t } = useTranslation();
   return (
     <section
       id="proyectos-estrella"
