@@ -308,6 +308,7 @@ const translations: Record<Locale, Record<string, any>> = {
       services: "Services",
       projects: "Projects",
       portfolio: "Portfolio",
+      featured: "Featured Projects",
       international: "International",
       contact: "Contact",
       contactButton: "Contact",
