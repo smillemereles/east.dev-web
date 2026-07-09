@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#nosotros", key: "nav.about" },
   { href: "#servicios", key: "nav.services" },
   { href: "#proyectos", key: "nav.projects" },
+  { href: "/proyectos-estrella", key: "nav.featured" },
   { href: "/portafolio", key: "nav.portfolio" },
   { href: "/internacional", key: "nav.international" },
   { href: "#contacto", key: "nav.contact" },

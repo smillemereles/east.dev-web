@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import International from "./pages/International";
+import Featured from "./pages/Featured";
 import NotFound from "./pages/NotFound";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/portafolio" element={<Portfolio />} />
           <Route path="/internacional" element={<International />} />
+          <Route path="/proyectos-estrella" element={<Featured />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
