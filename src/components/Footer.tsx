@@ -53,7 +53,7 @@ export const Footer = () => {
 
   return (
     <motion.footer
-      className="relative overflow-hidden border-t border-white/15 bg-white/10"
+      className="relative overflow-hidden border-t border-brand/20 bg-brand/10"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
@@ -62,7 +62,7 @@ export const Footer = () => {
       {/* Animated background accents */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl"
+        className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand/20 blur-3xl"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -70,7 +70,7 @@ export const Footer = () => {
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 -right-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl"
+        className="pointer-events-none absolute -bottom-32 -right-24 h-80 w-80 rounded-full bg-mist/10 blur-3xl"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -161,7 +161,7 @@ export const Footer = () => {
               variants={socialVariants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 rounded-full border border-white/20 text-white bg-transparent flex items-center justify-center hover:border-white transition-colors"
+              className="w-10 h-10 rounded-full border border-snow/20 text-snow bg-transparent flex items-center justify-center hover:border-snow transition-colors"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path d="M20.52 3.48a11.86 11.86 0 00-16.8 0A11.86 11.86 0 002 12.35c0 2.08.55 4.11 1.6 5.9L2 22l3.95-1.03a11.86 11.86 0 005.57 1.43h.01c6.5 0 11.8-5.28 11.8-11.8 0-3.16-1.24-6.12-3.24-8.18zm-8.53 17.04h-.01a9.7 9.7 0 01-4.94-1.34l-.35-.21-2.35.62.63-2.28-.23-.37A9.67 9.67 0 013.88 12.35C3.88 7.12 7.95 3.05 13.18 3.05c2.53 0 4.9.99 6.68 2.77a9.38 9.38 0 012.77 6.66 9.7 9.7 0 01-9.7 9.7zm5.31-7.24c-.29-.15-1.7-.84-1.96-.93-.26-.1-.45-.15-.64.15s-.73.93-.9 1.12c-.16.19-.32.2-.61.07a8.55 8.55 0 01-2.52-1.55 9.64 9.64 0 01-1.8-2.24c-.19-.33 0-.51.14-.67.14-.14.31-.37.47-.56.15-.18.2-.31.3-.52.1-.2.05-.38-.02-.53-.07-.15-.64-1.54-.88-2.12-.23-.55-.47-.48-.64-.49-.17-.01-.37-.01-.57-.01-.19 0-.5.07-.76.37-.26.3-1.01.99-1.01 2.42 0 1.43 1.03 2.82 1.17 3.02.13.2 2.02 3.08 4.9 4.32.68.29 1.21.46 1.62.59.68.21 1.3.18 1.79.11.55-.09 1.7-.69 1.94-1.36.24-.65.24-1.21.17-1.33-.07-.12-.26-.2-.55-.35z" />

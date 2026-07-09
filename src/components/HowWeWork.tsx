@@ -14,7 +14,7 @@ export const HowWeWork = () => {
   return (
     <section className="section-padding relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-brand/5 via-transparent to-mist/5 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Section Label */}

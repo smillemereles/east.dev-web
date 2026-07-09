@@ -46,15 +46,30 @@
     --steel: 210 10% 45%;
     --electric: 210 100% 65%;
 
+    /* Brand palette from uploaded swatches */
+    --brand: 202 29% 39%;
+    --brand-light: 202 29% 55%;
+    --brand-dark: 202 35% 25%;
+    --brand-foreground: 0 0% 99%;
+    --mist: 201 22% 74%;
+    --mist-light: 201 25% 88%;
+    --mist-dark: 201 20% 60%;
+    --snow: 0 0% 99.6%;
+    --snow-foreground: 202 30% 20%;
+
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 30% 8%), hsl(220 40% 4%));
     --gradient-glow: radial-gradient(ellipse at center, hsl(210 100% 65% / 0.15), transparent 70%);
     --gradient-card: linear-gradient(180deg, hsl(220 20% 12%), hsl(220 20% 8%));
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-dark)), hsl(var(--brand)));
+    --gradient-mist: linear-gradient(180deg, hsl(var(--mist-light)), hsl(var(--mist)));
+    --gradient-brand-radial: radial-gradient(ellipse at center, hsl(var(--brand) / 0.2), transparent 70%);
 
     /* Shadows */
     --shadow-soft: 0 4px 30px -2px hsl(210 100% 65% / 0.1);
     --shadow-card: 0 20px 60px -20px hsl(0 0% 0% / 0.5);
     --shadow-glow: 0 0 80px hsl(210 100% 65% / 0.3);
+    --shadow-brand-glow: 0 0 80px hsl(var(--brand) / 0.3);
 
     --sidebar-background: 220 20% 6%;
     --sidebar-foreground: 210 20% 95%;
@@ -142,10 +157,10 @@
 
   .bg-featured {
     background-image:
-      radial-gradient(ellipse 90% 55% at 50% -15%, hsl(var(--primary) / 0.22), transparent 60%),
-      radial-gradient(ellipse 70% 50% at 90% 35%, hsl(var(--primary) / 0.14), transparent 55%),
-      radial-gradient(ellipse 60% 35% at 10% 75%, hsl(var(--accent) / 0.12), transparent 55%),
-      radial-gradient(ellipse 80% 40% at 50% 110%, hsl(var(--primary) / 0.1), transparent 55%);
+      radial-gradient(ellipse 90% 55% at 50% -15%, hsl(var(--brand) / 0.22), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 90% 35%, hsl(var(--brand) / 0.14), transparent 55%),
+      radial-gradient(ellipse 60% 35% at 10% 75%, hsl(var(--mist) / 0.12), transparent 55%),
+      radial-gradient(ellipse 80% 40% at 50% 110%, hsl(var(--brand) / 0.1), transparent 55%);
   }
 
   .bg-noise {

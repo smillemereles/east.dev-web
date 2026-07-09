@@ -122,7 +122,7 @@ const stagger = {
 const ProjectMedia = ({ project }: { project: FeaturedProject }) => (
   <motion.div
     variants={scaleIn}
-    className="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-border/40 bg-card/40 aspect-[16/9] shadow-card-hover hover:shadow-glow transition-all duration-700"
+    className="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-mist/20 bg-snow/5 aspect-[16/9] shadow-card-hover hover:shadow-brand-glow transition-all duration-700"
   >
     {project.videoSrc ? (
       <video
@@ -143,8 +143,8 @@ const ProjectMedia = ({ project }: { project: FeaturedProject }) => (
         loading="lazy"
       />
     )}
-    <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-2xl sm:rounded-3xl pointer-events-none" />
-    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+    <div className="absolute inset-0 ring-1 ring-inset ring-snow/5 rounded-2xl sm:rounded-3xl pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
   </motion.div>
 );
 
@@ -152,14 +152,14 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
   <motion.div variants={stagger} className="flex flex-col relative z-10">
     <motion.span
       variants={fadeUp}
-      className="text-xs font-mono text-muted-foreground tracking-[0.3em] uppercase mb-5"
+      className="text-xs font-mono text-mist/70 tracking-[0.3em] uppercase mb-5"
     >
       Proyecto Estrella · 0{index + 1}
     </motion.span>
 
     <motion.span
       variants={fadeUp}
-      className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-6"
+      className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full bg-mist/20 text-mist text-xs sm:text-sm font-medium mb-6"
     >
       {project.category}
     </motion.span>
@@ -171,7 +171,7 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
       {project.name}
     </motion.h3>
 
-    <motion.p variants={fadeUp} className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
+    <motion.p variants={fadeUp} className="text-base sm:text-lg text-mist/80 leading-relaxed mb-10 max-w-xl">
       {project.description}
     </motion.p>
 
@@ -180,10 +180,10 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
         <motion.li
           key={f.label}
           variants={fadeUp}
-          className="flex items-start gap-3 text-sm text-foreground/80"
+          className="flex items-start gap-3 text-sm text-snow/90"
         >
-          <span className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-            <f.icon className="w-4 h-4 text-primary" />
+          <span className="w-9 h-9 rounded-xl bg-mist/20 flex items-center justify-center shrink-0">
+            <f.icon className="w-4 h-4 text-mist" />
           </span>
           <span className="pt-1.5 leading-snug">{f.label}</span>
         </motion.li>
@@ -195,7 +195,7 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
         {project.tech.map((t) => (
           <span
             key={t}
-            className="px-3 py-1 rounded-full border border-border/60 text-xs font-mono text-muted-foreground"
+            className="px-3 py-1 rounded-full border border-mist/30 text-xs font-mono text-mist/80"
           >
             {t}
           </span>
@@ -209,7 +209,7 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 px-7 py-3.5 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-medium transition-all hover:shadow-glow"
+          className="group inline-flex items-center gap-2 px-7 py-3.5 bg-brand hover:bg-brand/90 text-brand-foreground rounded-xl font-medium transition-all hover:shadow-brand-glow"
         >
           Visitar sitio
           <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -224,17 +224,17 @@ export const FeaturedProjects = () => {
   return (
     <section
       id="proyectos-estrella"
-      className="section-padding relative overflow-hidden bg-navy-dark"
+      className="section-padding relative overflow-hidden bg-brand-dark"
     >
       {/* Dramatic background layers */}
       <div className="absolute inset-0 bg-featured pointer-events-none" />
       <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mist/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mist/30 to-transparent" />
 
       {/* Header glow orb */}
       <div
-        className="glow-orb w-[60vw] h-[40vh] top-0 left-1/2 -translate-x-1/2 bg-primary/15"
+        className="glow-orb w-[60vw] h-[40vh] top-0 left-1/2 -translate-x-1/2 bg-brand/15"
         aria-hidden="true"
       />
 
@@ -247,10 +247,10 @@ export const FeaturedProjects = () => {
           variants={fadeIn}
           className="flex items-center gap-4 mb-14"
         >
-          <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
+          <span className="text-xs font-medium text-mist/70 tracking-[0.3em] uppercase">
             {t("nav.featured")}
           </span>
-          <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
+          <div className="flex-1 h-[1px] bg-gradient-to-r from-mist/40 to-transparent" />
         </motion.div>
 
         {/* Header */}
@@ -270,7 +270,7 @@ export const FeaturedProjects = () => {
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-light max-w-3xl leading-relaxed"
+            className="text-xl sm:text-2xl lg:text-3xl text-mist/80 font-light max-w-3xl leading-relaxed"
           >
             {t("featuredProjects.description")}
           </motion.p>
@@ -279,7 +279,7 @@ export const FeaturedProjects = () => {
         {/* Zigzag projects */}
         <div className="relative space-y-32 sm:space-y-44 lg:space-y-56">
           {/* Vertical connecting line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/40 to-transparent hidden lg:block" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-mist/30 to-transparent hidden lg:block" />
 
           {featuredProjects.map((project, index) => {
             const reversed = index % 2 === 1;
@@ -295,14 +295,14 @@ export const FeaturedProjects = () => {
                 {/* Ambient glow orb per project */}
                 <div
                   className={`glow-orb w-[40vw] h-[30vh] top-1/2 -translate-y-1/2 ${
-                    reversed ? "-left-[10vw] bg-primary/10" : "-right-[10vw] bg-accent/10"
+                    reversed ? "-left-[10vw] bg-brand/10" : "-right-[10vw] bg-mist/10"
                   }`}
                   aria-hidden="true"
                 />
 
                 {/* Giant decorative index */}
                 <div
-                  className={`absolute -top-20 sm:-top-28 lg:-top-32 font-display font-bold text-[8rem] sm:text-[10rem] lg:text-[14rem] leading-none text-foreground/[0.04] select-none pointer-events-none z-0 ${
+                  className={`absolute -top-20 sm:-top-28 lg:-top-32 font-display font-bold text-[8rem] sm:text-[10rem] lg:text-[14rem] leading-none text-snow/[0.04] select-none pointer-events-none z-0 ${
                     reversed ? "lg:left-0 lg:text-left" : "lg:right-0 lg:text-right"
                   }`}
                   aria-hidden="true"

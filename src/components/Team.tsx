@@ -5,7 +5,7 @@ export const Team = () => {
 
   return (
     <section id="por-que-elegir" className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-transparent pointer-events-none" />
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">

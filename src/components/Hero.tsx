@@ -48,9 +48,9 @@ export const Hero = () => {
       </div>
 
       {/* Background Glow Effects */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-electric/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-mist/5 rounded-full blur-[120px] pointer-events-none" />
       
       {/* Grid overlay */}
       <div className="absolute inset-0 opacity-[0.015]" style={{
@@ -68,7 +68,7 @@ export const Hero = () => {
               {t("hero.label")}
             </span>
           </div>
-          <span className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs font-medium text-primary tracking-wide">
+          <span className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full border border-brand/30 bg-brand/5 text-xs font-medium text-brand tracking-wide">
             {t("hero.internationalBadge")}
           </span>
         </div>
@@ -127,7 +127,7 @@ export const Hero = () => {
               {(t("hero.marquee") as string[]).map((item) => (
                 <span key={item} className="text-sm font-medium text-muted-foreground/50 tracking-[0.2em] uppercase flex items-center gap-4">
                   {item}
-                  <span className="w-2 h-2 rounded-full bg-primary/30" />
+                  <span className="w-2 h-2 rounded-full bg-brand/30" />
                 </span>
               ))}
             </div>

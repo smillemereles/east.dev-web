@@ -113,7 +113,7 @@ export const Projects = () => {
   const catTranslations = t("projects.categories") as Record<string, { label: string; projects: Record<string, string> }>;
 
   return (
-    <section id="proyectos" className="section-padding relative bg-muted/40">
+    <section id="proyectos" className="section-padding relative bg-brand/5">
       <div className="container-custom">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
