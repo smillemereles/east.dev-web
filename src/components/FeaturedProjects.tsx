@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "@/hooks/use-i18n";
 import {
   ArrowUpRight,
   CreditCard,
