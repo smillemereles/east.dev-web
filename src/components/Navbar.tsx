@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/proyectos-estrella", key: "nav.featured" },
   { href: "/portafolio", key: "nav.portfolio" },
   { href: "/internacional", key: "nav.international" },
-  { href: "#contacto", key: "nav.contact" },
 ];
 
 export const Navbar = () => {
