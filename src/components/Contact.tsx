@@ -46,29 +46,29 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="section-padding relative bg-slate-50 text-slate-950">
+    <section id="contacto" className="section-padding relative bg-mist text-snow-foreground">
       {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
-          <span className="text-xs font-medium text-slate-600 tracking-[0.3em] uppercase">
+          <span className="text-xs font-medium text-brand-dark/70 tracking-[0.3em] uppercase">
             {t("contact.section")}
           </span>
-          <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
+          <div className="flex-1 h-[1px] bg-gradient-to-r from-mist-dark/50 to-transparent" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-20">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-8 text-slate-950">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-8 text-snow-foreground">
               {t("contact.question")}
               <br />
               <span className="text-gradient">{t("contact.highlight")}</span>
             </h2>
             
-            <p className="text-lg text-slate-700 mb-4 max-w-md">
+            <p className="text-lg text-brand-dark/80 mb-4 max-w-md">
               {t("contact.description")}
             </p>
             <p className="text-sm font-medium text-primary mb-12 max-w-md">
@@ -77,35 +77,35 @@ export const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <a href="mailto:east.devpy@gmail.com" className="group flex items-center gap-4 p-4 -m-4 rounded-xl hover:bg-white transition-colors">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Mail className="w-5 h-5 text-primary" />
+              <a href="mailto:east.devpy@gmail.com" className="group flex items-center gap-4 p-4 -m-4 rounded-xl hover:bg-snow transition-colors">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center group-hover:bg-brand/20 transition-colors">
+                  <Mail className="w-5 h-5 text-brand" />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-600 mb-1">{t("contact.emailLabel")}</p>
-                  <p className="font-medium group-hover:text-primary transition-colors text-slate-950">{t("contact.email")}</p>
+                  <p className="text-sm text-brand-dark/70 mb-1">{t("contact.emailLabel")}</p>
+                  <p className="font-medium group-hover:text-brand transition-colors text-snow-foreground">{t("contact.email")}</p>
                 </div>
-                <ArrowUpRight className="w-5 h-5 text-slate-500 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ArrowUpRight className="w-5 h-5 text-mist-dark ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
 
-              <div className="flex items-center gap-4 p-4 -m-4 bg-white rounded-xl">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
+              <div className="flex items-center gap-4 p-4 -m-4 bg-snow rounded-xl">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-brand" />
                 </div>
                 <div>
-                  <p className="text-sm text-slate-600 mb-1">{t("contact.locationLabel")}</p>
-                   <p className="font-medium text-slate-950">Paraguay, Estados Unidos, Brasil</p>
+                  <p className="text-sm text-brand-dark/70 mb-1">{t("contact.locationLabel")}</p>
+                   <p className="font-medium text-snow-foreground">Paraguay, Estados Unidos, Brasil</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Content - Form */}
-          <div className="glass-card p-8 rounded-2xl bg-white/90 border-slate-200">
+          <div className="glass-card p-8 rounded-2xl bg-snow/90 border-mist-dark/30">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-3 text-slate-700">
+                  <label htmlFor="name" className="block text-sm font-medium mb-3 text-brand-dark">
                     {t("contact.form.name")}
                   </label>
                   <input
@@ -115,12 +115,12 @@ export const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-slate-950 placeholder:text-slate-400"
+                    className="w-full px-4 py-3 rounded-lg bg-snow border border-mist-dark/30 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-snow-foreground placeholder:text-mist-dark/50"
                     placeholder={t("contact.form.namePlaceholder") as string}
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-3 text-slate-700">
+                  <label htmlFor="email" className="block text-sm font-medium mb-3 text-brand-dark">
                     {t("contact.form.email")}
                   </label>
                   <input
@@ -130,7 +130,7 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-slate-950 placeholder:text-slate-400"
+                    className="w-full px-4 py-3 rounded-lg bg-snow border border-mist-dark/30 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-snow-foreground placeholder:text-mist-dark/50"
                     placeholder={t("contact.form.emailPlaceholder") as string}
                   />
                 </div>
@@ -138,7 +138,7 @@ export const Contact = () => {
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="project" className="block text-sm font-medium mb-3 text-slate-700">
+                  <label htmlFor="project" className="block text-sm font-medium mb-3 text-brand-dark">
                     {t("contact.form.project")}
                   </label>
                   <select
@@ -147,7 +147,7 @@ export const Contact = () => {
                     value={formData.project}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-slate-950"
+                    className="w-full px-4 py-3 rounded-lg bg-snow border border-mist-dark/30 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-snow-foreground"
                   >
                     <option value="">{t("contact.form.projectPlaceholder")}</option>
                     <option value="website">{(t("contact.projectOptions") as Record<string, string>).website}</option>
@@ -158,7 +158,7 @@ export const Contact = () => {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-medium mb-3 text-slate-700">
+                  <label htmlFor="budget" className="block text-sm font-medium mb-3 text-brand-dark">
                     {t("contact.form.budget")}
                   </label>
                   <select
@@ -166,7 +166,7 @@ export const Contact = () => {
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-slate-950"
+                    className="w-full px-4 py-3 rounded-lg bg-snow border border-mist-dark/30 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all text-snow-foreground"
                   >
                     <option value="">{t("contact.form.budgetPlaceholder")}</option>
                     <option value="500-1000">{(t("contact.budgetOptions") as Record<string, string>)["500-1000"]}</option>
@@ -178,7 +178,7 @@ export const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-3 text-slate-700">
+                <label htmlFor="message" className="block text-sm font-medium mb-3 text-brand-dark">
                   {t("contact.form.message")}
                 </label>
                 <textarea
@@ -188,12 +188,12 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all resize-none text-slate-950 placeholder:text-slate-400"
+                  className="w-full px-4 py-3 rounded-lg bg-snow border border-mist-dark/30 focus:border-primary focus:ring-1 focus:ring-primary/30 outline-none transition-all resize-none text-snow-foreground placeholder:text-mist-dark/50"
                   placeholder={t("contact.form.messagePlaceholder") as string}
                 />
               </div>
 
-              <Button type="submit" variant="hero" size="lg" className="w-full">
+              <Button type="submit" variant="brand" size="lg" className="w-full">
                 {t("contact.form.submit")}
                 <Send className="w-4 h-4" />
               </Button>
@@ -203,7 +203,7 @@ export const Contact = () => {
                 rel="noopener noreferrer"
                 className="block w-full"
               >
-                <Button type="button" variant="outline" size="lg" className="w-full bg-transparent border-slate-300 text-slate-700 hover:border-primary hover:text-primary hover:bg-slate-50">
+                <Button type="button" variant="outline" size="lg" className="w-full bg-transparent border-mist-dark text-brand-dark hover:border-brand hover:text-brand hover:bg-mist-light">
                   {t("contact.internationalCta")}
                 </Button>
               </a>
