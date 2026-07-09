@@ -63,6 +63,21 @@ export default {
         },
         steel: "hsl(var(--steel))",
         electric: "hsl(var(--electric))",
+        brand: {
+          DEFAULT: "hsl(var(--brand))",
+          light: "hsl(var(--brand-light))",
+          dark: "hsl(var(--brand-dark))",
+          foreground: "hsl(var(--brand-foreground))",
+        },
+        mist: {
+          DEFAULT: "hsl(var(--mist))",
+          light: "hsl(var(--mist-light))",
+          dark: "hsl(var(--mist-dark))",
+        },
+        snow: {
+          DEFAULT: "hsl(var(--snow))",
+          foreground: "hsl(var(--snow-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
