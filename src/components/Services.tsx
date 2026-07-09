@@ -21,7 +21,7 @@ export const Services = () => {
   return (
     <section id="servicios" className="section-padding relative">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand/10 to-transparent" />
       
       <div className="container-custom relative z-10">
         {/* Section Label */}

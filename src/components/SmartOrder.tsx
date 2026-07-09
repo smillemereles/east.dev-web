@@ -21,7 +21,7 @@ export const SmartOrder = () => {
   return (
     <section id="smart-order" className="section-padding relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-electric/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-mist/5 pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Section Label */}
