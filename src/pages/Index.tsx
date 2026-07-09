@@ -6,6 +6,7 @@ import { Services } from "@/components/Services";
 import { SmartOrder } from "@/components/SmartOrder";
 import { HowWeWork } from "@/components/HowWeWork";
 import { Projects } from "@/components/Projects";
+import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
