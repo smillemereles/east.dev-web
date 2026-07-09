@@ -20,7 +20,6 @@ const Index = () => {
       
       <SmartOrder />
       <HowWeWork />
-      <FeaturedProjects />
       <Projects />
       <Team />
       <Contact />
