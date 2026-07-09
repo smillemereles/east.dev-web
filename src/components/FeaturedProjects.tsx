@@ -224,19 +224,20 @@ export const FeaturedProjects = () => {
   return (
     <section
       id="proyectos-estrella"
-      className="section-padding relative overflow-hidden bg-brand-dark"
+      className="section-padding relative overflow-hidden bg-navy-dark"
     >
       {/* Dramatic background layers */}
       <div className="absolute inset-0 bg-featured pointer-events-none" />
-      <div className="absolute inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-overlay" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mist/30 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mist/30 to-transparent" />
+      <div className="absolute inset-0 bg-noise opacity-[0.04] pointer-events-none mix-blend-overlay" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/40 to-transparent" />
 
       {/* Header glow orb */}
       <div
-        className="glow-orb w-[60vw] h-[40vh] top-0 left-1/2 -translate-x-1/2 bg-brand/15"
+        className="glow-orb w-[70vw] h-[50vh] top-0 left-1/2 -translate-x-1/2 bg-electric/25"
         aria-hidden="true"
       />
+
 
       <div className="container-wide relative z-10">
         {/* Section Label */}
@@ -294,8 +295,8 @@ export const FeaturedProjects = () => {
               >
                 {/* Ambient glow orb per project */}
                 <div
-                  className={`glow-orb w-[40vw] h-[30vh] top-1/2 -translate-y-1/2 ${
-                    reversed ? "-left-[10vw] bg-brand/10" : "-right-[10vw] bg-mist/10"
+                  className={`glow-orb w-[45vw] h-[35vh] top-1/2 -translate-y-1/2 ${
+                    reversed ? "-left-[10vw] bg-electric/20" : "-right-[10vw] bg-primary/15"
                   }`}
                   aria-hidden="true"
                 />

@@ -157,10 +157,10 @@
 
   .bg-featured {
     background-image:
-      radial-gradient(ellipse 90% 55% at 50% -15%, hsl(var(--brand) / 0.22), transparent 60%),
-      radial-gradient(ellipse 70% 50% at 90% 35%, hsl(var(--brand) / 0.14), transparent 55%),
-      radial-gradient(ellipse 60% 35% at 10% 75%, hsl(var(--mist) / 0.12), transparent 55%),
-      radial-gradient(ellipse 80% 40% at 50% 110%, hsl(var(--brand) / 0.1), transparent 55%);
+      radial-gradient(ellipse 90% 55% at 50% -15%, hsl(var(--electric) / 0.28), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 90% 35%, hsl(var(--electric) / 0.20), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 70%, hsl(var(--primary) / 0.18), transparent 55%),
+      radial-gradient(ellipse 80% 45% at 50% 110%, hsl(var(--electric) / 0.16), transparent 55%);
   }
 
   .bg-noise {
