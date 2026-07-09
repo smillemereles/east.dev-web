@@ -100,20 +100,33 @@ const featuredProjects: FeaturedProject[] = [
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } },
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const } },
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1, ease: "easeOut" as const } },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
 };
 
 const ProjectMedia = ({ project }: { project: FeaturedProject }) => (
-  <div className="relative rounded-2xl overflow-hidden border border-border/40 bg-card/40 aspect-[16/10] shadow-card-hover">
+  <motion.div
+    variants={scaleIn}
+    className="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-border/40 bg-card/40 aspect-[16/9] shadow-card-hover hover:shadow-glow transition-all duration-700"
+  >
     {project.videoSrc ? (
       <video
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
         src={project.videoSrc}
         poster={project.poster}
         autoPlay
@@ -126,49 +139,50 @@ const ProjectMedia = ({ project }: { project: FeaturedProject }) => (
       <img
         src={project.poster}
         alt={project.name}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
         loading="lazy"
       />
     )}
-    <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-2xl pointer-events-none" />
-  </div>
+    <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-2xl sm:rounded-3xl pointer-events-none" />
+    <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+  </motion.div>
 );
 
 const ProjectContent = ({ project, index }: { project: FeaturedProject; index: number }) => (
-  <motion.div variants={stagger} className="flex flex-col">
+  <motion.div variants={stagger} className="flex flex-col relative z-10">
     <motion.span
       variants={fadeUp}
-      className="text-xs font-mono text-muted-foreground tracking-[0.3em] uppercase mb-4"
+      className="text-xs font-mono text-muted-foreground tracking-[0.3em] uppercase mb-5"
     >
       Proyecto Estrella · 0{index + 1}
     </motion.span>
 
     <motion.span
       variants={fadeUp}
-      className="inline-flex self-start items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-5"
+      className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-6"
     >
       {project.category}
     </motion.span>
 
     <motion.h3
       variants={fadeUp}
-      className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-[1.05] mb-5"
+      className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.05] mb-6"
     >
       {project.name}
     </motion.h3>
 
-    <motion.p variants={fadeUp} className="text-muted-foreground leading-relaxed mb-8">
+    <motion.p variants={fadeUp} className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
       {project.description}
     </motion.p>
 
-    <motion.ul variants={stagger} className="grid sm:grid-cols-2 gap-3 mb-8">
+    <motion.ul variants={stagger} className="grid sm:grid-cols-2 gap-4 mb-10">
       {project.features.map((f) => (
         <motion.li
           key={f.label}
           variants={fadeUp}
           className="flex items-start gap-3 text-sm text-foreground/80"
         >
-          <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+          <span className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
             <f.icon className="w-4 h-4 text-primary" />
           </span>
           <span className="pt-1.5 leading-snug">{f.label}</span>
@@ -177,7 +191,7 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
     </motion.ul>
 
     {project.tech && project.tech.length > 0 && (
-      <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-8">
+      <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-10">
         {project.tech.map((t) => (
           <span
             key={t}
@@ -195,7 +209,7 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium transition-all hover:shadow-glow"
+          className="group inline-flex items-center gap-2 px-7 py-3.5 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-medium transition-all hover:shadow-glow"
         >
           Visitar sitio
           <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -210,18 +224,28 @@ export const FeaturedProjects = () => {
   return (
     <section
       id="proyectos-estrella"
-      className="section-padding relative overflow-hidden"
+      className="section-padding relative overflow-hidden bg-navy-dark"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent pointer-events-none" />
+      {/* Dramatic background layers */}
+      <div className="absolute inset-0 bg-featured pointer-events-none" />
+      <div className="absolute inset-0 bg-noise opacity-[0.025] pointer-events-none mix-blend-overlay" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/40 to-transparent" />
 
-      <div className="container-custom relative z-10">
+      <div className="container-wide relative z-10">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeIn}
+          className="flex items-center gap-4 mb-14"
+        >
           <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
             {t("nav.featured")}
           </span>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-border to-transparent" />
-        </div>
+        </motion.div>
 
         {/* Header */}
         <motion.div
@@ -229,25 +253,28 @@ export const FeaturedProjects = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="max-w-4xl mb-20 sm:mb-28"
+          className="max-w-5xl mb-24 sm:mb-32 lg:mb-40"
         >
           <motion.h2
             variants={fadeUp}
-            className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.05] mb-6"
+            className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.95] mb-8"
           >
             {t("featuredProjects.title")}{" "}
             <span className="text-gradient">{t("featuredProjects.titleHighlight")}</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="text-xl sm:text-2xl text-muted-foreground font-light max-w-2xl"
+            className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-light max-w-3xl leading-relaxed"
           >
             {t("featuredProjects.description")}
           </motion.p>
         </motion.div>
 
         {/* Zigzag projects */}
-        <div className="space-y-28 sm:space-y-40">
+        <div className="relative space-y-32 sm:space-y-44 lg:space-y-56">
+          {/* Vertical connecting line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-border/30 to-transparent hidden lg:block" />
+
           {featuredProjects.map((project, index) => {
             const reversed = index % 2 === 1;
             return (
@@ -255,17 +282,27 @@ export const FeaturedProjects = () => {
                 key={project.name}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-120px" }}
                 variants={stagger}
-                className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+                className="relative grid lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-28 items-center"
               >
+                {/* Giant decorative index */}
+                <div
+                  className={`absolute -top-20 sm:-top-28 lg:-top-32 font-display font-bold text-[8rem] sm:text-[10rem] lg:text-[14rem] leading-none text-foreground/[0.03] select-none pointer-events-none z-0 ${
+                    reversed ? "lg:left-0 lg:text-left" : "lg:right-0 lg:text-right"
+                  }`}
+                  aria-hidden="true"
+                >
+                  0{index + 1}
+                </div>
+
                 <motion.div
                   variants={fadeUp}
-                  className={reversed ? "lg:order-2" : "lg:order-1"}
+                  className={`relative z-10 ${reversed ? "lg:order-2" : "lg:order-1"}`}
                 >
                   <ProjectMedia project={project} />
                 </motion.div>
-                <div className={reversed ? "lg:order-1" : "lg:order-2"}>
+                <div className={`relative z-10 ${reversed ? "lg:order-1" : "lg:order-2"}`}>
                   <ProjectContent project={project} index={index} />
                 </div>
               </motion.article>
