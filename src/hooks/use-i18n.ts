@@ -12,6 +12,7 @@ const translations: Record<Locale, Record<string, any>> = {
       services: "Servicios",
       projects: "Proyectos",
       portfolio: "Portafolio",
+      featured: "Proyectos Estrella",
       international: "Internacional",
       contact: "Contacto",
       contactButton: "Contactar",
