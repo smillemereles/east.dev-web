@@ -3,15 +3,15 @@ import { useTranslation } from "@/hooks/use-i18n";
 export const About = () => {
   const { t } = useTranslation();
   return (
-    <section id="nosotros" className="section-padding relative overflow-hidden bg-[hsl(210,15%,88%)] text-[hsl(220,20%,10%)]">
+    <section id="nosotros" className="section-padding relative overflow-hidden bg-mist text-snow-foreground">
 
       <div className="container-custom relative z-10">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
-          <span className="text-xs font-medium text-[hsl(220,15%,40%)] tracking-[0.3em] uppercase">
+          <span className="text-xs font-medium text-brand-dark/70 tracking-[0.3em] uppercase">
             {t("about.section")}
           </span>
-          <div className="flex-1 h-[1px] bg-gradient-to-r from-[hsl(220,15%,70%)] to-transparent" />
+          <div className="flex-1 h-[1px] bg-gradient-to-r from-mist-dark/50 to-transparent" />
         </div>
 
         {/* Big statement */}
@@ -23,15 +23,15 @@ export const About = () => {
 
         {/* Two-column narrative */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 mb-20">
-          <div className="space-y-6 text-[hsl(220,15%,35%)] text-lg leading-relaxed">
+          <div className="space-y-6 text-brand-dark/80 text-lg leading-relaxed">
             <p>
-              <span className="text-[hsl(220,20%,10%)] font-semibold">east.dev</span> {t("about.paragraph1")}
+              <span className="text-snow-foreground font-semibold">east.dev</span> {t("about.paragraph1")}
             </p>
             <p>
               {t("about.paragraph2")}
             </p>
           </div>
-          <div className="space-y-6 text-[hsl(220,15%,35%)] text-lg leading-relaxed">
+          <div className="space-y-6 text-brand-dark/80 text-lg leading-relaxed">
             <p>
               {t("about.paragraph3")}
             </p>
