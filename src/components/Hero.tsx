@@ -2,9 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
-import heroBgPng from "@/assets/hero-bridge-bg.png.asset.json";
-import heroBgWebp from "@/assets/hero-bridge-bg.webp.asset.json";
-import heroBgAvif from "@/assets/hero-bridge-bg.avif.asset.json";
+const heroBgPng = { url: "/hero/hero-bridge-bg.png" };
+const heroBgWebp = { url: "/hero/hero-bridge-bg.webp" };
+const heroBgAvif = { url: "/hero/hero-bridge-bg.avif" };
 
 
 
