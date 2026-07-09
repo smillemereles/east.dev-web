@@ -142,14 +142,23 @@
 
   .bg-featured {
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(var(--primary) / 0.12), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 85% 40%, hsl(var(--primary) / 0.08), transparent 55%),
-      radial-gradient(ellipse 50% 30% at 15% 80%, hsl(var(--accent) / 0.06), transparent 55%);
+      radial-gradient(ellipse 90% 55% at 50% -15%, hsl(var(--primary) / 0.22), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 90% 35%, hsl(var(--primary) / 0.14), transparent 55%),
+      radial-gradient(ellipse 60% 35% at 10% 75%, hsl(var(--accent) / 0.12), transparent 55%),
+      radial-gradient(ellipse 80% 40% at 50% 110%, hsl(var(--primary) / 0.1), transparent 55%);
   }
 
   .bg-noise {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
+
+  .glow-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+
 
 
   .scrollbar-hide {
