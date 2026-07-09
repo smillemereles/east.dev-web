@@ -18,7 +18,6 @@ const Index = () => {
       <Services />
       
       <SmartOrder />
-      <HowWeWork />
       <Projects />
       <Team />
       <Contact />
