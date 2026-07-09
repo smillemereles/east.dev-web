@@ -94,7 +94,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-600 mb-1">{t("contact.locationLabel")}</p>
-                  <p className="font-medium text-slate-950">{t("contact.location")}</p>
+                   <p className="font-medium text-slate-950">Paraguay, Estados Unidos, Brasil</p>
                 </div>
               </div>
             </div>
