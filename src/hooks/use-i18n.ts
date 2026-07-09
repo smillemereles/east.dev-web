@@ -395,6 +395,11 @@ const translations: Record<Locale, Record<string, any>> = {
         },
       },
     },
+    featuredProjects: {
+      title: "Work that",
+      titleHighlight: "shines",
+      description: "A curated selection of projects where strategy, design and code come together to deliver real results.",
+    },
     howWeWork: {
       section: "How We Work",
       subtitle: "How we do it",
