@@ -102,11 +102,19 @@ export const Navbar = () => {
             <Globe size={16} />
             {locale === "es" ? "EN" : "ES"}
           </button>
-          <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="default">
-              {t("nav.contactButton")}
-            </Button>
-          </a>
+          {location.pathname === "/" ? (
+            <a href="#contacto">
+              <Button variant="hero" size="default">
+                {t("nav.contactButton")}
+              </Button>
+            </a>
+          ) : (
+            <Link to={{ pathname: "/", hash: "#contacto" }}>
+              <Button variant="hero" size="default">
+                {t("nav.contactButton")}
+              </Button>
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
