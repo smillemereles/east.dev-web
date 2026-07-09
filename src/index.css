@@ -136,6 +136,22 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12;
   }
 
+  .container-wide {
+    @apply max-w-[100rem] mx-auto px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+
+  .bg-featured {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(var(--primary) / 0.12), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 85% 40%, hsl(var(--primary) / 0.08), transparent 55%),
+      radial-gradient(ellipse 50% 30% at 15% 80%, hsl(var(--accent) / 0.06), transparent 55%);
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
