@@ -12,7 +12,7 @@ const translations: Record<Locale, Record<string, any>> = {
       services: "Servicios",
       projects: "Proyectos",
       portfolio: "Portafolio",
-      featured: "Proyectos Estrella",
+      featured: "Proyectos",
       international: "Internacional",
       contact: "Contacto",
       contactButton: "Contactar",
@@ -95,8 +95,8 @@ const translations: Record<Locale, Record<string, any>> = {
       },
     },
     featuredProjects: {
-      title: "Trabajos que",
-      titleHighlight: "brillan",
+      title: "Proyectos que",
+      titleHighlight: "destacan",
       description: "Una selección de proyectos donde estrategia, diseño y código se unen para generar resultados reales.",
     },
     howWeWork: {
@@ -313,7 +313,7 @@ const translations: Record<Locale, Record<string, any>> = {
       services: "Services",
       projects: "Projects",
       portfolio: "Portfolio",
-      featured: "Featured Projects",
+      featured: "Projects",
       international: "International",
       contact: "Contact",
       contactButton: "Contact",
@@ -396,8 +396,8 @@ const translations: Record<Locale, Record<string, any>> = {
       },
     },
     featuredProjects: {
-      title: "Work that",
-      titleHighlight: "shines",
+      title: "Projects that",
+      titleHighlight: "stand out",
       description: "A curated selection of projects where strategy, design and code come together to deliver real results.",
     },
     howWeWork: {
