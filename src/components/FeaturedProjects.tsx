@@ -238,6 +238,9 @@ const ProjectContent = ({
 
 export const FeaturedProjects = () => {
   const { t } = useTranslation();
+  const translatedItems = (t("featuredProjects.items") as Array<{ category: string; description: string; features: string[] }>) || [];
+  const badgeLabel = (t("featuredProjects.badge") as string) || "Featured Project";
+  const visitLabel = (t("featuredProjects.visitSite") as string) || "Visit site";
   return (
     <section
       id="proyectos-estrella"
