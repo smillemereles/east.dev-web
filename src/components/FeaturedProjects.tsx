@@ -148,20 +148,36 @@ const ProjectMedia = ({ project }: { project: FeaturedProject }) => (
   </motion.div>
 );
 
-const ProjectContent = ({ project, index }: { project: FeaturedProject; index: number }) => (
+const ProjectContent = ({
+  project,
+  index,
+  translated,
+  badgeLabel,
+  visitLabel,
+}: {
+  project: FeaturedProject;
+  index: number;
+  translated?: { category?: string; description?: string; features?: string[] };
+  badgeLabel: string;
+  visitLabel: string;
+}) => {
+  const featureLabels = translated?.features && translated.features.length === project.features.length
+    ? translated.features
+    : project.features.map((f) => f.label);
+  return (
   <motion.div variants={stagger} className="flex flex-col relative z-10">
     <motion.span
       variants={fadeUp}
       className="text-xs font-mono text-mist/70 tracking-[0.3em] uppercase mb-5"
     >
-      Proyecto Estrella · 0{index + 1}
+      {badgeLabel} · 0{index + 1}
     </motion.span>
 
     <motion.span
       variants={fadeUp}
       className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full bg-mist/20 text-mist text-xs sm:text-sm font-medium mb-6"
     >
-      {project.category}
+      {translated?.category ?? project.category}
     </motion.span>
 
     <motion.h3
@@ -172,20 +188,20 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
     </motion.h3>
 
     <motion.p variants={fadeUp} className="text-base sm:text-lg text-mist/80 leading-relaxed mb-10 max-w-xl">
-      {project.description}
+      {translated?.description ?? project.description}
     </motion.p>
 
     <motion.ul variants={stagger} className="grid sm:grid-cols-2 gap-4 mb-10">
-      {project.features.map((f) => (
+      {project.features.map((f, i) => (
         <motion.li
-          key={f.label}
+          key={i}
           variants={fadeUp}
           className="flex items-start gap-3 text-sm text-snow/90"
         >
           <span className="w-9 h-9 rounded-xl bg-mist/20 flex items-center justify-center shrink-0">
             <f.icon className="w-4 h-4 text-mist" />
           </span>
-          <span className="pt-1.5 leading-snug">{f.label}</span>
+          <span className="pt-1.5 leading-snug">{featureLabels[i]}</span>
         </motion.li>
       ))}
     </motion.ul>
@@ -211,13 +227,14 @@ const ProjectContent = ({ project, index }: { project: FeaturedProject; index: n
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 px-7 py-3.5 bg-brand hover:bg-brand/90 text-brand-foreground rounded-xl font-medium transition-all hover:shadow-brand-glow"
         >
-          Visitar sitio
+          {visitLabel}
           <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </a>
       </motion.div>
     )}
   </motion.div>
-);
+  );
+};
 
 export const FeaturedProjects = () => {
   const { t } = useTranslation();
