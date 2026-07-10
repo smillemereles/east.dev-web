@@ -338,7 +338,7 @@ export const FeaturedProjects = () => {
                   <ProjectMedia project={project} />
                 </motion.div>
                 <div className={`relative z-10 ${reversed ? "lg:order-1" : "lg:order-2"}`}>
-                  <ProjectContent project={project} index={index} />
+                  <ProjectContent project={project} index={index} translated={translatedItems[index]} badgeLabel={badgeLabel} visitLabel={visitLabel} />
                 </div>
               </motion.article>
             );
