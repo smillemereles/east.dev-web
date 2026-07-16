@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -12,6 +13,10 @@ import FlowArt, { FlowSection } from "@/components/FlowArt";
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <link rel="canonical" href="https://eastdevpy.com/" />
+        <meta property="og:url" content="https://eastdevpy.com/" />
+      </Helmet>
       <Navbar />
       <Hero />
       <About />

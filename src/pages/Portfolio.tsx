@@ -33,6 +33,7 @@ import farmanextMentovick from "@/assets/portfolio/farmanext-mentovick.png";
 import farmanextGripe from "@/assets/portfolio/farmanext-gripe.png";
 import { ArrowLeft, ExternalLink, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
@@ -177,6 +178,13 @@ export default function Portfolio() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Portafolio | east.dev — Diseño y Desarrollo Web</title>
+        <meta name="description" content="Portafolio de east.dev: proyectos de diseño web, e-commerce, branding y contenido digital para clientes en Paraguay y el exterior." />
+        <link rel="canonical" href="https://eastdevpy.com/portafolio" />
+        <meta property="og:url" content="https://eastdevpy.com/portafolio" />
+        <meta property="og:title" content="Portafolio | east.dev" />
+      </Helmet>
       <Navbar />
       {/* Header removido, Navbar general se usa arriba */}
 
