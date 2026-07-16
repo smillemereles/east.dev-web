@@ -18,7 +18,7 @@ const translations: Record<Locale, Record<string, any>> = {
       contactButton: "Contactar",
     },
     hero: {
-      label: "Desarrollo web premium",
+      label: "Desarrollo web premium · Ciudad del Este",
       titleLine1: "El socio",
       titleLine2: "creativo",
       subtitle: "para",
