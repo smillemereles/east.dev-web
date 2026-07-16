@@ -1,6 +1,12 @@
 import { ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
+const heroBgPng = { url: "/hero/hero-bridge-bg.png" };
+const heroBgWebp = { url: "/hero/hero-bridge-bg.webp" };
+const heroBgAvif = { url: "/hero/hero-bridge-bg.avif" };
+
+
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -17,128 +23,115 @@ export const Hero = () => {
       }, 300);
     }, 3000);
     return () => clearInterval(interval);
-  }, [words.length]);
+  }, []);
 
   return (
     <section
       id="inicio"
-      className="min-h-screen w-full flex items-center justify-center p-4 md:p-8 pt-24 md:pt-28"
-      style={{ background: "#fafbfc", color: "#0f172a", fontFamily: "'Plus Jakarta Sans', Inter, sans-serif" }}
+      className="min-h-screen flex flex-col justify-center relative overflow-hidden"
     >
-      <div
-        className="w-full max-w-7xl mx-auto flex flex-col md:flex-row min-h-[720px] rounded-3xl overflow-hidden bg-white shadow-sm"
-        style={{ border: "1px solid #e8ecf1" }}
-      >
-        {/* Left Content */}
-        <div
-          className="flex-1 p-8 md:p-16 flex flex-col justify-center"
-          style={{ borderRight: "1px solid #e8ecf1" }}
-        >
-          <div className="flex flex-col space-y-6 max-w-xl animate-fade-up">
-            <div
-              className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase w-fit"
-              style={{ background: "#e8ecf1", color: "#3b82f6" }}
-            >
+      {/* Subtle hero background image */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <picture>
+          <source srcSet={heroBgAvif.url} type="image/avif" />
+          <source srcSet={heroBgWebp.url} type="image/webp" />
+          <img
+            src={heroBgPng.url}
+            alt="Puente de la Amistad con conexión digital"
+            className="w-full h-full object-cover opacity-20"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
+      </div>
+
+      {/* Background Glow Effects */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-mist/5 rounded-full blur-[120px] pointer-events-none" />
+      
+      {/* Grid overlay */}
+      <div className="absolute inset-0 opacity-[0.015]" style={{
+        backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+                          linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
+        backgroundSize: '80px 80px'
+      }} />
+
+      <div className="container-custom relative z-10 pt-24 sm:pt-32 pb-16 sm:pb-20">
+        {/* Top Label */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8 sm:mb-12 animate-fade-up">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-primary" />
+            <span className="text-xs font-medium text-muted-foreground tracking-[0.3em] uppercase">
               {t("hero.label")}
-            </div>
-
-            <span
-              className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-xs font-medium tracking-wide w-fit"
-              style={{ border: "1px solid #dbeafe", background: "#eff6ff", color: "#3b82f6" }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              {t("hero.internationalBadge")}
             </span>
+          </div>
+          <span className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full border border-brand/30 bg-brand/5 text-xs font-medium text-brand tracking-wide">
+            {t("hero.internationalBadge")}
+          </span>
+        </div>
 
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight"
-              style={{ fontFamily: "'Syne', sans-serif", color: "#0f172a" }}
-            >
-              <span className="block">{t("hero.titleLine1")}</span>
-              <span className="block" style={{ color: "#3b82f6" }}>
-                {t("hero.titleLine2")}
-              </span>
-              <span className="block" style={{ color: "#94a3b8" }}>
-                {t("hero.subtitle")}{" "}
-                <span
-                  className={`inline-block transition-all duration-300 ${
-                    isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-                  }`}
-                  style={{ color: "#0f172a" }}
-                >
-                  {words[currentWord]}
-                </span>
-              </span>
-            </h1>
-
-            <p className="text-base md:text-lg leading-relaxed" style={{ color: "#94a3b8" }}>
-              {t("hero.description")}
-            </p>
-
-            <div className="flex flex-wrap gap-3 pt-2">
-              <button
-                onClick={() => document.getElementById("proyectos")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-6 py-3.5 font-semibold rounded-xl transition-all active:scale-95 inline-flex items-center gap-2"
-                style={{ background: "#3b82f6", color: "#ffffff", boxShadow: "0 10px 25px -10px rgba(59,130,246,0.5)" }}
+        {/* Main Headline */}
+        <div className="max-w-5xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold leading-[0.9] tracking-tight mb-6 sm:mb-8">
+            <span className="block animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              {t("hero.titleLine1")}
+            </span>
+            <span className="block animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              <span className="text-gradient">{t("hero.titleLine2")}</span>
+            </span>
+            <span className="block text-muted-foreground/50 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              {t("hero.subtitle")} {" "}
+              <span 
+                className={`inline-block text-foreground transition-all duration-300 ${
+                  isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+                }`}
               >
-                {t("hero.ctaProjects")}
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-6 py-3.5 font-semibold rounded-xl transition-all active:scale-95"
-                style={{ background: "#ffffff", border: "1px solid #e8ecf1", color: "#0f172a" }}
-              >
-                {t("hero.ctaContact")}
-              </button>
-              <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer">
-                <button
-                  className="px-6 py-3.5 font-semibold rounded-xl transition-all active:scale-95"
-                  style={{ background: "#ffffff", border: "1px solid #e8ecf1", color: "#0f172a" }}
-                >
-                  {t("hero.internationalCta")}
-                </button>
-              </a>
-            </div>
+                {words[currentWord]}
+              </span>
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-8 sm:mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            {t("hero.description")}
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
+            <Button variant="hero" size="xl" onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}>
+              {t("hero.ctaProjects")}
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+            <Button variant="heroOutline" size="xl" onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}>
+              {t("hero.ctaContact")}
+            </Button>
+            <a href="https://wa.link/jfxdzh" target="_blank" rel="noopener noreferrer" className="inline-flex">
+              <Button variant="heroOutline" size="xl">
+                {t("hero.internationalCta")}
+              </Button>
+            </a>
           </div>
         </div>
 
-        {/* Right Visual */}
-        <div
-          className="flex-1 relative overflow-hidden flex items-center justify-center p-8 md:p-12 min-h-[400px]"
-          style={{ background: "#fafbfc" }}
-        >
-          <div className="relative w-full max-w-[480px] aspect-square">
-            <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4">
-              <div
-                className="col-span-4 row-span-4 rounded-3xl flex items-center justify-center"
-                style={{
-                  background: "#ffffff",
-                  border: "1px solid #e8ecf1",
-                  boxShadow: "0 20px 40px -20px rgba(148,163,184,0.35)",
-                }}
-              >
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center"
-                  style={{ background: "rgba(59,130,246,0.1)" }}
-                >
-                  <div className="w-5 h-5 rounded-full" style={{ background: "#3b82f6" }} />
-                </div>
-              </div>
-              <div
-                className="col-start-3 col-end-7 row-start-4 row-end-7 rounded-3xl"
-                style={{ background: "#e8ecf1", border: "1px solid #ffffff", opacity: 0.6 }}
-              />
-              <div
-                className="col-start-5 col-end-7 row-start-2 row-end-4 rounded-2xl"
-                style={{ background: "rgba(59,130,246,0.15)" }}
-              />
+        {/* Floating images removed per design preference */}
+      </div>
+
+      {/* Bottom Marquee */}
+      <div className="absolute bottom-0 left-0 right-0 border-t border-border/30 py-4 sm:py-6 overflow-hidden hidden sm:block">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex items-center gap-8 sm:gap-16 mx-4 sm:mx-8">
+              {(t("hero.marquee") as string[]).map((item) => (
+                <span key={item} className="text-sm font-medium text-muted-foreground/50 tracking-[0.2em] uppercase flex items-center gap-4">
+                  {item}
+                  <span className="w-2 h-2 rounded-full bg-brand/30" />
+                </span>
+              ))}
             </div>
-            <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full pointer-events-none"
-              style={{ background: "#3b82f6", filter: "blur(120px)", opacity: 0.12 }}
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>
