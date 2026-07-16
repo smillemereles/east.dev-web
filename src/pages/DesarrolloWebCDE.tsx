@@ -47,66 +47,47 @@ const services = [
 const DesarrolloWebCDE = () => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
-    document.title = "Desarrollo Web en Ciudad del Este | Diseño Web Paraguay · east.dev";
-    const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    const desc =
-      "Empresa de desarrollo y diseño web en Ciudad del Este, Paraguay. Sitios corporativos, e-commerce, landing pages y sistemas para restaurantes. Presupuesto por WhatsApp.";
-    setMeta("description", desc);
-    setMeta("og:title", "Desarrollo Web en Ciudad del Este | east.dev", "property");
-    setMeta("og:description", desc, "property");
-    setMeta("og:url", "https://eastdevpy.com/desarrollo-web-ciudad-del-este", "property");
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) canonical.href = "https://eastdevpy.com/desarrollo-web-ciudad-del-este";
-
-    // FAQ JSON-LD
-    const faqLd = document.createElement("script");
-    faqLd.type = "application/ld+json";
-    faqLd.setAttribute("data-page", "cde-faq");
-    faqLd.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    });
-    document.head.appendChild(faqLd);
-
-    const breadcrumbLd = document.createElement("script");
-    breadcrumbLd.type = "application/ld+json";
-    breadcrumbLd.setAttribute("data-page", "cde-breadcrumb");
-    breadcrumbLd.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eastdevpy.com/" },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Desarrollo web en Ciudad del Este",
-          item: "https://eastdevpy.com/desarrollo-web-ciudad-del-este",
-        },
-      ],
-    });
-    document.head.appendChild(breadcrumbLd);
-
-    return () => {
-      document.querySelectorAll('script[data-page^="cde-"]').forEach((n) => n.remove());
-    };
   }, []);
+
+  const desc =
+    "Empresa de desarrollo y diseño web en Ciudad del Este, Paraguay. Sitios corporativos, e-commerce, landing pages y sistemas para restaurantes. Presupuesto por WhatsApp.";
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://eastdevpy.com/" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Desarrollo web en Ciudad del Este",
+        item: "https://eastdevpy.com/desarrollo-web-ciudad-del-este",
+      },
+    ],
+  };
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <Navbar />
+      <Helmet>
+        <title>Desarrollo Web en Ciudad del Este | Diseño Web Paraguay · east.dev</title>
+        <meta name="description" content={desc} />
+        <link rel="canonical" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
+        <meta property="og:url" content="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
+        <meta property="og:title" content="Desarrollo Web en Ciudad del Este | east.dev" />
+        <meta property="og:description" content={desc} />
+        <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
+      </Helmet>
 
       <section className="pt-32 pb-16 relative overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-brand/5 rounded-full blur-[150px] pointer-events-none" />
