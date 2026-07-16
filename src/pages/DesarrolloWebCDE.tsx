@@ -88,6 +88,7 @@ const DesarrolloWebCDE = () => {
         <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>
       </Helmet>
+      <Navbar />
 
       <section className="pt-32 pb-16 relative overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-brand/5 rounded-full blur-[150px] pointer-events-none" />
