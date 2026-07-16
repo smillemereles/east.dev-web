@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import International from "./pages/International";
 import Featured from "./pages/Featured";
+import DesarrolloWebCDE from "./pages/DesarrolloWebCDE";
+import DisenoWebParaguay from "./pages/DisenoWebParaguay";
 import NotFound from "./pages/NotFound";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
