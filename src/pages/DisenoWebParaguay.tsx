@@ -43,46 +43,32 @@ const services = [
 const DisenoWebParaguay = () => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
-    document.title = "Diseño Web Paraguay | Estudio Profesional · east.dev";
-    const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
-      let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    const desc =
-      "Estudio de diseño web en Paraguay. Diseño UI/UX, sitios corporativos, e-commerce y landing pages con estándares internacionales. Presupuesto por WhatsApp.";
-    setMeta("description", desc);
-    setMeta("og:title", "Diseño Web Paraguay | east.dev", "property");
-    setMeta("og:description", desc, "property");
-    setMeta("og:url", "https://eastdevpy.com/diseno-web-paraguay", "property");
-    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) canonical.href = "https://eastdevpy.com/diseno-web-paraguay";
-
-    const faqLd = document.createElement("script");
-    faqLd.type = "application/ld+json";
-    faqLd.setAttribute("data-page", "py-faq");
-    faqLd.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    });
-    document.head.appendChild(faqLd);
-
-    return () => {
-      document.querySelectorAll('script[data-page^="py-"]').forEach((n) => n.remove());
-    };
   }, []);
+
+  const desc =
+    "Estudio de diseño web en Paraguay. Diseño UI/UX, sitios corporativos, e-commerce y landing pages con estándares internacionales. Presupuesto por WhatsApp.";
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
 
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Diseño Web Paraguay | Estudio Profesional · east.dev</title>
+        <meta name="description" content={desc} />
+        <link rel="canonical" href="https://eastdevpy.com/diseno-web-paraguay" />
+        <meta property="og:url" content="https://eastdevpy.com/diseno-web-paraguay" />
+        <meta property="og:title" content="Diseño Web Paraguay | east.dev" />
+        <meta property="og:description" content={desc} />
+        <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
+      </Helmet>
       <Navbar />
 
       <section className="pt-32 pb-16 relative overflow-hidden">
