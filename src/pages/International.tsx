@@ -22,9 +22,6 @@ const International = () => {
         <meta property="og:title" content="Trabajos Internacionales | eastdevpy.com" />
         <meta property="og:description" content={description} />
       </Helmet>
-
-  return (
-    <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <div className="pt-24">
         <InternationalWorks />
