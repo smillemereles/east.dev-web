@@ -33,6 +33,7 @@ import farmanextMentovick from "@/assets/portfolio/farmanext-mentovick.png";
 import farmanextGripe from "@/assets/portfolio/farmanext-gripe.png";
 import { ArrowLeft, ExternalLink, Image, Globe, MapPin, ShoppingCart, Code } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
