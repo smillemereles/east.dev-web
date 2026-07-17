@@ -57,7 +57,7 @@ const featuredProjects: FeaturedProject[] = [
     ],
     tech: ["Next.js", "Stripe", "PIX", "Tailwind"],
     url: "https://www.farmanext.com.py",
-    videoSrc: "",
+    videoSrc: farmanextVideo.url,
     poster: "/farmanext/farmanexthero.png",
   },
   {
