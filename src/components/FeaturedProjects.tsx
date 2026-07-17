@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "@/hooks/use-i18n";
+import farmanextVideo from "@/assets/farmanextxeast.dev.mp4.asset.json";
 import {
   ArrowUpRight,
   CreditCard,
