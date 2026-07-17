@@ -8,7 +8,6 @@ import { Projects } from "@/components/Projects";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import FlowArt, { FlowSection } from "@/components/FlowArt";
 
 const Index = () => {
   return (
@@ -20,19 +19,9 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
-
-      {/* Flow transitions: rotate-in pin effect between showcase sections */}
-      <FlowArt aria-label="Servicios, Smart Order y Proyectos">
-        <FlowSection aria-label="Servicios">
-          <Services />
-        </FlowSection>
-        <FlowSection aria-label="Smart Order">
-          <SmartOrder />
-        </FlowSection>
-        <FlowSection aria-label="Proyectos">
-          <Projects />
-        </FlowSection>
-      </FlowArt>
+      <Services />
+      <SmartOrder />
+      <Projects />
 
       <Team />
       <Contact />
