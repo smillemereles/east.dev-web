@@ -35,8 +35,11 @@ import { ArrowLeft, ExternalLink, Image, Globe, MapPin, ShoppingCart, Code } fro
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
+// adding portfolio
+import { Footer} from "@/components/Footer";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
+
 
 interface DesignWork {
   id: number;
@@ -341,6 +344,7 @@ export default function Portfolio() {
           </a>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
