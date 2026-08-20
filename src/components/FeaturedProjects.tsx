@@ -98,7 +98,27 @@ const featuredProjects: FeaturedProject[] = [
     videoSrc: "",
     poster: "/maniagroup/hero.png",
   },
+  {
+    name: "Sanatorio San Carlos",
+    category: "Salud · Sitio Institucional",
+    description:
+      "El mundo de la salud también confía sus manos en nosotros. Desarrollamos la presencia digital del Sanatorio San Carlos (Coronel Oviedo, Caaguazú): un sitio claro y humano que presenta especialidades, servicios y canales de contacto para pacientes.",
+    features: [
+      { icon: HeartPulse, label: "Presentación de especialidades médicas" },
+      { icon: Stethoscope, label: "Servicios y urgencias destacados" },
+      { icon: Users, label: "Cuerpo médico y equipo profesional" },
+      { icon: Mail, label: "Contacto y agendamiento simple" },
+      { icon: Smartphone, label: "Diseño responsive para pacientes" },
+      { icon: Search, label: "Optimización SEO local" },
+      { icon: Layers, label: "Navegación clara y accesible" },
+    ],
+    tech: ["React", "Vite", "SEO", "Tailwind"],
+    url: "https://sancarloshospital.com/",
+    videoSrc: "",
+    poster: "/sancarlos/hero.png",
+  },
 ];
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
