@@ -17,6 +17,10 @@ import {
   Globe,
   Gauge,
   Leaf,
+  HeartPulse,
+  Stethoscope,
+  Users,
+
   type LucideIcon,
 } from "lucide-react";
 
