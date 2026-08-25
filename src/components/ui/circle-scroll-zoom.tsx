@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import scrollVideo from "@/assets/scroll-cinematic.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,26 +10,28 @@ export interface CircleScrollZoomProps {
   subtitle?: React.ReactNode;
   imageSrc: string;
   imageAlt?: string;
+  videoSrc?: string;
   className?: string;
 }
 
 /**
- * Sección de transición: el logo de east.dev se revela dentro de un círculo
- * que crece con el scroll hasta ocupar toda la pantalla, llevando a la
- * siguiente sección.
+ * Sección de transición: un video se revela dentro de un círculo que crece con
+ * el scroll, sobre un fondo con el logo de east.dev difuminado.
  */
 export function CircleScrollZoom({
   title,
   subtitle,
   imageSrc,
   imageAlt = "east.dev",
+  videoSrc = scrollVideo,
   className = "",
 }: CircleScrollZoomProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
   const maskRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLVideoElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     if (!containerRef.current || !pinRef.current) return;
@@ -97,7 +100,16 @@ export function CircleScrollZoom({
         ref={pinRef}
         className="relative h-[100svh] w-full overflow-hidden bg-navy-dark"
       >
-        {/* Imagen de fondo revelada dentro del círculo */}
+        {/* Fondo: logo east.dev difuminado */}
+        <img
+          className="absolute inset-0 h-full w-full object-contain p-10 blur-[40px] opacity-40"
+          src={imageSrc}
+          alt={imageAlt}
+          loading="eager"
+          decoding="async"
+        />
+
+        {/* Video revelado dentro del círculo */}
         <div
           ref={maskRef}
           className="absolute inset-0 will-change-[mask-image]"
@@ -112,17 +124,20 @@ export function CircleScrollZoom({
             } as React.CSSProperties
           }
         >
-          <img
+          <video
             ref={imageRef}
-            className="h-full w-full object-cover will-change-transform blur-[40px] opacity-50"
-            src={imageSrc}
-            alt={imageAlt}
-            loading="eager"
-            decoding="async"
+            className="h-full w-full object-cover will-change-transform"
+            src={videoSrc}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-navy-dark/20" />
         </div>
+
 
         {/* Texto */}
         <div
