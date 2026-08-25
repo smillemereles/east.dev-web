@@ -34,15 +34,24 @@ export function CircleScrollZoom({
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
+    // Evita que la barra de URL móvil dispare refreshes y saltos del pin
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
     const video = videoRef.current;
     if (video) {
       video.muted = true;
-      video.play().catch(() => {});
+      const tryPlay = () => video.play().catch(() => {});
+      tryPlay();
+      video.addEventListener("loadeddata", tryPlay, { once: true });
+      document.addEventListener("touchstart", tryPlay, { once: true });
     }
 
     const ctx = gsap.context(() => {
-      const startRadius = () =>
-        window.innerWidth < 640 ? 90 : window.innerWidth < 1024 ? 130 : 170;
+      const vw = () => pinRef.current?.clientWidth || window.innerWidth;
+      const vh = () => pinRef.current?.clientHeight || window.innerHeight;
+
+      // Radio inicial proporcional al lado menor: se ve bien en cualquier pantalla
+      const startRadius = () => Math.max(70, Math.min(vw(), vh()) * 0.22);
 
       const setRadius = (r: number) => {
         if (maskRef.current) {
@@ -52,19 +61,21 @@ export function CircleScrollZoom({
 
       setRadius(startRadius());
 
-      const maxRadius = () =>
-        Math.hypot(window.innerWidth, window.innerHeight) * 0.75;
+      const maxRadius = () => Math.hypot(vw(), vh()) * 0.8;
+
+      const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=220%",
-          scrub: 1.1,
+          end: isMobile ? "+=140%" : "+=220%",
+          scrub: isMobile ? 0.6 : 1.1,
           pin: pinRef.current,
           pinSpacing: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
+          onRefresh: () => setRadius(startRadius()),
           onUpdate: (self) => {
             const p = self.progress;
             const s = startRadius();
@@ -73,8 +84,12 @@ export function CircleScrollZoom({
         },
       });
 
-      tl.to(videoRef.current, { scale: 1.18, ease: "none" }, 0);
+      tl.to(videoRef.current, { scale: isMobile ? 1.1 : 1.18, ease: "none" }, 0);
       tl.to(textRef.current, { opacity: 0, y: -40, ease: "none" }, 0);
+
+      const onOrientation = () => ScrollTrigger.refresh();
+      window.addEventListener("orientationchange", onOrientation);
+      return () => window.removeEventListener("orientationchange", onOrientation);
     }, containerRef);
 
     return () => ctx.revert();
@@ -88,12 +103,12 @@ export function CircleScrollZoom({
     >
       <div
         ref={pinRef}
-        className="relative h-screen w-full overflow-hidden bg-navy-dark"
+        className="relative h-[100svh] w-full overflow-hidden bg-navy-dark"
       >
         {/* Video revelado dentro del círculo */}
         <div
           ref={maskRef}
-          className="absolute inset-0"
+          className="absolute inset-0 will-change-[mask-image]"
           style={
             {
               "--r": "170px",
@@ -101,6 +116,7 @@ export function CircleScrollZoom({
                 "radial-gradient(circle at 50% 50%, #000 0, #000 var(--r), transparent calc(var(--r) + 1px))",
               maskImage:
                 "radial-gradient(circle at 50% 50%, #000 0, #000 var(--r), transparent calc(var(--r) + 1px))",
+              WebkitTransform: "translateZ(0)",
             } as React.CSSProperties
           }
         >
@@ -113,7 +129,10 @@ export function CircleScrollZoom({
             muted
             loop
             playsInline
+            preload="metadata"
+            disablePictureInPicture
           />
+
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-navy-dark/30" />
         </div>
 
