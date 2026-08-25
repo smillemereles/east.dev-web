@@ -31,8 +31,8 @@ const translations: Record<Locale, Record<string, any>> = {
       internationalCta: "Proyecto internacional",
     },
     scrollReveal: {
-      title: "Una visión en movimiento",
-      subtitle: "Desde Ciudad del Este creamos experiencias digitales con identidad propia.",
+      title: "",
+      subtitle: "",
     },
     about: {
       section: "Sobre Nosotros",
@@ -392,8 +392,8 @@ const translations: Record<Locale, Record<string, any>> = {
       internationalCta: "International project",
     },
     scrollReveal: {
-      title: "A vision in motion",
-      subtitle: "From Ciudad del Este we craft digital experiences with their own identity.",
+      title: "",
+      subtitle: "",
     },
     about: {
       section: "About Us",
