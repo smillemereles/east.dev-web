@@ -114,14 +114,14 @@ export function CircleScrollZoom({
         >
           <img
             ref={imageRef}
-            className="h-full w-full object-cover will-change-transform blur-[80px] opacity-25"
+            className="h-full w-full object-cover will-change-transform blur-[40px] opacity-50"
             src={imageSrc}
             alt={imageAlt}
             loading="eager"
             decoding="async"
           />
 
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-navy-dark/30" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-navy-dark/20" />
         </div>
 
         {/* Texto */}
