@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import scrollVideo from "@/assets/scroll-cinematic.mp4";
+import scrollVideoAsset from "@/assets/scroll-cinematic.mp4.asset.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +23,7 @@ export function CircleScrollZoom({
   subtitle,
   imageSrc,
   imageAlt = "east.dev",
-  videoSrc = scrollVideo,
+  videoSrc = scrollVideoAsset.url,
   className = "",
 }: CircleScrollZoomProps) {
   const containerRef = useRef<HTMLDivElement>(null);
