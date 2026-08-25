@@ -7,26 +7,27 @@ gsap.registerPlugin(ScrollTrigger);
 export interface CircleScrollZoomProps {
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
-  videoSrc: string;
-  posterSrc?: string;
+  imageSrc: string;
+  imageAlt?: string;
   className?: string;
 }
 
 /**
- * Sección de transición: un video se revela dentro de un círculo que crece
- * con el scroll hasta ocupar toda la pantalla, llevando a la siguiente sección.
+ * Sección de transición: el logo de east.dev se revela dentro de un círculo
+ * que crece con el scroll hasta ocupar toda la pantalla, llevando a la
+ * siguiente sección.
  */
 export function CircleScrollZoom({
   title,
   subtitle,
-  videoSrc,
-  posterSrc,
+  imageSrc,
+  imageAlt = "east.dev",
   className = "",
 }: CircleScrollZoomProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
   const maskRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,15 +37,6 @@ export function CircleScrollZoom({
 
     // Evita que la barra de URL móvil dispare refreshes y saltos del pin
     ScrollTrigger.config({ ignoreMobileResize: true });
-
-    const video = videoRef.current;
-    if (video) {
-      video.muted = true;
-      const tryPlay = () => video.play().catch(() => {});
-      tryPlay();
-      video.addEventListener("loadeddata", tryPlay, { once: true });
-      document.addEventListener("touchstart", tryPlay, { once: true });
-    }
 
     const ctx = gsap.context(() => {
       const vw = () => pinRef.current?.clientWidth || window.innerWidth;
@@ -84,7 +76,7 @@ export function CircleScrollZoom({
         },
       });
 
-      tl.to(videoRef.current, { scale: isMobile ? 1.1 : 1.18, ease: "none" }, 0);
+      tl.to(imageRef.current, { scale: isMobile ? 1.1 : 1.18, ease: "none" }, 0);
       tl.to(textRef.current, { opacity: 0, y: -40, ease: "none" }, 0);
 
       const onOrientation = () => ScrollTrigger.refresh();
@@ -105,7 +97,7 @@ export function CircleScrollZoom({
         ref={pinRef}
         className="relative h-[100svh] w-full overflow-hidden bg-navy-dark"
       >
-        {/* Video revelado dentro del círculo */}
+        {/* Imagen de fondo revelada dentro del círculo */}
         <div
           ref={maskRef}
           className="absolute inset-0 will-change-[mask-image]"
@@ -120,17 +112,13 @@ export function CircleScrollZoom({
             } as React.CSSProperties
           }
         >
-          <video
-            ref={videoRef}
-            className="h-full w-full object-cover will-change-transform"
-            src={videoSrc}
-            poster={posterSrc}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            disablePictureInPicture
+          <img
+            ref={imageRef}
+            className="h-full w-full object-cover will-change-transform blur-[80px] opacity-25"
+            src={imageSrc}
+            alt={imageAlt}
+            loading="eager"
+            decoding="async"
           />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-navy-dark/30" />
