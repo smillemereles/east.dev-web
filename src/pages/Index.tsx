@@ -9,12 +9,8 @@ import { Projects } from "@/components/Projects";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { useTranslation } from "@/hooks/use-i18n";
-import scrollVideo from "@/assets/scroll-cinematic.mp4.asset.json";
 
 const Index = () => {
-  const { t } = useTranslation();
-
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Helmet>
@@ -23,11 +19,7 @@ const Index = () => {
       </Helmet>
       <Navbar />
       <Hero />
-      <CircleScrollZoom
-        videoSrc={scrollVideo.url}
-        title={t("scrollReveal.title") as string}
-        subtitle={t("scrollReveal.subtitle") as string}
-      />
+      <CircleScrollZoom imageSrc="/logo-eastdev-transparent.png" />
       <About />
       <Services />
       <SmartOrder />
