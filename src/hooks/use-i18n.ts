@@ -391,6 +391,10 @@ const translations: Record<Locale, Record<string, any>> = {
       internationalBadge: "🌍 Available for international projects",
       internationalCta: "International project",
     },
+    scrollReveal: {
+      title: "A vision in motion",
+      subtitle: "From Ciudad del Este we craft digital experiences with their own identity.",
+    },
     about: {
       section: "About Us",
       title: "The bridge between your vision and digital reality",
