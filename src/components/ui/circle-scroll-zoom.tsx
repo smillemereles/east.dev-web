@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
 import scrollVideoAsset from "@/assets/scroll-cinematic.mp4.asset.json";
 
 export interface CircleScrollZoomProps {
@@ -167,7 +166,6 @@ export function CircleScrollZoom({
               muted
               loop
               playsInline
-              // @ts-expect-error atributo específico de iOS
               webkit-playsinline="true"
               preload="auto"
             />
