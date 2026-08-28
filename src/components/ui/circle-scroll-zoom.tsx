@@ -14,9 +14,15 @@ export interface CircleScrollZoomProps {
   className?: string;
 }
 
+// Diámetro base del círculo en px; la animación solo escala con transform (GPU)
+const BASE_DIAMETER = 240;
+
 /**
  * Sección de transición: un video se revela dentro de un círculo que crece con
  * el scroll, sobre un fondo con el logo de east.dev difuminado.
+ *
+ * El círculo se anima con `transform: scale()` (compositado por GPU) en lugar
+ * de una máscara radial repintada por frame, lo que lo hace fluido en móviles.
  */
 export function CircleScrollZoom({
   title,
@@ -28,10 +34,9 @@ export function CircleScrollZoom({
 }: CircleScrollZoomProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
-  const maskRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLVideoElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-
 
   useEffect(() => {
     if (!containerRef.current || !pinRef.current) return;
@@ -47,39 +52,45 @@ export function CircleScrollZoom({
 
       // Radio inicial proporcional al lado menor: se ve bien en cualquier pantalla
       const startRadius = () => Math.max(70, Math.min(vw(), vh()) * 0.22);
-
-      const setRadius = (r: number) => {
-        if (maskRef.current) {
-          maskRef.current.style.setProperty("--r", `${r}px`);
-        }
-      };
-
-      setRadius(startRadius());
-
       const maxRadius = () => Math.hypot(vw(), vh()) * 0.8;
 
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      const endZoom = isMobile ? 1.08 : 1.16;
+
+      const render = (p: number) => {
+        if (!circleRef.current || !innerRef.current) return;
+        const s0 = startRadius();
+        const r = s0 + Math.pow(p, 2.1) * (maxRadius() - s0);
+        const s = r / (BASE_DIAMETER / 2);
+        // El video se contra-escala para mantenerse fijo, con un leve zoom final
+        const zoom = (1 + (endZoom - 1) * p) / s;
+        gsap.set(circleRef.current, { scale: s });
+        gsap.set(innerRef.current, { scale: zoom });
+      };
+
+      gsap.set([circleRef.current, innerRef.current], {
+        xPercent: -50,
+        yPercent: -50,
+        transformOrigin: "center center",
+        force3D: true,
+      });
+      render(0);
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
           end: isMobile ? "+=140%" : "+=220%",
-          scrub: isMobile ? 0.6 : 1.1,
+          scrub: isMobile ? 0.5 : 1.1,
           pin: pinRef.current,
           pinSpacing: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-          onRefresh: () => setRadius(startRadius()),
-          onUpdate: (self) => {
-            const p = self.progress;
-            const s = startRadius();
-            setRadius(s + Math.pow(p, 2.1) * (maxRadius() - s));
-          },
+          onRefresh: () => render(0),
+          onUpdate: (self) => render(self.progress),
         },
       });
 
-      tl.to(imageRef.current, { scale: isMobile ? 1.1 : 1.18, ease: "none" }, 0);
       tl.to(textRef.current, { opacity: 0, y: -40, ease: "none" }, 0);
 
       const onOrientation = () => ScrollTrigger.refresh();
@@ -109,35 +120,38 @@ export function CircleScrollZoom({
           decoding="async"
         />
 
-        {/* Video revelado dentro del círculo */}
+        {/* Círculo escalado por GPU que revela el video */}
         <div
-          ref={maskRef}
-          className="absolute inset-0 will-change-[mask-image]"
-          style={
-            {
-              "--r": "170px",
-              WebkitMaskImage:
-                "radial-gradient(circle at 50% 50%, #000 0, #000 var(--r), transparent calc(var(--r) + 1px))",
-              maskImage:
-                "radial-gradient(circle at 50% 50%, #000 0, #000 var(--r), transparent calc(var(--r) + 1px))",
-              WebkitTransform: "translateZ(0)",
-            } as React.CSSProperties
-          }
+          ref={circleRef}
+          className="absolute left-1/2 top-1/2 overflow-hidden rounded-full will-change-transform"
+          style={{
+            width: BASE_DIAMETER,
+            height: BASE_DIAMETER,
+            transform: "translate(-50%, -50%)",
+          }}
         >
-          <video
-            ref={imageRef}
-            className="h-full w-full object-cover will-change-transform"
-            src={videoSrc}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          />
-
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-navy-dark/20" />
+          {/* Interior del tamaño del viewport, contra-escalado */}
+          <div
+            ref={innerRef}
+            className="absolute left-1/2 top-1/2 will-change-transform"
+            style={{
+              width: "100vw",
+              height: "100svh",
+              transform: "translate(-50%, -50%)",
+            }}
+          >
+            <video
+              className="h-full w-full object-cover"
+              src={videoSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-navy-dark/20" />
+          </div>
         </div>
-
 
         {/* Texto */}
         <div
