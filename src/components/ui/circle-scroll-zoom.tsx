@@ -104,12 +104,24 @@ export function CircleScrollZoom({
     };
 
     // El video solo reproduce cuando la sección está en pantalla
+    const v = videoRef.current;
+    const tryPlay = () => {
+      if (!v || v.paused === false) return;
+      void v.play().catch(() => {});
+    };
+
+    v?.addEventListener("loadedmetadata", tryPlay);
+    v?.addEventListener("canplay", tryPlay);
+    v?.addEventListener("pause", tryPlay);
+
     const io = new IntersectionObserver(
       ([entry]) => {
-        const v = videoRef.current;
         if (!v) return;
-        if (entry.isIntersecting) void v.play().catch(() => {});
-        else v.pause();
+        if (entry.isIntersecting) {
+          void v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
       },
       { threshold: 0.05 }
     );
@@ -123,6 +135,9 @@ export function CircleScrollZoom({
     return () => {
       if (raf) cancelAnimationFrame(raf);
       io.disconnect();
+      v?.removeEventListener("loadedmetadata", tryPlay);
+      v?.removeEventListener("canplay", tryPlay);
+      v?.removeEventListener("pause", tryPlay);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       window.removeEventListener("orientationchange", onResize);
@@ -132,9 +147,24 @@ export function CircleScrollZoom({
   return (
     <section
       ref={containerRef}
-      className={`relative w-full bg-navy-dark h-[240svh] sm:h-[320svh] ${className}`}
+      className={`circle-scroll-zoom relative w-full bg-navy-dark h-[240svh] sm:h-[320svh] ${className}`}
       aria-label="Transición cinematográfica"
     >
+      <style>{`
+        .circle-scroll-zoom video::-webkit-media-controls,
+        .circle-scroll-zoom video::-webkit-media-controls-enclosure,
+        .circle-scroll-zoom video::-webkit-media-controls-panel,
+        .circle-scroll-zoom video::-webkit-media-controls-overlay-play-button,
+        .circle-scroll-zoom video::-webkit-media-controls-play-button,
+        .circle-scroll-zoom video::-webkit-media-controls-start-playback-button {
+          display: none !important;
+          -webkit-appearance: none;
+          pointer-events: none;
+        }
+        .circle-scroll-zoom video {
+          pointer-events: none;
+        }
+      `}</style>
       <div
         ref={stickyRef}
         className="sticky top-0 h-[100svh] w-full overflow-hidden bg-navy-dark"
@@ -185,6 +215,9 @@ export function CircleScrollZoom({
               playsInline
               webkit-playsinline="true"
               preload="auto"
+              disablePictureInPicture
+              disableRemotePlayback
+              controls={false}
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-navy-dark/20" />
           </div>
