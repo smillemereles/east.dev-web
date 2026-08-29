@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import scrollVideoAsset from "@/assets/scroll-cinematic.mp4.asset.json";
 
 export interface CircleScrollZoomProps {
   title?: React.ReactNode;
@@ -26,7 +25,7 @@ export function CircleScrollZoom({
   subtitle,
   imageSrc,
   imageAlt = "east.dev",
-  videoSrc = scrollVideoAsset.url,
+  videoSrc = "/videos/scroll-cinematic.mp4",
   className = "",
 }: CircleScrollZoomProps) {
   const containerRef = useRef<HTMLDivElement>(null);
