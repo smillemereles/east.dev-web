@@ -54,12 +54,14 @@ export function CircleScrollZoom({
       const isMobile = vw < 640;
       const endZoom = isMobile ? 1.06 : 1.14;
 
-      const s0 = Math.max(70, Math.min(vw, vh) * 0.22);
+      const s0 = Math.max(40, Math.min(vw, vh) * 0.11);
       const maxR = Math.hypot(vw, vh) * 0.75;
       const r = s0 + Math.pow(p, 2) * (maxR - s0);
       const s = r / (BASE_DIAMETER / 2);
       const zoom = (1 + (endZoom - 1) * p) / s;
 
+      const fade = Math.min(1, p / 0.08) * Math.min(1, (1 - p) / 0.06 + 0.4);
+      circle.style.opacity = String(Math.max(0, Math.min(1, fade)));
       circle.style.transform = `translate3d(-50%, -50%, 0) scale(${s})`;
       inner.style.transform = `translate3d(-50%, -50%, 0) scale(${zoom})`;
       if (textRef.current) {
