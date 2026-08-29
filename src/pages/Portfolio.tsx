@@ -152,19 +152,6 @@ const clients: ClientPortfolio[] = [
   },
 ];
 
-const aspectClasses = {
-  square: "aspect-square",
-  portrait: "aspect-[3/4]",
-  landscape: "aspect-[4/3]",
-};
-
-const typeColors: Record<string, string> = {
-  "Post Instagram": "bg-electric/20 text-electric",
-  "Carousel": "bg-accent/20 text-accent-foreground",
-  "Story": "bg-purple-500/20 text-purple-300",
-  "Branding": "bg-emerald-500/20 text-emerald-300",
-  "Web Design": "bg-sky-500/20 text-sky-300",
-};
 
 export default function Portfolio() {
   const { t } = useTranslation();
@@ -174,7 +161,7 @@ export default function Portfolio() {
     description: string;
     works: Record<string, { title: string; description: string }>;
   }>;
-  const workTypeTranslations = t("portfolio.workTypes") as Record<string, string>;
+  
 
   const filteredClients = activeClient
     ? clients.filter((c) => c.slug === activeClient)
