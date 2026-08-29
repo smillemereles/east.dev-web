@@ -147,7 +147,7 @@ export function CircleScrollZoom({
   return (
     <section
       ref={containerRef}
-      className={`relative w-full bg-navy-dark h-[240svh] sm:h-[320svh] ${className}`}
+      className={`circle-scroll-zoom relative w-full bg-navy-dark h-[240svh] sm:h-[320svh] ${className}`}
       aria-label="Transición cinematográfica"
     >
       <style>{`
