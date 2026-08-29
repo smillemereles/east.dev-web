@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import scrollVideoAsset from "@/assets/scroll-cinematic.mp4.asset.json";
 
 export interface CircleScrollZoomProps {
   title?: React.ReactNode;
@@ -26,7 +25,7 @@ export function CircleScrollZoom({
   subtitle,
   imageSrc,
   imageAlt = "east.dev",
-  videoSrc = scrollVideoAsset.url,
+  videoSrc = "/videos/scroll-cinematic.mp4",
   className = "",
 }: CircleScrollZoomProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -147,7 +146,7 @@ export function CircleScrollZoom({
   return (
     <section
       ref={containerRef}
-      className={`circle-scroll-zoom relative w-full bg-navy-dark h-[240svh] sm:h-[320svh] ${className}`}
+      className={`circle-scroll-zoom relative w-full bg-navy-dark h-[220svh] sm:h-[260svh] ${className}`}
       aria-label="Transición cinematográfica"
     >
       <style>{`

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "@/hooks/use-i18n";
-import farmanextVideo from "@/assets/farmanextxeast.dev.mp4.asset.json";
 import {
   ArrowUpRight,
   CreditCard,
@@ -61,7 +60,7 @@ const featuredProjects: FeaturedProject[] = [
     ],
     tech: ["Next.js", "Stripe", "PIX", "Tailwind"],
     url: "https://www.farmanext.com.py",
-    videoSrc: farmanextVideo.url,
+    videoSrc: "/videos/farmanext.mp4",
     poster: "/farmanext/farmanexthero.png",
   },
   {
