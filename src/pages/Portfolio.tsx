@@ -39,6 +39,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer} from "@/components/Footer";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
+import { ScrollTiltedGrid } from "@/components/ui/scroll-tilted-grid";
 
 
 interface DesignWork {
