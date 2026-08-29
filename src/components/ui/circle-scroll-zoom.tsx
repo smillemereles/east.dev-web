@@ -185,6 +185,9 @@ export function CircleScrollZoom({
               playsInline
               webkit-playsinline="true"
               preload="auto"
+              disablePictureInPicture
+              disableRemotePlayback
+              controls={false}
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-navy-dark/20" />
           </div>
