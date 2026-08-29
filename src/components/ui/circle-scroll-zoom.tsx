@@ -34,6 +34,7 @@ export function CircleScrollZoom({
   const circleRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -102,6 +103,18 @@ export function CircleScrollZoom({
       render(current);
     };
 
+    // El video solo reproduce cuando la sección está en pantalla
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        const v = videoRef.current;
+        if (!v) return;
+        if (entry.isIntersecting) void v.play().catch(() => {});
+        else v.pause();
+      },
+      { threshold: 0.05 }
+    );
+    io.observe(sticky);
+
     onResize();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
@@ -109,6 +122,7 @@ export function CircleScrollZoom({
 
     return () => {
       if (raf) cancelAnimationFrame(raf);
+      io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       window.removeEventListener("orientationchange", onResize);
@@ -162,6 +176,7 @@ export function CircleScrollZoom({
             }}
           >
             <video
+              ref={videoRef}
               className="h-full w-full object-cover"
               src={videoSrc}
               autoPlay
