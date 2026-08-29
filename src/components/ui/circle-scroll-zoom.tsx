@@ -104,12 +104,24 @@ export function CircleScrollZoom({
     };
 
     // El video solo reproduce cuando la sección está en pantalla
+    const v = videoRef.current;
+    const tryPlay = () => {
+      if (!v || v.paused === false) return;
+      void v.play().catch(() => {});
+    };
+
+    v?.addEventListener("loadedmetadata", tryPlay);
+    v?.addEventListener("canplay", tryPlay);
+    v?.addEventListener("pause", tryPlay);
+
     const io = new IntersectionObserver(
       ([entry]) => {
-        const v = videoRef.current;
         if (!v) return;
-        if (entry.isIntersecting) void v.play().catch(() => {});
-        else v.pause();
+        if (entry.isIntersecting) {
+          void v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
       },
       { threshold: 0.05 }
     );
