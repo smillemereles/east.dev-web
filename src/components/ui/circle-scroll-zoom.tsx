@@ -135,6 +135,9 @@ export function CircleScrollZoom({
     return () => {
       if (raf) cancelAnimationFrame(raf);
       io.disconnect();
+      v?.removeEventListener("loadedmetadata", tryPlay);
+      v?.removeEventListener("canplay", tryPlay);
+      v?.removeEventListener("pause", tryPlay);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       window.removeEventListener("orientationchange", onResize);
