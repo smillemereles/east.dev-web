@@ -150,6 +150,21 @@ export function CircleScrollZoom({
       className={`relative w-full bg-navy-dark h-[240svh] sm:h-[320svh] ${className}`}
       aria-label="Transición cinematográfica"
     >
+      <style>{`
+        .circle-scroll-zoom video::-webkit-media-controls,
+        .circle-scroll-zoom video::-webkit-media-controls-enclosure,
+        .circle-scroll-zoom video::-webkit-media-controls-panel,
+        .circle-scroll-zoom video::-webkit-media-controls-overlay-play-button,
+        .circle-scroll-zoom video::-webkit-media-controls-play-button,
+        .circle-scroll-zoom video::-webkit-media-controls-start-playback-button {
+          display: none !important;
+          -webkit-appearance: none;
+          pointer-events: none;
+        }
+        .circle-scroll-zoom video {
+          pointer-events: none;
+        }
+      `}</style>
       <div
         ref={stickyRef}
         className="sticky top-0 h-[100svh] w-full overflow-hidden bg-navy-dark"
