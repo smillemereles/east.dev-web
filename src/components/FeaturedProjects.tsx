@@ -117,7 +117,7 @@ const featuredProjects: FeaturedProject[] = [
       { icon: Layers, label: "Navegación clara y accesible" },
     ],
     tech: ["React", "Vite", "SEO", "Tailwind"],
-    url: "https://sancarloshospital.com/",
+    url: "https://sanatoriosancarlos.com.py/",
     videoSrc: "",
     poster: "/sancarlos/hero.png",
   },
