@@ -270,54 +270,21 @@ export default function Portfolio() {
                 </span>
               </div>
 
-              {/* Works Grid - Masonry style */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {client.works.map((work) => {
-                  const wt = ct?.works?.[String(work.id)];
-                  const translatedType = workTypeTranslations?.[work.type] ?? work.type;
-                  return (
-                  <div
-                    key={work.id}
-                    className="group relative rounded-xl overflow-hidden bg-card/30 border border-border/20 hover:border-electric/30 transition-all duration-500"
-                  >
-                    <div
-                      className={`${aspectClasses[work.aspect]} bg-gradient-to-br from-card via-card/80 to-electric/5 flex items-stretch justify-stretch`}
-                    >
-                      {work.image ? (
-                        <img
-                          src={work.image}
-                          alt={wt?.title ?? work.title}
-                          className="object-cover w-full h-full"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex flex-col items-center justify-center text-center p-4">
-                          <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-electric/10 flex items-center justify-center">
-                            <Image className="w-6 h-6 text-electric/50" />
-                          </div>
-                          <p className="text-xs text-muted-foreground/50">
-                            {t("portfolio.imageComingSoon")}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4">
-                      <span
-                        className={`text-xs px-2.5 py-1 rounded-full w-fit mb-2 ${typeColors[work.type] || "bg-card text-foreground"}`}
-                      >
-                        {translatedType}
-                      </span>
-                      <h3 className="text-sm font-semibold">{wt?.title ?? work.title}</h3>
-                      <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                        {wt?.description ?? work.description}
-                      </p>
-                    </div>
-                  </div>
-                  );
-                })}
-              </div>
+              {/* Works Grid - Scroll tilted editorial */}
+              <ScrollTiltedGrid
+                images={client.works
+                  .filter((w) => w.image)
+                  .map((w) => ({
+                    src: w.image,
+                    alt: ct?.works?.[String(w.id)]?.title ?? w.title,
+                  }))}
+                aspectRatio={client.works[0]?.aspect === "landscape" ? "4/3" : "3/4"}
+                maxWidth={client.works[0]?.aspect === "landscape" ? "4xl" : "2xl"}
+                gap={10}
+                rounded="0.75rem"
+                maxTilt={55}
+                maxBlur={6}
+              />
             </div>
             );
           })}
