@@ -754,11 +754,10 @@ const interpolate = (value: string, params?: Record<string, string>) => {
   );
 };
 
+// Spanish is always the default (so Google indexes Spanish); English only when the visitor picks it.
 const getInitialLocale = (): Locale => {
   if (typeof window === "undefined") return "es";
-  const stored = localStorage.getItem("locale");
-  if (stored === "en" || stored === "es") return stored;
-  return navigator.language.startsWith("en") ? "en" : "es";
+  return localStorage.getItem("locale") === "en" ? "en" : "es";
 };
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
