@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 
 type Result = { slug: string; name: string; reason: string };
 
-export const ProjectMatcher = () => {
+export const ProjectMatcher = ({ onSelect }: { onSelect: (slug: string) => void }) => {
   const { locale } = useTranslation() as any;
   const en = locale === "en";
   const [business, setBusiness] = useState("");
@@ -79,9 +79,9 @@ export const ProjectMatcher = () => {
             </p>
             <h3 className="text-xl font-display font-bold mb-2">{result.name}</h3>
             <p className="text-muted-foreground mb-4">{result.reason}</p>
-            <a href={`#${result.slug}`} className="inline-flex items-center gap-2 text-brand font-medium">
+            <button type="button" onClick={() => onSelect(result.slug)} className="inline-flex items-center gap-2 text-brand font-medium">
               {en ? "See project" : "Ver proyecto"} <ArrowDown className="w-4 h-4" />
-            </a>
+            </button>
           </div>
         )}
       </div>

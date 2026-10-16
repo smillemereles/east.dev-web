@@ -40,6 +40,7 @@ import { Footer} from "@/components/Footer";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/use-i18n";
 import { ScrollTiltedGrid } from "@/components/ui/scroll-tilted-grid";
+import { ProjectMatcher } from "@/components/ProjectMatcher";
 
 
 interface DesignWork {
@@ -197,6 +198,13 @@ export default function Portfolio() {
         </div>
       </section>
 
+      <ProjectMatcher
+        onSelect={(slug) => {
+          setActiveClient(slug);
+          setTimeout(() => document.getElementById(slug)?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+        }}
+      />
+
       {/* Client Filter */}
       <section className="pb-8 sticky top-[72px] z-40 glass-effect">
         <div className="container-custom">
@@ -239,7 +247,7 @@ export default function Portfolio() {
           {filteredClients.map((client) => {
             const ct = clientTranslations?.[client.slug];
             return (
-            <div key={client.slug}>
+            <div key={client.slug} id={client.slug} className="scroll-mt-40">
               {/* Client Header */}
               <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                 <div>
