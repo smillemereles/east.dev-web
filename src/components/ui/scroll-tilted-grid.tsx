@@ -63,17 +63,44 @@ type TileConfig = {
   rounded: string;
 };
 
+type WorkCaption = {
+  title?: string;
+  type?: string;
+  description?: string;
+};
+
+function TileCaption({ title, type, description }: WorkCaption) {
+  if (!title && !type && !description) return null;
+
+  return (
+    <figcaption className="absolute inset-x-0 bottom-0 bg-background/95 p-4 text-foreground opacity-100 transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 md:group-focus:opacity-100 motion-reduce:transition-none">
+      {type ? (
+        <span className="mb-2 inline-block rounded border border-electric/30 bg-electric/10 px-2 py-1 text-xs font-medium text-electric">
+          {type}
+        </span>
+      ) : null}
+      {title ? <h3 className="break-words text-base font-semibold leading-snug">{title}</h3> : null}
+      {description ? <p className="mt-2 break-words text-sm leading-relaxed text-muted-foreground">{description}</p> : null}
+    </figcaption>
+  );
+}
+
 function Tile({
   src,
   alt,
+  title,
+  type,
+  description,
+  imagePlaceholder,
   side,
   config,
 }: {
   src: string;
   alt: string;
+  imagePlaceholder?: string;
   side: Side;
   config: TileConfig;
-}) {
+} & WorkCaption) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress: p } = useScroll({
     target: ref,
@@ -104,16 +131,29 @@ function Tile({
   const innerSY = useTransform(p, [0, 0.5, 1], [1.4, 1, 1.4], { ease: focusEase });
 
   const filter = useMotionTemplate`blur(${blur}px) brightness(${bright}) contrast(${contrast})`;
+  const hasCaption = Boolean(title || type || description);
+  const tileClassName = "group relative overflow-hidden bg-card/30 border border-border/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  const content = (
+    <>
+      {src ? (
+        <motion.img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" style={reduce ? undefined : { filter }} />
+      ) : (
+        <div className="flex h-full items-center justify-center p-4 text-center text-sm text-muted-foreground">{imagePlaceholder}</div>
+      )}
+      <TileCaption title={title} type={type} description={description} />
+    </>
+  );
 
   if (reduce) {
     return (
-      <div
+      <figure
         ref={ref}
-        className="overflow-hidden bg-card/30 border border-border/20"
+        tabIndex={hasCaption ? 0 : undefined}
+        className={tileClassName}
         style={{ aspectRatio, borderRadius: rounded }}
       >
-        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
-      </div>
+        {content}
+      </figure>
     );
   }
 
@@ -133,28 +173,30 @@ function Tile({
             rotateX: rx,
             rotate: rot,
             skewX: sk,
-            filter,
             transformStyle: "preserve-3d",
-            willChange: "transform, filter",
+            willChange: "transform",
           }}
         >
-          <motion.div
-            className="overflow-hidden bg-card/30 border border-border/20"
+          <motion.figure
+            tabIndex={hasCaption ? 0 : undefined}
+            className={tileClassName}
             style={{ aspectRatio, borderRadius: rounded, scaleY: innerSY }}
           >
-            <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
-          </motion.div>
+            {content}
+          </motion.figure>
         </motion.div>
       </motion.div>
     </div>
   );
 }
 
-export type ScrollTiltedGridImage = string | { src: string; alt?: string };
+export type ScrollTiltedGridImage = string | ({ src: string; alt?: string } & WorkCaption);
 
 export type ScrollTiltedGridProps = {
-  /** Image URLs (or { src, alt } objects) to render. */
+  /** Image URLs or objects with optional localized work captions. */
   images?: readonly ScrollTiltedGridImage[];
+  /** Localized label for work items without an image. */
+  imagePlaceholder?: string;
   /** Cycle the source list and append more pairs near the bottom. Default `false`. */
   loop?: boolean;
   /** Initial number of cycles to render when `loop` is on. Default `3`. */
@@ -183,6 +225,7 @@ export type ScrollTiltedGridProps = {
  */
 export function ScrollTiltedGrid({
   images = DEFAULT_GRID_IMAGES,
+  imagePlaceholder,
   loop = false,
   initialCycles = 3,
   aspectRatio = "3/4",
@@ -227,7 +270,7 @@ export function ScrollTiltedGrid({
   );
 
   const gridClass = [
-    "mx-auto grid w-full grid-cols-2",
+    "mx-auto grid w-full grid-cols-1 sm:grid-cols-2",
     MAX_WIDTH_CLASS[maxWidth],
     GAP_CLASS[gap],
   ]
@@ -245,6 +288,10 @@ export function ScrollTiltedGrid({
               key={`${src}-${i}`}
               src={src}
               alt={alt}
+              title={typeof item === "string" ? undefined : item.title}
+              type={typeof item === "string" ? undefined : item.type}
+              description={typeof item === "string" ? undefined : item.description}
+              imagePlaceholder={imagePlaceholder}
               side={i % 2 === 0 ? "L" : "R"}
               config={config}
             />
