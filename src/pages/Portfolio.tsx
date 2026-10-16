@@ -157,6 +157,7 @@ const clients: ClientPortfolio[] = [
 export default function Portfolio() {
   const { t } = useTranslation();
   const [activeClient, setActiveClient] = useState<string | null>(null);
+  const workTypeTranslations = t("portfolio.workTypes") as Record<string, string>;
   const clientTranslations = t("portfolio.clients") as Record<string, {
     category: string;
     description: string;
@@ -268,12 +269,14 @@ export default function Portfolio() {
 
               {/* Works Grid - Scroll tilted editorial */}
               <ScrollTiltedGrid
-                images={client.works
-                  .filter((w) => w.image)
-                  .map((w) => ({
+                images={client.works.map((w) => ({
                     src: w.image,
                     alt: ct?.works?.[String(w.id)]?.title ?? w.title,
+                    title: ct?.works?.[String(w.id)]?.title ?? w.title,
+                    description: ct?.works?.[String(w.id)]?.description ?? w.description,
+                    type: workTypeTranslations?.[w.type] ?? w.type,
                   }))}
+                imagePlaceholder={t("portfolio.imageComingSoon")}
                 aspectRatio={client.works[0]?.aspect === "landscape" ? "4/3" : "3/4"}
                 maxWidth={client.works[0]?.aspect === "landscape" ? "4xl" : "2xl"}
                 gap={10}
