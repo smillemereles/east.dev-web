@@ -1,39 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://eastdevpy.com/</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/en</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/pt</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/" />
   </url>
   <url>
     <loc>https://eastdevpy.com/desarrollo-web-ciudad-del-este</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/en/desarrollo-web-ciudad-del-este</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/pt/desarrollo-web-ciudad-del-este</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/desarrollo-web-ciudad-del-este" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
   </url>
   <url>
     <loc>https://eastdevpy.com/diseno-web-paraguay</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/diseno-web-paraguay" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/en/diseno-web-paraguay</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/diseno-web-paraguay" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/pt/diseno-web-paraguay</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/diseno-web-paraguay" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/diseno-web-paraguay" />
   </url>
   <url>
     <loc>https://eastdevpy.com/portafolio</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/portafolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/portafolio" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/portafolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/portafolio" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/en/portafolio</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/portafolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/portafolio" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/portafolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/portafolio" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/pt/portafolio</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/portafolio" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/portafolio" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/portafolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/portafolio" />
   </url>
   <url>
     <loc>https://eastdevpy.com/internacional</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/internacional" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/internacional" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/internacional" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/internacional" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/en/internacional</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/internacional" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/internacional" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/internacional" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/internacional" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/pt/internacional</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/internacional" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/internacional" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/internacional" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/internacional" />
   </url>
   <url>
     <loc>https://eastdevpy.com/proyectos-estrella</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/proyectos-estrella" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/en/proyectos-estrella</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/proyectos-estrella" />
+  </url>
+  <url>
+    <loc>https://eastdevpy.com/pt/proyectos-estrella</loc>
+    <lastmod>2026-11-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eastdevpy.com/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eastdevpy.com/en/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://eastdevpy.com/pt/proyectos-estrella" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://eastdevpy.com/proyectos-estrella" />
   </url>
 </urlset>

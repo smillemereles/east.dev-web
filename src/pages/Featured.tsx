@@ -14,8 +14,6 @@ const Featured = () => {
       <Helmet>
         <title>Proyectos Estrella | east.dev</title>
         <meta name="description" content="Proyectos destacados de east.dev: sitios web, e-commerce y sistemas Smart Order desarrollados desde Ciudad del Este, Paraguay." />
-        <link rel="canonical" href="https://eastdevpy.com/proyectos-estrella" />
-        <meta property="og:url" content="https://eastdevpy.com/proyectos-estrella" />
         <meta property="og:title" content="Proyectos Estrella | east.dev" />
       </Helmet>
       <Navbar />

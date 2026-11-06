@@ -63,8 +63,6 @@ const DisenoWebParaguay = () => {
       <Helmet>
         <title>Diseño Web Paraguay | Estudio Profesional · east.dev</title>
         <meta name="description" content={desc} />
-        <link rel="canonical" href="https://eastdevpy.com/diseno-web-paraguay" />
-        <meta property="og:url" content="https://eastdevpy.com/diseno-web-paraguay" />
         <meta property="og:title" content="Diseño Web Paraguay | east.dev" />
         <meta property="og:description" content={desc} />
         <script type="application/ld+json">{JSON.stringify(faqLd)}</script>

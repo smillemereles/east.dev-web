@@ -3,7 +3,7 @@ import { Menu, X, Globe } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-eastdev-2.jpeg";
-import { useTranslation } from "@/hooks/use-i18n";
+import { useTranslation, stripLocale } from "@/hooks/use-i18n";
 
 const navLinks = [
   { href: "#inicio", key: "nav.home" },
@@ -15,10 +15,12 @@ const navLinks = [
 ];
 
 export const Navbar = () => {
-  const { locale, setLocale, t } = useTranslation();
+  const location = useLocation();
+  const { locale, setLocale, t, lp } = useTranslation();
+  const isHomePath = stripLocale(location.pathname) === "/";
+  const nextLocale = ({ es: "en", en: "pt", pt: "es" } as const)[locale];
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        {location.pathname === "/" ? (
+        {isHomePath ? (
           <a href="#inicio" className="flex items-center gap-3 group">
             <img
               src={logo}
@@ -46,7 +48,7 @@ export const Navbar = () => {
             />
           </a>
         ) : (
-          <Link to={{ pathname: "/", hash: "#inicio" }} className="flex items-center gap-3 group">
+          <Link to={{ pathname: lp("/"), hash: "#inicio" }} className="flex items-center gap-3 group">
             <img
               src={logo}
               alt="east.dev"
@@ -63,14 +65,14 @@ export const Navbar = () => {
               return (
                 <Link
                   key={link.href}
-                  to={link.href}
+                  to={lp(link.href)}
                   className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
                 >
                   {label}
                 </Link>
               );
             } else {
-              const isHome = location.pathname === "/";
+              const isHome = isHomePath;
               return isHome ? (
                 <a
                   key={link.href}
@@ -82,7 +84,7 @@ export const Navbar = () => {
               ) : (
                 <Link
                   key={link.href}
-                  to={{ pathname: "/", hash: link.href }}
+                  to={{ pathname: lp("/"), hash: link.href }}
                   className="text-muted-foreground hover:text-foreground font-medium transition-colors duration-300 text-sm tracking-wide uppercase"
                 >
                   {label}
@@ -96,20 +98,20 @@ export const Navbar = () => {
           <button
             type="button"
             className="rounded-full border border-border/50 px-3 py-2 text-sm font-medium text-muted-foreground hover:border-foreground hover:text-foreground transition-colors flex items-center gap-2"
-            onClick={() => setLocale(locale === "es" ? "en" : "es")}
-            title={locale === "es" ? "Switch to English" : "Cambiar a Español"}
+            onClick={() => setLocale(nextLocale)}
+            title={({ en: "Switch to English", pt: "Mudar para Português", es: "Cambiar a Español" })[nextLocale]}
           >
             <Globe size={16} />
-            {locale === "es" ? "EN" : "ES"}
+            {nextLocale.toUpperCase()}
           </button>
-          {location.pathname === "/" ? (
+          {isHomePath ? (
             <a href="#contacto">
               <Button variant="hero" size="default">
                 {t("nav.contactButton")}
               </Button>
             </a>
           ) : (
-            <Link to={{ pathname: "/", hash: "#contacto" }}>
+            <Link to={{ pathname: lp("/"), hash: "#contacto" }}>
               <Button variant="hero" size="default">
                 {t("nav.contactButton")}
               </Button>
@@ -122,11 +124,11 @@ export const Navbar = () => {
           <button
             type="button"
             className="rounded-full border border-border/50 px-3 py-2 text-sm font-medium text-muted-foreground hover:border-foreground hover:text-foreground transition-colors flex items-center gap-2"
-            onClick={() => setLocale(locale === "es" ? "en" : "es")}
-            title={locale === "es" ? "Switch to English" : "Cambiar a Español"}
+            onClick={() => setLocale(nextLocale)}
+            title={({ en: "Switch to English", pt: "Mudar para Português", es: "Cambiar a Español" })[nextLocale]}
           >
             <Globe size={16} />
-            {locale === "es" ? "EN" : "ES"}
+            {nextLocale.toUpperCase()}
           </button>
           <button
             className="p-2 text-foreground"
@@ -148,7 +150,7 @@ export const Navbar = () => {
                 return (
                   <Link
                     key={link.href}
-                    to={link.href}
+                    to={lp(link.href)}
                     className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
                     onClick={() => setIsOpen(false)}
                   >
@@ -156,7 +158,7 @@ export const Navbar = () => {
                   </Link>
                 );
               } else {
-                const isHome = location.pathname === "/";
+                const isHome = isHomePath;
                 return isHome ? (
                   <a
                     key={link.href}
@@ -169,7 +171,7 @@ export const Navbar = () => {
                 ) : (
                   <Link
                     key={link.href}
-                    to={{ pathname: "/", hash: link.href }}
+                    to={{ pathname: lp("/"), hash: link.href }}
                     className="text-muted-foreground hover:text-foreground font-medium py-2 transition-colors uppercase tracking-wide"
                     onClick={() => setIsOpen(false)}
                   >
@@ -178,14 +180,14 @@ export const Navbar = () => {
                 );
               }
             })}
-            {location.pathname === "/" ? (
+            {isHomePath ? (
               <a href="#contacto" onClick={() => setIsOpen(false)}>
                 <Button variant="hero" className="mt-4">
                   {t("nav.contactButton")}
                 </Button>
               </a>
             ) : (
-              <Link to={{ pathname: "/", hash: "#contacto" }} onClick={() => setIsOpen(false)}>
+              <Link to={{ pathname: lp("/"), hash: "#contacto" }} onClick={() => setIsOpen(false)}>
                 <Button variant="hero" className="mt-4">
                   {t("nav.contactButton")}
                 </Button>

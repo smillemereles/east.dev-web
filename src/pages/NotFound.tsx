@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { useTranslation } from "@/hooks/use-i18n";
 
 const NotFound = () => {
-  const { t } = useTranslation();
+  const { t, lp } = useTranslation();
   const location = useLocation();
 
   useEffect(() => {
@@ -18,8 +18,8 @@ const NotFound = () => {
         <h1 className="mb-4 text-7xl font-display font-bold text-gradient">404</h1>
         <p className="mb-6 text-xl text-muted-foreground">{t("notFound.message")}</p>
         <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+          to={lp("/")}
+className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
         >
           <ArrowLeft className="w-4 h-4" />
           {t("notFound.back")}
