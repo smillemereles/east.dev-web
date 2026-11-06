@@ -367,7 +367,7 @@ es: {
       back: "Volver al inicio",
     },
   },
-en: {
+  en: {
     nav: {
       home: "Home",
       about: "About",
@@ -728,7 +728,7 @@ en: {
       back: "Back to home",
     },
   },
-pt: {
+  pt: {
     nav: {
       home: "Início",
       about: "Sobre mim",
