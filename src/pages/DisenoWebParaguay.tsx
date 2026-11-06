@@ -95,7 +95,7 @@ const DisenoWebParaguay = () => {
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </a>
-            <Link to="/portafolio">
+            <Link to={lp("/portafolio")}>
               <Button variant="heroOutline" size="xl">
                 Ver trabajos
               </Button>

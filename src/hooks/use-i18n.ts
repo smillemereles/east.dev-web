@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export type Locale = "es" | "en" | "pt";
 export const LOCALES: Locale[] = ["es", "en", "pt"];
@@ -1094,6 +1095,7 @@ es: {
 interface I18nContextValue {
   locale: Locale;
   setLocale: (locale: Locale) => void;
+  lp: (path: string) => string;
   t: (key: string, params?: Record<string, string>) => any;
 }
 
@@ -1116,25 +1118,41 @@ const interpolate = (value: string, params?: Record<string, string>) => {
   );
 };
 
-// Spanish is always the default (so Google indexes Spanish); English only when the visitor picks it.
-const getInitialLocale = (): Locale => {
-  if (typeof window === "undefined") return "es";
-  return localStorage.getItem("locale") === "en" ? "en" : "es";
+// Locale lives in the URL: "/" = Spanish, "/en/..." = English, "/pt/..." = Portuguese.
+export const localeFromPath = (pathname: string): Locale => {
+  const seg = pathname.split("/")[1];
+  return seg === "en" || seg === "pt" ? seg : "es";
+};
+
+export const stripLocale = (pathname: string): string => {
+  const seg = pathname.split("/")[1];
+  if (seg === "en" || seg === "pt") return pathname.slice(3) || "/";
+  return pathname || "/";
+};
+
+export const localizePath = (path: string, locale: Locale): string => {
+  const clean = stripLocale(path);
+  if (locale === "es") return clean;
+  return clean === "/" ? `/${locale}` : `/${locale}${clean}`;
 };
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [locale, setLocale] = useState<Locale>(getInitialLocale);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const locale = localeFromPath(location.pathname);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("locale", locale);
-      document.documentElement.lang = locale;
-    }
+    document.documentElement.lang = locale === "pt" ? "pt-BR" : locale;
   }, [locale]);
+
+  const setLocale = (next: Locale) => {
+    navigate(localizePath(location.pathname, next) + location.hash);
+  };
 
   const value = useMemo<I18nContextValue>(() => ({
     locale,
     setLocale,
+    lp: (path: string) => localizePath(path, locale),
     t: (key: string, params?: Record<string, string>) => {
       const translation = getTranslation(locale, key);
       if (typeof translation === "string") {
@@ -1142,7 +1160,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       }
       return translation;
     },
-  }), [locale]);
+  }), [locale, location.pathname, location.hash]);
 
   return React.createElement(
     LanguageContext.Provider,
