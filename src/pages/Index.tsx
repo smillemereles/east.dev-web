@@ -14,8 +14,6 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Helmet>
-        <link rel="canonical" href="https://eastdevpy.com/" />
-        <meta property="og:url" content="https://eastdevpy.com/" />
       </Helmet>
       <Navbar />
       <Hero />

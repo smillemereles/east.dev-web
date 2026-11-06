@@ -17,8 +17,6 @@ const International = () => {
       <Helmet>
         <title>Trabajos Internacionales | eastdevpy.com</title>
         <meta name="description" content={description} />
-        <link rel="canonical" href="https://eastdevpy.com/internacional" />
-        <meta property="og:url" content="https://eastdevpy.com/internacional" />
         <meta property="og:title" content="Trabajos Internacionales | eastdevpy.com" />
         <meta property="og:description" content={description} />
       </Helmet>

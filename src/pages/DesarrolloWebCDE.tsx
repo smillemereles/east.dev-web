@@ -81,8 +81,6 @@ const DesarrolloWebCDE = () => {
       <Helmet>
         <title>Desarrollo Web en Ciudad del Este | Diseño Web Paraguay · east.dev</title>
         <meta name="description" content={desc} />
-        <link rel="canonical" href="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
-        <meta property="og:url" content="https://eastdevpy.com/desarrollo-web-ciudad-del-este" />
         <meta property="og:title" content="Desarrollo Web en Ciudad del Este | east.dev" />
         <meta property="og:description" content={desc} />
         <script type="application/ld+json">{JSON.stringify(faqLd)}</script>
